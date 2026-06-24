@@ -1,10 +1,10 @@
-﻿"""
-Menu scraper for MN Legit Cannabis â€“ South Metro (Sweed POS platform).
+"""
+Menu scraper for MN Legit Cannabis – South Metro (Sweed POS platform).
 
 Strategy (in order):
-  1. Direct API  â€“ POST to /_api/Products/GetProductList per category (fast; WAF often blocks)
-  2. Browser API â€“ same POST via Playwright's request context (shares session cookies, bypasses WAF)
-  3. DOM fallback â€“ parse visible product cards if both API paths fail
+  1. Direct API  – POST to /_api/Products/GetProductList per category (fast; WAF often blocks)
+  2. Browser API – same POST via Playwright's request context (shares session cookies, bypasses WAF)
+  3. DOM fallback – parse visible product cards if both API paths fail
 """
 
 import hashlib
@@ -51,7 +51,7 @@ HEADERS = {
 }
 
 
-# â”€â”€ Logging â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Logging ───────────────────────────────────────────────────────────────────
 
 def log(msg: str):
     print(f"[{datetime.now(CST).strftime('%Y-%m-%d %H:%M:%S CST')}] {msg}", flush=True)
@@ -90,7 +90,7 @@ def _write_debug(cat_name: str, page_num: int, raw):
         json.dump(_debug_log, f, indent=2)
 
 
-# â”€â”€ Utility formatters â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Utility formatters ────────────────────────────────────────────────────────
 
 def _pct(v) -> str:
     if not v: return ""
@@ -112,8 +112,8 @@ def _lst(v) -> list:
     return []
 
 
-# â”€â”€ Sweed POS API normalizer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-# Endpoint: https://shop.dinkydope.com/_api/Products/GetProductList
+# ── Sweed POS API normalizer ──────────────────────────────────────────────────
+# Endpoint: https://shop.mnlegitcannabis.com/_api/Products/GetProductList
 # Confirmed category IDs from browser Network tab
 
 SWEED_API_URL = f"https://{STORE_DOMAIN}/_api/Products/GetProductList"
@@ -269,7 +269,7 @@ def _parse_sweed_response(data, force_category: str = "") -> list[dict]:
     return results
 
 
-# â”€â”€ Strategy 1: Direct HTTP POST (fast, WAF often blocks outside browser) â”€â”€â”€â”€â”€
+# ── Strategy 1: Direct HTTP POST (fast, WAF often blocks outside browser) ─────
 
 def try_sweed_api() -> list[dict]:
     session = requests.Session()
@@ -306,7 +306,7 @@ def try_sweed_api() -> list[dict]:
     return []
 
 
-# â”€â”€ Strategy 2: Playwright browser (page.evaluate fetch â€” true browser request) â”€
+# ── Strategy 2: Playwright browser (page.evaluate fetch — true browser request) ─
 
 def _sweed_fetch_all(page, store_id) -> list[dict]:
     """POST per category using page.evaluate() so fetch runs inside Chromium.
@@ -344,11 +344,11 @@ def _sweed_fetch_all(page, store_id) -> list[dict]:
                 }""", {"url": SWEED_API_URL, "payload": payload})
 
                 if not isinstance(result, dict) or "__error" in result:
-                    log(f"    page {page_num} â†’ error: {result}")
+                    log(f"    page {page_num} → error: {result}")
                     _write_debug(cat_name, page_num, {"__error": str(result)})
                     break
 
-                log(f"    page {page_num} â†’ HTTP {result.get('__status')}")
+                log(f"    page {page_num} → HTTP {result.get('__status')}")
                 raw = result.get("__data")
                 _write_debug(cat_name, page_num, raw)
                 found = _parse_sweed_response(raw, force_category=cat_name)
@@ -368,14 +368,14 @@ def _sweed_fetch_all(page, store_id) -> list[dict]:
     return list(all_products.values())
 
 
-# â”€â”€ DOM fallback (Sweed card structure) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── DOM fallback (Sweed card structure) ───────────────────────────────────────
 
 _HREF_STRAIN = {"hybrid": "Hybrid", "indica": "Indica", "sativa": "Sativa",
                 "cbd": "CBD", "cbg": "CBG"}
 
 
 def _dom_scrape_page(page) -> list[dict]:
-    """Parse visible product cards. Uses aria-label, href slug, and text regex â€”
+    """Parse visible product cards. Uses aria-label, href slug, and text regex —
     all stable signals that don't depend on CSS module class names."""
     found = []
     cards = page.query_selector_all("[id^='product-']")
@@ -474,13 +474,13 @@ def _guess_strain(name: str) -> str:
     return ""
 
 def _clean_name(name: str) -> str:
-    for pat in (r'\s*[-â€“]\s*PRE-?ROLL\s*$', r'\s*[-â€“]\s*FLOWER\s*$',
+    for pat in (r'\s*[-–]\s*PRE-?ROLL\s*$', r'\s*[-–]\s*FLOWER\s*$',
                 r'\s*\bFlower\b\s*$', r'\s*\bPRE-?ROLL\b\s*$'):
         name = re.sub(pat, '', name, flags=re.I).strip()
     return name
 
 
-# â”€â”€ Playwright orchestrator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Playwright orchestrator ───────────────────────────────────────────────────
 
 # Category page URL slugs (from Sweed's URL structure: /menu/<slug>-<id>)
 CATEGORY_PAGE_URLS = {
@@ -518,9 +518,9 @@ def try_playwright() -> list[dict]:
 
         page.on("response", on_response)
 
-        # Navigate to each category page â€” the browser makes its own API calls
+        # Navigate to each category page — the browser makes its own API calls
         for cat_name, cat_url in CATEGORY_PAGE_URLS.items():
-            log(f"  Loading [{cat_name}] â†’ {cat_url}")
+            log(f"  Loading [{cat_name}] → {cat_url}")
             before = len(pending)
             try:
                 page.goto(cat_url, wait_until="networkidle", timeout=40000)
@@ -560,12 +560,12 @@ def try_playwright() -> list[dict]:
     return list(all_products.values())
 
 
-# â”€â”€ Database helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Database helpers ──────────────────────────────────────────────────────────
 
 def _normalize(s: str) -> str:
     """Strip accents and trailing punctuation so keys stay stable across minor name changes."""
     s = unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().lower().strip()
-    return s.rstrip(" -â€“â€”.,")
+    return s.rstrip(" -–—.,")
 
 def product_key(p: dict) -> str:
     key = f"{_normalize(p.get('name',''))}-{_normalize(p.get('brand',''))}"
@@ -580,7 +580,7 @@ def save_db(db: dict):
     db["last_updated"] = datetime.now(CST).isoformat()
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(DATA_FILE, "w") as f: json.dump(db, f, indent=2)
-    log(f"Saved â†’ {DATA_FILE}")
+    log(f"Saved → {DATA_FILE}")
 
 def merge(db: dict, fresh: list[dict]) -> dict:
     now  = datetime.now(CST).isoformat()
@@ -594,7 +594,7 @@ def merge(db: dict, fresh: list[dict]) -> dict:
             log(f"  NEW: {p['name']}")
         elif data[pid].get("category") != p.get("category"):
             p["first_seen"] = now
-            log(f"  CATEGORY CHANGE ({data[pid].get('category')} â†’ {p.get('category')}): {p['name']}")
+            log(f"  CATEGORY CHANGE ({data[pid].get('category')} → {p.get('category')}): {p['name']}")
         else:
             p["first_seen"] = data[pid]["first_seen"]
         p["last_seen"] = now
@@ -606,7 +606,7 @@ def merge(db: dict, fresh: list[dict]) -> dict:
     return db
 
 
-# â”€â”€ Main â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Main ──────────────────────────────────────────────────────────────────────
 
 def run():
     log("=" * 56)
@@ -620,7 +620,7 @@ def run():
     products = try_sweed_api()
 
     if not products:
-        log("Direct API blocked â€” launching Playwright...")
+        log("Direct API blocked — launching Playwright...")
         products = try_playwright()
 
     if not products:
@@ -636,7 +636,7 @@ def run():
     db = merge(db, products)
     save_db(db)
     in_stock = sum(1 for p in db["products"].values() if p.get("in_stock", True))
-    log(f"Done â€” {len(products)} scraped, {in_stock} in stock")
+    log(f"Done — {len(products)} scraped, {in_stock} in stock")
     return db
 
 

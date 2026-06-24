@@ -1,5 +1,5 @@
-﻿"""
-Dev preview â€” same data as production, enhanced visual styling.
+"""
+Dev preview — same data as production, enhanced visual styling.
 Outputs docs/dev.html.  Run:  python build_dev.py
 """
 import subprocess
@@ -13,19 +13,19 @@ DEV_BANNER = """
 <div style="position:fixed;bottom:0;left:0;right:0;background:#7c3aed;color:#fff;
   text-align:center;font-size:.75rem;font-weight:700;padding:6px 8px;z-index:99999;
   letter-spacing:.3px;box-shadow:0 -2px 8px rgba(124,58,237,.35)">
-  âš—ï¸ DEV PREVIEW â€” visual experiments only, does not affect the live page
+  ⚗️ DEV PREVIEW — visual experiments only, does not affect the live page
 </div>
 """
 
 DEV_CSS = """
 <style id="dev-overrides">
 
-/* â”€â”€ System fonts â”€â”€ */
+/* ── System fonts ── */
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
 
-/* â”€â”€ Pure black palette â€” OLED, Netflix/Apple TV elevation model â”€â”€ */
+/* ── Pure black palette — OLED, Netflix/Apple TV elevation model ── */
 body.dark {
-  --brand:    #4ade80;   /* 7.8:1 on #000 â€” WCAG AA */
+  --brand:    #4ade80;   /* 7.8:1 on #000 — WCAG AA */
   --brand-lt: #0a1f12;
   --text:     #ffffff;
   --muted:    #9ca3af;
@@ -40,7 +40,7 @@ body.dark {
   --new:      #4ade80;
 }
 
-/* â”€â”€ Borderless elevation â€” cards float via shadow only â”€â”€ */
+/* ── Borderless elevation — cards float via shadow only ── */
 body.dark .card {
   border-color: transparent;
   box-shadow: 0 2px 10px rgba(0,0,0,.7);
@@ -75,13 +75,13 @@ body.dark .price-single        { color: #4ade80; }
 body.dark .new-arrivals-section { background: linear-gradient(135deg,#0a1a10,#0a0a0a); border-color: #1e3a24; }
 body.dark .sold-row            { background: #0a0a0a; }
 
-/* â”€â”€ Section title accent bars by category â”€â”€ */
+/* ── Section title accent bars by category ── */
 body.dark [data-cat="flower"]   .section-title { border-left: 3px solid #4ade80; padding-left: 12px; }
 body.dark [data-cat="pre-roll"] .section-title { border-left: 3px solid #fb923c; padding-left: 12px; }
 body.dark [data-cat="vapes"]    .section-title { border-left: 3px solid #38bdf8; padding-left: 12px; }
 body.dark [data-cat="edibles"]  .section-title { border-left: 3px solid #e879f9; padding-left: 12px; }
 
-/* â”€â”€ Tab count badges â”€â”€ */
+/* ── Tab count badges ── */
 .tab-count {
   display: inline-block;
   background: #1e1e1e;
@@ -96,7 +96,7 @@ body.dark [data-cat="edibles"]  .section-title { border-left: 3px solid #e879f9;
 }
 body.dark .tab.on .tab-count { background: #0a2016; color: #4ade80; }
 
-/* â”€â”€ Sticky search row (moved into tabs-wrap by JS) â”€â”€ */
+/* ── Sticky search row (moved into tabs-wrap by JS) ── */
 .tabs-wrap .search-row {
   padding: 6px 24px 10px;
   border-top: 1px solid #1e1e1e;
@@ -104,10 +104,10 @@ body.dark .tab.on .tab-count { background: #0a2016; color: #4ade80; }
 }
 .tabs-wrap .search-row .search-wrap { max-width: 100%; }
 
-/* â”€â”€ Hide "tap for details" hint â”€â”€ */
+/* ── Hide "tap for details" hint ── */
 .card-detail-hint { display: none !important; }
 
-/* â”€â”€ Base â”€â”€ */
+/* ── Base ── */
 :root { --radius: 14px; }
 body  { font-size: 15px; line-height: 1.5; }
 
@@ -166,13 +166,13 @@ body  { font-size: 15px; line-height: 1.5; }
 
 .legend { font-size: .76rem; gap: 14px; padding: 10px 24px; }
 
-/* â”€â”€ Schedule â”€â”€ */
+/* ── Schedule ── */
 .sched-shift      { padding: 10px 18px; font-size: .86rem; }
 .sched-shift-name { min-width: 150px; font-size: .9rem; font-weight: 700; }
 .sched-shift-time { font-size: .84rem; }
 .sched-day        { border-radius: 14px; }
 
-/* â”€â”€ Mobile â”€â”€ */
+/* ── Mobile ── */
 @media (max-width: 640px) {
   body { font-size: 14.5px; }
 
@@ -199,7 +199,7 @@ DEV_JS = """
     // Force dark mode
     document.body.classList.add('dark');
     var btn = document.getElementById('darkToggle');
-    if (btn) btn.textContent = 'â˜€ï¸ Light';
+    if (btn) btn.textContent = '☀️ Light';
 
     // Move search row into sticky tabs-wrap
     var searchRow = document.querySelector('.mood-bar .search-row');
@@ -227,21 +227,21 @@ DEV_JS = """
 
     // Terpene tooltips
     var TERP = {
-      'Myrcene':       'Earthy, musky Â· sedating, muscle relaxant',
-      'Caryophyllene': 'Spicy, peppery Â· anti-inflammatory, CB2 agonist',
-      'Limonene':      'Citrus Â· mood-lifting, stress relief',
-      'Pinene':        'Pine Â· alertness, memory retention',
-      'Linalool':      'Floral, lavender Â· calming, anti-anxiety',
-      'Terpinolene':   'Floral, herbal Â· cerebral, creative',
-      'Ocimene':       'Sweet, herbal Â· uplifting',
-      'Humulene':      'Earthy, woody Â· appetite suppressant',
-      'Bisabolol':     'Floral, nutty Â· soothing, anti-irritant',
-      'Geraniol':      'Rose, floral Â· relaxing, neuroprotective',
-      'Valencene':     'Citrus, sweet Â· anti-inflammatory',
+      'Myrcene':       'Earthy, musky · sedating, muscle relaxant',
+      'Caryophyllene': 'Spicy, peppery · anti-inflammatory, CB2 agonist',
+      'Limonene':      'Citrus · mood-lifting, stress relief',
+      'Pinene':        'Pine · alertness, memory retention',
+      'Linalool':      'Floral, lavender · calming, anti-anxiety',
+      'Terpinolene':   'Floral, herbal · cerebral, creative',
+      'Ocimene':       'Sweet, herbal · uplifting',
+      'Humulene':      'Earthy, woody · appetite suppressant',
+      'Bisabolol':     'Floral, nutty · soothing, anti-irritant',
+      'Geraniol':      'Rose, floral · relaxing, neuroprotective',
+      'Valencene':     'Citrus, sweet · anti-inflammatory',
     };
     document.querySelectorAll('.terp').forEach(function(el) {
       var name = el.textContent.trim();
-      if (TERP[name]) el.title = name + ' â€” ' + TERP[name];
+      if (TERP[name]) el.title = name + ' — ' + TERP[name];
     });
 
   });
@@ -251,13 +251,13 @@ DEV_JS = """
 
 html = html.replace("</head>", DEV_CSS + DEV_JS + "\n</head>", 1)
 html = html.replace("</body>", DEV_BANNER + "\n</body>", 1)
-html = html.replace("<title>Dinky Dope", "<title>[DEV] Dinky Dope", 1)
+html = html.replace("<title>MN Legit Cannabis", "<title>[DEV] MN Legit Cannabis", 1)
 html = html.replace(
-    "ðŸŒ¿ Dinky Dope Â· Dinkytown Â· Updated daily at 4:30 PM CST",
-    "âš—ï¸ DEV PREVIEW â€” Dinky Dope Â· Dinkytown",
+    "🌿 Dinky Dope · Dinkytown · Updated daily at 4:30 PM CST",
+    "⚗️ DEV PREVIEW — Dinky Dope · Dinkytown",
     1,
 )
 
 out = Path("docs/dev.html")
 out.write_text(html, encoding="utf-8")
-print(f"Dev build â†’ {out}")
+print(f"Dev build → {out}")

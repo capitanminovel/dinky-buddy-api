@@ -1,4 +1,4 @@
-﻿"""Renders products.json into a fully static HTML file â€” no JS fetch needed."""
+"""Renders products.json into a fully static HTML file — no JS fetch needed."""
 import json
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
@@ -14,19 +14,19 @@ NEW_DAYS     = 3
 SOLD_DAYS    = 2
 
 CAT_ICONS = {
-    "flower":"ðŸŒ¿","pre-roll":"ðŸš¬","pre_roll":"ðŸš¬","preroll":"ðŸš¬",
-    "edible":"ðŸ¬","edibles":"ðŸ¬","concentrate":"ðŸ’Ž","concentrates":"ðŸ’Ž",
-    "vape":"ðŸ’¨","vapes":"ðŸ’¨","cartridge":"ðŸ’¨","cartridges":"ðŸ’¨",
-    "tincture":"ðŸ’§","tinctures":"ðŸ’§","topical":"ðŸ§´","topicals":"ðŸ§´",
-    "capsule":"ðŸ’Š","capsules":"ðŸ’Š","accessory":"ðŸ› ï¸","accessories":"ðŸ› ï¸",
-    "beverage":"ðŸ¥¤","beverages":"ðŸ¥¤",
+    "flower":"🌿","pre-roll":"🚬","pre_roll":"🚬","preroll":"🚬",
+    "edible":"🍬","edibles":"🍬","concentrate":"💎","concentrates":"💎",
+    "vape":"💨","vapes":"💨","cartridge":"💨","cartridges":"💨",
+    "tincture":"💧","tinctures":"💧","topical":"🧴","topicals":"🧴",
+    "capsule":"💊","capsules":"💊","accessory":"🛠️","accessories":"🛠️",
+    "beverage":"🥤","beverages":"🥤",
 }
 TIER_LABELS = {
-    "gram":"1g","two_gram":"2g","eighth":"â…› oz",
-    "quarter":"Â¼ oz","half_ounce":"Â½ oz","ounce":"1 oz","unit":"Unit",
+    "gram":"1g","two_gram":"2g","eighth":"⅛ oz",
+    "quarter":"¼ oz","half_ounce":"½ oz","ounce":"1 oz","unit":"Unit",
 }
 
-def cat_icon(c): return CAT_ICONS.get((c or "").lower().strip(), "ðŸŒ±")
+def cat_icon(c): return CAT_ICONS.get((c or "").lower().strip(), "🌱")
 
 def strain_class(s):
     t = (s or "").lower()
@@ -68,7 +68,7 @@ def build_card(p, key):
     terps  = "".join(f'<span class="terp">{t}</span>' for t in (p.get("terpenes") or [])[:4])
     terp_h = f'<div class="terp-row">{terps}</div>' if terps else ""
 
-    minors = " Â· ".join(filter(None, [
+    minors = " · ".join(filter(None, [
         f'CBG {p["cbg"]}' if p.get("cbg") else "",
         f'CBN {p["cbn"]}' if p.get("cbn") else "",
     ]))
@@ -97,27 +97,27 @@ def build_card(p, key):
         <div class="card-name">{p["name"]}</div>
         {weight_h}{minor_h}{terp_h}
         <div class="price-section">{price_h}</div>
-        <div class="card-detail-hint">Tap for strain guide â†’</div>
+        <div class="card-detail-hint">Tap for strain guide →</div>
       </div>
     </div>"""
 
 def build():
-    with open(DATA) as f:
+    with open(DATA, encoding='utf-8') as f:
         db = json.load(f)
 
     strains = {}
     if STRAINS_DATA.exists():
-        with open(STRAINS_DATA) as f:
+        with open(STRAINS_DATA, encoding='utf-8') as f:
             strains = json.load(f)
 
     schedule = {"shifts": [], "last_updated": None}
     sched_path = Path(__file__).parent / "docs" / "schedule.json"
     if sched_path.exists():
-        with open(sched_path) as f:
+        with open(sched_path, encoding='utf-8') as f:
             schedule = json.load(f)
 
     now     = datetime.now(CST)
-    ts      = now.strftime("%a, %b %d %Y â€” %I:%M %p CST")
+    ts      = now.strftime("%a, %b %d %Y — %I:%M %p CST")
     TARGET  = ("flower", "pre-roll", "vapes", "edibles")
     all_p   = [(k,v) for k,v in db["products"].items()
                if v.get("in_stock", True) and (v.get("category","").lower() in TARGET)]
@@ -138,7 +138,7 @@ def build():
         new_section = f"""
     <section class="section new-arrivals-section" data-cat="all">
       <div class="new-arrivals-head">
-        <span class="new-arrivals-title">âœ¨ New in the Last 3 Days</span>
+        <span class="new-arrivals-title">✨ New in the Last 3 Days</span>
         <span class="new-arrivals-count" data-total="{n}">{n} product{"s" if n!=1 else ""}</span>
       </div>
       <div class="grid">{new_cards}</div>
@@ -172,7 +172,7 @@ def build():
         sold_section = f"""
     <section class="sold-section" data-cat="all">
       <div class="sold-head">
-        <span class="sold-title">ðŸš« Sold Out â€” Last 2 Days</span>
+        <span class="sold-title">🚫 Sold Out — Last 2 Days</span>
         <span class="sold-count">{n} item{"s" if n!=1 else ""}</span>
       </div>
       <div class="sold-list">{rows}</div>
@@ -203,14 +203,14 @@ def build():
     products_js  = json.dumps({k: v for k, v in db["products"].items()}, ensure_ascii=False)
     strains_js   = json.dumps(strains, ensure_ascii=False)
     schedule_js  = json.dumps(schedule, ensure_ascii=False)
-    tab_btns    += '\n<button class="tab sched-tab" data-cat="schedule" onclick="openScheduleTab(this)">ðŸ“… Schedule</button>'
+    tab_btns    += '\n<button class="tab sched-tab" data-cat="schedule" onclick="openScheduleTab(this)">📅 Schedule</button>'
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MN Legit Cannabis â€“ South Metro Menu</title>
+  <title>Dinky Dope – Dinkytown Menu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -350,7 +350,7 @@ def build():
     .section-divider{{height:2px;background:linear-gradient(90deg,var(--brand-lt),transparent);margin:0 0 36px;border-radius:1px}}
     .hidden{{display:none!important}}
 
-    /* â”€â”€ Mood / Effect filter bar â”€â”€ */
+    /* ── Mood / Effect filter bar ── */
     .mood-bar{{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:24px;display:flex;flex-direction:column;gap:10px}}
     .mood-bar-top{{display:flex;align-items:center;gap:10px;flex-wrap:wrap}}
     .mood-bar-label{{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}}
@@ -367,7 +367,7 @@ def build():
     .card.match-good{{border-left:5px solid #d97706}}
     .card.match-weak{{border-left:5px solid #94a3b8}}
 
-    /* â”€â”€ Rating badge shown on cards when mood active â”€â”€ */
+    /* ── Rating badge shown on cards when mood active ── */
     .rating-badge{{display:none;position:absolute;top:8px;right:8px;min-width:28px;height:28px;border-radius:50%;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.6)}}
     .rating-badge.show{{display:flex}}
     .rating-badge.rb-strong{{background:#16a34a;color:#fff}}
@@ -380,7 +380,7 @@ def build():
     body.dark .rating-badge.rb-good{{background:#fbbf24;color:#1a1000}}
     body.dark .rating-badge.rb-weak{{background:#475569;color:#e2e8f0}}
 
-    /* â”€â”€ Moods info button + modal â”€â”€ */
+    /* ── Moods info button + modal ── */
     .mood-info-btn{{border:none;background:none;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;padding:4px 6px;border-radius:8px;font-family:inherit;white-space:nowrap;flex-shrink:0}}
     .mood-info-btn:hover{{color:var(--brand);background:var(--brand-lt)}}
     .moods-modal-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;display:flex;align-items:flex-end;justify-content:center}}
@@ -400,7 +400,7 @@ def build():
     body.dark .moods-modal-box{{background:var(--bg)}}
     body.dark .moods-modal-head{{background:var(--bg)}}
 
-    /* â”€â”€ Text search â”€â”€ */
+    /* ── Text search ── */
     .search-row{{display:flex;align-items:center;gap:8px}}
     .search-wrap{{position:relative;flex:1;max-width:520px}}
     .search-icon{{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:.85rem;pointer-events:none}}
@@ -416,7 +416,7 @@ def build():
       .mood-bar{{padding:12px 14px}}.mood-chips{{gap:5px}}.mood-chip{{font-size:.73rem;padding:5px 10px}}
     }}
 
-    /* â”€â”€ Modal overlay â”€â”€ */
+    /* ── Modal overlay ── */
     .modal-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .2s}}
     .modal-overlay.open{{opacity:1;pointer-events:all}}
     .modal-box{{background:#e8e0d0;border-radius:18px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:scale(.95);transition:transform .2s;font-family:'Nunito Sans',sans-serif}}
@@ -425,7 +425,7 @@ def build():
     .modal-close:hover{{background:var(--sg-dark)}}
     .modal-inner{{padding:16px 22px 22px;clear:both}}
 
-    /* â”€â”€ Strain card (inside modal) â€” matches legit_strain_guide.html â”€â”€ */
+    /* ── Strain card (inside modal) — matches legit_strain_guide.html ── */
     .sg-card{{background:white;border:3px solid var(--sg-border);border-radius:16px;padding:18px 22px;margin-bottom:14px}}
     .sg-name{{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;text-align:center;text-transform:uppercase;letter-spacing:.05em;color:var(--sg-dark);margin-bottom:2px}}
     .sg-type{{text-align:center;font-size:12.5px;font-weight:700;color:#555;margin-bottom:4px}}
@@ -443,12 +443,12 @@ def build():
     .btn-add-profile.added{{background:#6b7280;color:#fff}}
     .btn-close-modal{{background:transparent;color:var(--sg-green);border:2px solid var(--sg-green);border-radius:24px;padding:10px 22px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}}
 
-    /* â”€â”€ Profile floating button â”€â”€ */
+    /* ── Profile floating button ── */
     .profile-fab{{position:fixed;bottom:28px;right:24px;background:var(--sg-green);color:var(--sg-pink);border:none;border-radius:30px;padding:12px 20px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);z-index:500;display:none;align-items:center;gap:8px;transition:background .15s,transform .1s}}
     .profile-fab:hover{{background:var(--sg-dark);transform:scale(1.04)}}
     .profile-fab-count{{background:var(--sg-pink);color:var(--sg-dark);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}}
 
-    /* â”€â”€ Profile drawer â”€â”€ */
+    /* ── Profile drawer ── */
     .profile-drawer{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1100;display:none;align-items:flex-end;justify-content:center}}
     .profile-drawer.open{{display:flex}}
     .profile-box{{background:#e8e0d0;width:100%;max-width:680px;max-height:85vh;border-radius:18px 18px 0 0;overflow-y:auto;padding:0 0 30px}}
@@ -470,7 +470,7 @@ def build():
     .btn-staff-guide{{background:transparent;color:var(--muted);border:1.5px solid var(--border);border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
     .btn-staff-guide:hover{{border-color:var(--brand);color:var(--brand)}}
 
-    /* â”€â”€ Staff guide modal â”€â”€ */
+    /* ── Staff guide modal ── */
     .sg-guide-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:500;display:flex;align-items:flex-end;justify-content:center}}
     .sg-guide-overlay.hidden{{display:none}}
     .sg-guide-box{{background:var(--bg);width:100%;max-width:720px;max-height:90vh;border-radius:20px 20px 0 0;overflow-y:auto;padding:0 0 40px}}
@@ -518,7 +518,7 @@ def build():
       .profile-box{{max-height:92vh}}
       .modal-inner{{padding:12px 14px 18px}}
     }}
-    /* â”€â”€ Schedule â”€â”€ */
+    /* ── Schedule ── */
     .sched-tab{{margin-left:auto}}
     #scheduleSection{{display:none;padding:24px}}
     #scheduleSection.active{{display:block}}
@@ -571,7 +571,7 @@ def build():
   </style>
 </head>
 <body>
-<div class="top-bar">ðŸŒ¿ MN Legit Cannabis Â· South Metro Â· Updated daily at 4:30 PM CST</div>
+<div class="top-bar">🌿 Dinky Dope · Dinkytown · Updated daily at 4:30 PM CST</div>
 <header>
   <div class="header-inner">
     <div class="mascot-wrap">
@@ -583,7 +583,7 @@ def build():
     <div class="mascot-wrap">
       <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHAxcXpnaHdqN3QyaGtmaDM5azkyd2hlZndvNHZocncwamd6Y2Z5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VRvFAP4CXxUQw/giphy.gif" alt="" loading="lazy">
     </div>
-    <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">ðŸŒ™ Dark</button>
+    <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">🌙 Dark</button>
     <div class="header-meta">
       <div>Last updated: <strong>{ts}</strong></div>
       <div>{len(all_p)} products in stock</div>
@@ -591,19 +591,19 @@ def build():
   </div>
 </header>
 <div class="export-bar">
-  <span class="export-bar-label">â¬‡ Export Strain Profiles:</span>
-  <button class="btn-export-avail" onclick="showExportPopup('legit-available-guide.docx')">âœ… Available Now ({len(all_p)} products)</button>
-  <button class="btn-export-all"   onclick="showExportPopup('legit-master-guide.docx')">ðŸ“¦ Master Cache (all strains)</button>
-  <button class="btn-staff-guide"  onclick="openStaffGuide()" style="margin-left:auto">ðŸ“– Staff Guide</button>
+  <span class="export-bar-label">⬇ Export Strain Profiles:</span>
+  <button class="btn-export-avail" onclick="showExportPopup('legit-available-guide.docx')">✅ Available Now ({len(all_p)} products)</button>
+  <button class="btn-export-all"   onclick="showExportPopup('legit-master-guide.docx')">📦 Master Cache (all strains)</button>
+  <button class="btn-staff-guide"  onclick="openStaffGuide()" style="margin-left:auto">📖 Staff Guide</button>
 </div>
 
 <!-- Export popup -->
 <div class="export-popup-overlay hidden" id="exportPopup">
   <div class="export-popup-box">
     <img class="export-popup-gif" id="exportPopupGif" src="https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif" alt="">
-    <div class="export-popup-title">Your guide is ready ðŸƒ</div>
-    <div class="export-popup-sub" id="exportPopupSub">Downloading in <span id="exportCountdown">4</span>sâ€¦</div>
-    <button class="export-popup-btn" id="exportGoBtn">Let's Go â¬‡</button>
+    <div class="export-popup-title">Your guide is ready 🍃</div>
+    <div class="export-popup-sub" id="exportPopupSub">Downloading in <span id="exportCountdown">4</span>s…</div>
+    <button class="export-popup-btn" id="exportGoBtn">Let's Go ⬇</button>
   </div>
 </div>
 <div class="legend">
@@ -613,8 +613,8 @@ def build():
   <div class="legend-item"><span class="strain-badge strain-cbd">CBD</span></div>
   <div class="legend-item"><span class="new-badge">New Today</span> Added today</div>
   <div class="legend-item"><span class="recent-badge">New (2d)</span> Within 3 days</div>
-  <div class="legend-item"><span class="sold-thc" style="background:#fde68a;color:#92400e;padding:2px 7px;border-radius:10px;font-size:.75rem;font-weight:600">ðŸš« Gone</span> Sold out in last 2 days</div>
-  <div class="legend-item" style="margin-left:auto;color:var(--brand);font-weight:600">Tap any product for strain guide â†’</div>
+  <div class="legend-item"><span class="sold-thc" style="background:#fde68a;color:#92400e;padding:2px 7px;border-radius:10px;font-size:.75rem;font-weight:600">🚫 Gone</span> Sold out in last 2 days</div>
+  <div class="legend-item" style="margin-left:auto;color:var(--brand);font-weight:600">Tap any product for strain guide →</div>
 </div>
 <div class="tabs-wrap"><div class="tabs" id="tabs">{tab_btns}</div></div>
 <main>
@@ -622,34 +622,34 @@ def build():
     <div class="mood-bar-top">
       <span class="mood-bar-label">Find your vibe</span>
       <div class="mood-chips" id="moodChips">
-        <button class="mood-chip" data-mood="wind-down"      onclick="filterMood(this)" title="Myrcene + Linalool â€” muscle relaxation, sedation, GABAergic calm (Russo 2011)">ðŸ˜´ Wind Down</button>
-        <button class="mood-chip" data-mood="anxiety-relief" onclick="filterMood(this)" title="Caryophyllene + Linalool + Limonene â€” the Kamal anxiolytic chemotype (Kamal et al. 2018, Front Neurosci)">ðŸ§˜ Anxiety Relief</button>
-        <button class="mood-chip" data-mood="lift-up"        onclick="filterMood(this)" title="Limonene + Terpinolene + Ocimene â€” mood elevation, citrus-forward uplift">â¬† Lift Up</button>
-        <button class="mood-chip" data-mood="get-creative"   onclick="filterMood(this)" title="Pinene + Terpinolene â€” AChE inhibition sharpens focus; terpinolene drives cerebral creativity">ðŸŽ¨ Get Creative</button>
-        <button class="mood-chip" data-mood="get-social"     onclick="filterMood(this)" title="Limonene + Terpinolene â€” euphoria, giggles, sociability without heavy sedation">ðŸ˜„ Get Social</button>
-        <button class="mood-chip" data-mood="pain-body"      onclick="filterMood(this)" title="Caryophyllene (CB2 agonist) + Myrcene + Humulene â€” anti-inflammatory, analgesic, muscle relaxant">ðŸ’† Pain &amp; Body</button>
-        <button class="mood-chip" data-mood="just-happy"     onclick="filterMood(this)" title="Limonene + Linalool â€” balanced euphoria and body warmth">âœ¨ Just Happy</button>
-        <button class="mood-chip" data-mood="aphrodisiac"    onclick="filterMood(this)" title="Limonene (dopamineâ†‘) + Linalool (anxietyâ†“) + Geraniol (rose terpene) + Caryophyllene (CB2 tactile) â€” 3,000 years of documented use (Russo 2011)">ðŸŒ¹ Aphrodisiac</button>
+        <button class="mood-chip" data-mood="wind-down"      onclick="filterMood(this)" title="Myrcene + Linalool — muscle relaxation, sedation, GABAergic calm (Russo 2011)">😴 Wind Down</button>
+        <button class="mood-chip" data-mood="anxiety-relief" onclick="filterMood(this)" title="Caryophyllene + Linalool + Limonene — the Kamal anxiolytic chemotype (Kamal et al. 2018, Front Neurosci)">🧘 Anxiety Relief</button>
+        <button class="mood-chip" data-mood="lift-up"        onclick="filterMood(this)" title="Limonene + Terpinolene + Ocimene — mood elevation, citrus-forward uplift">⬆ Lift Up</button>
+        <button class="mood-chip" data-mood="get-creative"   onclick="filterMood(this)" title="Pinene + Terpinolene — AChE inhibition sharpens focus; terpinolene drives cerebral creativity">🎨 Get Creative</button>
+        <button class="mood-chip" data-mood="get-social"     onclick="filterMood(this)" title="Limonene + Terpinolene — euphoria, giggles, sociability without heavy sedation">😄 Get Social</button>
+        <button class="mood-chip" data-mood="pain-body"      onclick="filterMood(this)" title="Caryophyllene (CB2 agonist) + Myrcene + Humulene — anti-inflammatory, analgesic, muscle relaxant">💆 Pain &amp; Body</button>
+        <button class="mood-chip" data-mood="just-happy"     onclick="filterMood(this)" title="Limonene + Linalool — balanced euphoria and body warmth">✨ Just Happy</button>
+        <button class="mood-chip" data-mood="aphrodisiac"    onclick="filterMood(this)" title="Limonene (dopamine↑) + Linalool (anxiety↓) + Geraniol (rose terpene) + Caryophyllene (CB2 tactile) — 3,000 years of documented use (Russo 2011)">🌹 Aphrodisiac</button>
       </div>
-      <button class="mood-clear hidden" id="moodClear" onclick="clearMood()">âœ• Mood</button>
-      <button class="mood-info-btn" onclick="openMoodsInfo()" title="Learn the science behind each mood filter">â„¹ï¸ How it works</button>
+      <button class="mood-clear hidden" id="moodClear" onclick="clearMood()">✕ Mood</button>
+      <button class="mood-info-btn" onclick="openMoodsInfo()" title="Learn the science behind each mood filter">ℹ️ How it works</button>
     </div>
     <div class="search-row">
       <div class="search-wrap">
-        <span class="search-icon">ðŸ”</span>
+        <span class="search-icon">🔍</span>
         <input type="text" id="searchInput" class="search-input"
-               placeholder="Search: anxiety, PTSD, sleep, pain, creative, Myrceneâ€¦"
+               placeholder="Search: anxiety, PTSD, sleep, pain, creative, Myrcene…"
                oninput="handleSearch(this.value)">
-        <button class="search-clear hidden" id="searchClear" onclick="clearSearch()">âœ•</button>
+        <button class="search-clear hidden" id="searchClear" onclick="clearSearch()">✕</button>
       </div>
     </div>
     <div class="mood-status hidden" id="moodStatus"></div>
   </div>
   {new_section}{sold_section}{sections}
-  <div class="mood-zero hidden" id="moodZero">No products match this vibe right now â€” try another filter.</div>
+  <div class="mood-zero hidden" id="moodZero">No products match this vibe right now — try another filter.</div>
 </main>
 <footer>
-  Last updated: {ts} &nbsp;Â·&nbsp; {len(all_p)} products in stock &nbsp;Â·&nbsp; Dinky Dope · Dinkytown
+  Last updated: {ts} &nbsp;·&nbsp; {len(all_p)} products in stock &nbsp;·&nbsp; Dinky Dope · Dinkytown
 </footer>
 <div class="footer-sticky">
   <span class="fs-stock">{len(all_p)} products in stock</span>
@@ -660,13 +660,13 @@ def build():
 <div class="moods-modal-overlay hidden" id="moodsInfoModal" onclick="if(event.target===this)closeMoodsInfo()">
   <div class="moods-modal-box">
     <div class="moods-modal-head">
-      <span class="moods-modal-title">ðŸ”¬ How Moods Are Scored</span>
-      <button class="moods-modal-close" onclick="closeMoodsInfo()">âœ•</button>
+      <span class="moods-modal-title">🔬 How Moods Are Scored</span>
+      <button class="moods-modal-close" onclick="closeMoodsInfo()">✕</button>
     </div>
     <div style="padding:10px 18px 0;font-size:.8rem;color:var(--muted);line-height:1.55">
-      Every rating is derived from <strong>COA terpene lab data only</strong> â€” not dispensary marketing copy.
-      Scores 1â€“10 are generated by Claude AI using published pharmacology research (Russo 2011 <em>Br J Pharmacol</em>, Kamal 2018 <em>Front Neurosci</em>, Gertsch 2008 <em>PNAS</em>).
-      Cards sort best â†’ weakest match. Border color = strength at a glance.
+      Every rating is derived from <strong>COA terpene lab data only</strong> — not dispensary marketing copy.
+      Scores 1–10 are generated by Claude AI using published pharmacology research (Russo 2011 <em>Br J Pharmacol</em>, Kamal 2018 <em>Front Neurosci</em>, Gertsch 2008 <em>PNAS</em>).
+      Cards sort best → weakest match. Border color = strength at a glance.
     </div>
     <div id="moodsInfoCards"></div>
   </div>
@@ -676,8 +676,8 @@ def build():
 <div class="sg-guide-overlay hidden" id="staffGuideModal" onclick="if(event.target===this)closeStaffGuide()">
   <div class="sg-guide-box">
     <div class="sg-guide-head">
-      <span class="sg-guide-title">ðŸ“– Staff Guide</span>
-      <button class="sg-guide-close" onclick="closeStaffGuide()">âœ•</button>
+      <span class="sg-guide-title">📖 Staff Guide</span>
+      <button class="sg-guide-close" onclick="closeStaffGuide()">✕</button>
     </div>
     <div id="staffGuideContent"></div>
   </div>
@@ -686,11 +686,11 @@ def build():
 <!-- Strain modal -->
 <div class="modal-overlay" id="strainModal" onclick="closeModalOutside(event)">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">âœ•</button>
+    <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="modal-inner">
       <div id="modalCard"></div>
       <div class="modal-actions">
-        <button class="btn-add-profile" id="btnAddProfile" onclick="toggleProfile()">ï¼‹ Add to Profile</button>
+        <button class="btn-add-profile" id="btnAddProfile" onclick="toggleProfile()">＋ Add to Profile</button>
         <button class="btn-close-modal" onclick="closeModal()">Close</button>
       </div>
     </div>
@@ -701,9 +701,9 @@ def build():
 <div class="profile-drawer" id="profileDrawer">
   <div class="profile-box">
     <div class="profile-header">
-      <div class="profile-header-title">ðŸ“‹ Strain Profile</div>
+      <div class="profile-header-title">📋 Strain Profile</div>
       <div class="profile-header-actions">
-        <button class="btn-export" onclick="exportGuide()">â¬‡ Download Strain Guide</button>
+        <button class="btn-export" onclick="exportGuide()">⬇ Download Strain Guide</button>
         <button class="btn-clear" onclick="clearProfile()">Clear All</button>
         <button class="btn-close-drawer" onclick="closeDrawer()">Close</button>
       </div>
@@ -716,26 +716,26 @@ def build():
 
 <!-- Floating profile button -->
 <button class="profile-fab" id="profileFab" onclick="openDrawer()">
-  ðŸ“‹ My Profile <span class="profile-fab-count" id="fabCount">0</span>
+  📋 My Profile <span class="profile-fab-count" id="fabCount">0</span>
 </button>
 
 <script>
 const PRODUCTS = {products_js};
 const STRAINS  = {strains_js};
 
-// â”€â”€ Mood map: effects + terpenes that predict each vibe â”€â”€
+// ── Mood map: effects + terpenes that predict each vibe ──
 // Sources: Russo 2011 Br J Pharmacol; Kamal et al. 2018 Front Neurosci;
 //          Smith et al. 2022 PLOS ONE (terpenes > indica/sativa label)
 const MOOD_MAP = {{
   'wind-down': {{
     label: 'Wind Down',
-    science: 'Myrcene + Linalool stack â€” sedation, muscle relaxation, GABAergic calm',
+    science: 'Myrcene + Linalool stack — sedation, muscle relaxation, GABAergic calm',
     effects:  ['Sleepy','Relaxing','Calming','Chill','Body High','Unbothered'],
     terpenes: ['Myrcene','Linalool']
   }},
   'anxiety-relief': {{
     label: 'Anxiety Relief',
-    science: 'Caryophyllene (CB2) + Linalool (GABA) + Limonene (5-HT1A) â€” Kamal 2018 anxiolytic chemotype',
+    science: 'Caryophyllene (CB2) + Linalool (GABA) + Limonene (5-HT1A) — Kamal 2018 anxiolytic chemotype',
     effects:  ['Calming','Chill','Relaxing','Unbothered','Blissful'],
     terpenes: ['Caryophyllene','Linalool','Limonene']
   }},
@@ -753,7 +753,7 @@ const MOOD_MAP = {{
   }},
   'get-social': {{
     label: 'Get Social',
-    science: 'Limonene + Terpinolene â€” euphoria and giggles without heavy sedation',
+    science: 'Limonene + Terpinolene — euphoria and giggles without heavy sedation',
     effects:  ['Social','Giggly','Talkative','Happy','Euphoric'],
     terpenes: ['Limonene','Terpinolene']
   }},
@@ -765,13 +765,13 @@ const MOOD_MAP = {{
   }},
   'just-happy': {{
     label: 'Just Happy',
-    science: 'Limonene + Linalool + Terpinolene â€” balanced euphoria and body warmth',
+    science: 'Limonene + Linalool + Terpinolene — balanced euphoria and body warmth',
     effects:  ['Happy','Euphoric','Blissful','Giggly','Tingly','Uplifting'],
     terpenes: ['Limonene','Linalool','Terpinolene']
   }},
   'aphrodisiac': {{
     label: 'Aphrodisiac',
-    science: 'Limonene (dopamine/serotonin â†‘) + Linalool (anxiety â†“, the #1 arousal blocker) + Geraniol (rose terpene, historic aphrodisiac) + Caryophyllene (CB2 tactile sensitivity) + Terpinolene (lowers inhibitions). Cannabis aphrodisiac use documented across cultures for 3,000+ years â€” Russo 2011.',
+    science: 'Limonene (dopamine/serotonin ↑) + Linalool (anxiety ↓, the #1 arousal blocker) + Geraniol (rose terpene, historic aphrodisiac) + Caryophyllene (CB2 tactile sensitivity) + Terpinolene (lowers inhibitions). Cannabis aphrodisiac use documented across cultures for 3,000+ years — Russo 2011.',
     effects:  ['Aroused','Tingly','Euphoric','Blissful','Happy'],
     terpenes: ['Limonene','Linalool','Geraniol','Terpinolene','Ocimene','Caryophyllene']
   }}
@@ -784,8 +784,8 @@ let activeCat    = 'all';
 let activeSearch = '';
 let searchTimer  = null;
 
-// Research-backed terpene â†’ effect map (Russo 2011, Kamal 2018, Smith 2022)
-// Terpenes come from COA data â€” the only source we fully trust.
+// Research-backed terpene → effect map (Russo 2011, Kamal 2018, Smith 2022)
+// Terpenes come from COA data — the only source we fully trust.
 // Scraped "effects" from the dispensary page are NOT used anywhere.
 const TERPENE_EFFECTS = {{
   'Myrcene':       ['Relaxing','Sleepy','Body High','Calming','Hungry'],
@@ -809,12 +809,12 @@ function derivedEffects(terpenes) {{
   return [...set];
 }}
 
-// Terpene position â†’ concentration proxy (earlier in COA list = dominant)
+// Terpene position → concentration proxy (earlier in COA list = dominant)
 function terpenePositionScore(tx, moodTerpenes) {{
   return moodTerpenes.reduce((sum, mt) => {{
     const idx = tx.indexOf(mt);
     if (idx === -1) return sum;
-    if (idx === 0)  return sum + 4.0;   // dominant terpene â€” very strong signal
+    if (idx === 0)  return sum + 4.0;   // dominant terpene — very strong signal
     if (idx <= 1)   return sum + 2.5;   // secondary
     if (idx <= 3)   return sum + 1.5;   // tertiary
     return sum + 0.75;                  // minor trace
@@ -827,7 +827,7 @@ function moodScore(card, mood) {{
   const derived = derivedEffects(tx);
   const terpScore   = terpenePositionScore(tx, mood.terpenes);
   const effectScore = mood.effects.filter(e => derived.includes(e)).length * 0.8;
-  // Scale to 0-10 with realistic spread: max raw ~8-9 â†’ caps at 10
+  // Scale to 0-10 with realistic spread: max raw ~8-9 → caps at 10
   return Math.min(10, Math.round((terpScore + effectScore) * 10 / 9));
 }}
 
@@ -839,7 +839,7 @@ document.addEventListener('DOMContentLoaded', () => {{
 }});
 
 function fmtList(arr) {{
-  if (!arr || !arr.length) return 'â€”';
+  if (!arr || !arr.length) return '—';
   return arr.join(', ');
 }}
 
@@ -849,8 +849,8 @@ function buildSgCard(key, forExport) {{
   const thcPill = p.thc ? `<span class="sg-pill thc">THC ${{p.thc}}</span>` : '';
   const cbdPill = p.cbd ? `<span class="sg-pill cbd">CBD ${{p.cbd}}</span>` : '';
   const pills   = (thcPill || cbdPill) ? `<div class="sg-thc-cbd">${{thcPill}}${{cbdPill}}</div>` : '';
-  const price   = p.price ? `<div class="sg-price">${{p.price}}${{p.weight ? ' Â· ' + p.weight : ''}}</div>` : '';
-  const removeBtn = forExport ? '' : `<button class="profile-item-remove" onclick="removeFromProfile('${{key}}')" title="Remove">âœ•</button>`;
+  const price   = p.price ? `<div class="sg-price">${{p.price}}${{p.weight ? ' · ' + p.weight : ''}}</div>` : '';
+  const removeBtn = forExport ? '' : `<button class="profile-item-remove" onclick="removeFromProfile('${{key}}')" title="Remove">✕</button>`;
 
   const tx      = p.terpenes || [];
   const derived = derivedEffects(tx);
@@ -869,7 +869,7 @@ function buildSgCard(key, forExport) {{
   <div class="sg-card" style="position:relative">
     ${{removeBtn}}
     <div class="sg-name">${{p.name || 'Unknown'}}</div>
-    <div class="sg-type">${{p.strain_type ? 'â€” ' + p.strain_type : ''}}</div>
+    <div class="sg-type">${{p.strain_type ? '— ' + p.strain_type : ''}}</div>
     <span class="sg-supplier">${{p.brand || 'Unknown'}}</span>
     ${{pills}}${{price}}
     <hr class="sg-divider">
@@ -883,7 +883,7 @@ function openModal(key) {{
   document.getElementById('modalCard').innerHTML = buildSgCard(key, false);
   const btn = document.getElementById('btnAddProfile');
   const inProfile = profileKeys.includes(key);
-  btn.textContent = inProfile ? 'âœ“ In Profile' : 'ï¼‹ Add to Profile';
+  btn.textContent = inProfile ? '✓ In Profile' : '＋ Add to Profile';
   btn.classList.toggle('added', inProfile);
   document.getElementById('strainModal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -908,7 +908,7 @@ function toggleProfile() {{
   }}
   const btn = document.getElementById('btnAddProfile');
   const inProfile = profileKeys.includes(currentKey);
-  btn.textContent = inProfile ? 'âœ“ In Profile' : 'ï¼‹ Add to Profile';
+  btn.textContent = inProfile ? '✓ In Profile' : '＋ Add to Profile';
   btn.classList.toggle('added', inProfile);
   updateFab();
 }}
@@ -970,7 +970,7 @@ const EXPORT_POPUP_HTML = `
 <div class="welcome-overlay" id="welcomeOverlay" onclick="if(event.target===this)dismissWelcome()">
   <div class="welcome-box">
     <img class="welcome-gif" src="https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif" alt="Welcome">
-    <div class="welcome-title">Welcome to Legit ðŸƒ</div>
+    <div class="welcome-title">Welcome to Legit 🍃</div>
     <div class="welcome-sub">Your strain guide is ready. Enjoy!</div>
     <button class="welcome-close" onclick="dismissWelcome()">Let's Go</button>
   </div>
@@ -990,7 +990,7 @@ function exportGuide() {{
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legit Cannabis â€“ Strain Guide</title>
+<title>Dinky Dope – Strain Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{{--green:#3d5c2e;--pink:#e88fa2;--cream:#f5f0e8;--dark-green:#2a3f1f;--border-green:#4a7030;--text:#1a1a1a}}
@@ -1007,7 +1007,7 @@ function exportGuide() {{
   .info-box strong{{color:var(--dark-green);font-family:'Nunito',sans-serif}}
   .info-box .info-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:var(--dark-green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}}
   .info-grid{{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;margin-top:6px}}
-  .info-grid div::before{{content:'â†’ ';color:#888}}
+  .info-grid div::before{{content:'→ ';color:#888}}
   .info-note{{margin-top:10px;padding-top:8px;border-top:1px solid #e0d8cc;font-size:11.5px;color:#777}}
   .sg-card{{background:white;border:3px solid var(--border-green);border-radius:16px;padding:18px 22px;margin-bottom:18px}}
   .sg-name{{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;text-align:center;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:2px}}
@@ -1030,50 +1030,50 @@ function exportGuide() {{
 ${{EXPORT_POPUP_HTML}}
 <div class="page">
   <div class="header">
-    <div class="logo-badge"><span class="leaf">ðŸƒ</span><div class="name">LEGIT<br>CANNABIS</div></div>
-    <div><div class="header-title">Strain Guide</div><div class="header-sub">Staff Reference Â· ${{today}}</div></div>
+    <div class="logo-badge"><span class="leaf">🍃</span><div class="name">LEGIT<br>CANNABIS</div></div>
+    <div><div class="header-title">Strain Guide</div><div class="header-sub">Staff Reference · ${{today}}</div></div>
   </div>
   <div class="info-box">
-    <div class="info-title">ðŸƒ Legit Staff Buddy â€” Staff Guide</div>
+    <div class="info-title">🍃 Legit Staff Buddy — Staff Guide</div>
 
     <div style="margin-bottom:12px;">
-      <strong>Access:</strong> capitanminovel.github.io/legit-buddy-api<br>
+      <strong>Access:</strong> capitanminovel.github.io/dinky-buddy-api<br>
       <strong>Schedule PIN:</strong> 0420
     </div>
 
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">ðŸ”„ Menu Updates</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">🔄 Menu Updates</div>
     <div style="margin-bottom:12px;">
       The menu is automatically checked and updated <strong>4 times daily</strong>:<br>
-      <strong>9:00 AM Â· 1:00 PM Â· 4:30 PM Â· 10:00 PM CST</strong><br>
+      <strong>9:00 AM · 1:00 PM · 4:30 PM · 10:00 PM CST</strong><br>
       New products and sold-out items reflect within the hour of each update.
     </div>
 
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">âœ¨ New Arrivals</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">✨ New Arrivals</div>
     <div style="margin-bottom:12px;">
       Products added to the menu within the last <strong>3 days</strong> are highlighted with a green "New Today" or "New (Xd ago)" badge at the top of the page.
     </div>
 
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">ðŸš« Sold Out Tracker</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">🚫 Sold Out Tracker</div>
     <div style="margin-bottom:12px;">
       Items that left the menu within the last <strong>2 days</strong> appear in the amber "Sold Out" section so you know what recently went out of stock.
     </div>
 
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">ðŸ” Search &amp; Filter</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">🔍 Search &amp; Filter</div>
     <div style="margin-bottom:12px;">
-      Use the search bar to find products by name, brand, terpene, or effect. Filter by category (Flower, Pre-Roll, Vapes, Edibles) using the tabs. Use the <strong>Mood Filter</strong> to recommend products by effect â€” Relax, Focus, Sleep, Social, and more.
+      Use the search bar to find products by name, brand, terpene, or effect. Filter by category (Flower, Pre-Roll, Vapes, Edibles) using the tabs. Use the <strong>Mood Filter</strong> to recommend products by effect — Relax, Focus, Sleep, Social, and more.
     </div>
 
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">ðŸ“‹ Strain Guide &amp; Profile</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">📋 Strain Guide &amp; Profile</div>
     <div style="margin-bottom:12px;">
-      Tap any product card to view its full strain profile â€” lineage, terpenes, therapeutic uses, aroma, and mood ratings. Press <strong>ï¼‹ Add to Profile</strong> to save strains to your personal list, then use <strong>â¬‡ Export Strain Profiles</strong> to download a printable guide.
+      Tap any product card to view its full strain profile — lineage, terpenes, therapeutic uses, aroma, and mood ratings. Press <strong>＋ Add to Profile</strong> to save strains to your personal list, then use <strong>⬇ Export Strain Profiles</strong> to download a printable guide.
     </div>
 
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">ðŸ“… Staff Schedule</div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">📅 Staff Schedule</div>
     <div style="margin-bottom:12px;">
-      Enter PIN <strong>0420</strong> to view the staff schedule. Navigate weeks using the Previous/Next buttons. Use the staff filter chips to view individual schedules. Tap <strong>ðŸ“· View Original Schedule Images</strong> to see the source photos.
+      Enter PIN <strong>0420</strong> to view the staff schedule. Navigate weeks using the Previous/Next buttons. Use the staff filter chips to view individual schedules. Tap <strong>📷 View Original Schedule Images</strong> to see the source photos.
     </div>
 
-    <div class="info-note">âš  The schedule reflects the original as sent. If changes were made after it was sent, refer to the <strong>physical schedule posted at work</strong>.</div>
+    <div class="info-note">⚠ The schedule reflects the original as sent. If changes were made after it was sent, refer to the <strong>physical schedule posted at work</strong>.</div>
   </div>
   ${{cards}}
 </div>
@@ -1102,7 +1102,7 @@ function exportAll(mode) {{
     keys = [...new Set([...Object.keys(STRAINS), ...Object.keys(PRODUCTS)])];
   }}
 
-  // Sort: flower â†’ pre-roll â†’ vapes â†’ other, then alpha within each
+  // Sort: flower → pre-roll → vapes → other, then alpha within each
   const catOrder = ['flower','pre-roll','vapes','edibles'];
   keys.sort((a, b) => {{
     const pa = PRODUCTS[a] || {{}};
@@ -1123,7 +1123,7 @@ function exportAll(mode) {{
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Legit Cannabis â€“ ${{title}}</title>
+<title>Legit Cannabis – ${{title}}</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{{--green:#3d5c2e;--pink:#e88fa2;--cream:#f5f0e8;--dark-green:#2a3f1f;--border-green:#4a7030;--text:#1a1a1a}}
@@ -1157,8 +1157,8 @@ function exportAll(mode) {{
 ${{EXPORT_POPUP_HTML}}
 <div class="page">
   <div class="header">
-    <div class="logo-badge"><span class="leaf">ðŸƒ</span><div class="name">LEGIT<br>CANNABIS</div></div>
-    <div><div class="header-title">${{title}}</div><div class="header-sub">Staff Reference Â· ${{today}}</div></div>
+    <div class="logo-badge"><span class="leaf">🍃</span><div class="name">LEGIT<br>CANNABIS</div></div>
+    <div><div class="header-title">${{title}}</div><div class="header-sub">Staff Reference · ${{today}}</div></div>
   </div>
   ${{cards}}
 </div>
@@ -1172,7 +1172,7 @@ ${{EXPORT_POPUP_HTML}}
   URL.revokeObjectURL(url);
 }}
 
-// â”€â”€ Category + mood + text search combined filter â”€â”€
+// ── Category + mood + text search combined filter ──
 function applyFilters() {{
   const mood = activeMood ? MOOD_MAP[activeMood] : null;
   const q    = activeSearch;
@@ -1185,7 +1185,7 @@ function applyFilters() {{
     const section = card.closest('.section');
     const catOk = activeCat === 'all' || (section && section.dataset.cat === activeCat);
 
-    // Mood check â€” driven entirely by COA terpenes, not dispensary effect labels
+    // Mood check — driven entirely by COA terpenes, not dispensary effect labels
     let moodOk = true;
     if (mood) {{
       const tx      = (card.dataset.terpenes || '').split(',').filter(Boolean);
@@ -1194,9 +1194,9 @@ function applyFilters() {{
              || mood.terpenes.some(t => tx.includes(t));
     }}
 
-    // Text search â€” terpenes (COA), derived effects (research), and enriched
+    // Text search — terpenes (COA), derived effects (research), and enriched
     // strain fields (therapeutic, aroma, misc, lineage).
-    // Scraped dispensary "effects" intentionally excluded â€” not trusted.
+    // Scraped dispensary "effects" intentionally excluded — not trusted.
     let searchOk = true;
     if (q) {{
       const p = PRODUCTS[key] || {{}};
@@ -1241,7 +1241,7 @@ function applyFilters() {{
     if (visible) totalVisible++;
   }});
 
-  // Sort each grid: mood active â†’ best score first; no mood â†’ restore original order
+  // Sort each grid: mood active → best score first; no mood → restore original order
   document.querySelectorAll('.grid').forEach(grid => {{
     const cards = [...grid.querySelectorAll('.card')];
     if (mood) {{
@@ -1289,8 +1289,8 @@ function applyFilters() {{
   if (mood)  parts.push(`<strong>${{mood.label}}:</strong> ${{mood.science}}`);
   if (q)     parts.push(`searching <strong>"${{q}}"</strong>`);
   if (parts.length) {{
-    parts.push(`â€” ${{totalVisible}} product${{totalVisible == 1 ? '' : 's'}} found`);
-    statusEl.innerHTML = parts.join(' Â· ');
+    parts.push(`— ${{totalVisible}} product${{totalVisible == 1 ? '' : 's'}} found`);
+    statusEl.innerHTML = parts.join(' · ');
     statusEl.classList.remove('hidden');
   }} else {{
     statusEl.classList.add('hidden');
@@ -1342,7 +1342,7 @@ function clearMood() {{
   applyFilters();
 }}
 
-// â”€â”€ Export popup + docx download â”€â”€
+// ── Export popup + docx download ──
 let _exportTimer = null;
 let _exportFile  = null;
 
@@ -1354,9 +1354,9 @@ function showExportPopup(filename) {{
   const sub       = document.getElementById('exportPopupSub');
 
   // Reset state
-  btn.textContent = "Let's Go â¬‡";
+  btn.textContent = "Let's Go ⬇";
   btn.classList.remove('ready');
-  sub.innerHTML   = 'Downloading in <span id="exportCountdown">4</span>sâ€¦';
+  sub.innerHTML   = 'Downloading in <span id="exportCountdown">4</span>s…';
   document.getElementById('exportPopupGif').src = 'https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif';
   overlay.classList.remove('hidden');
 
@@ -1370,19 +1370,19 @@ function showExportPopup(filename) {{
     if (el) el.textContent = secs;
     if (secs <= 0) {{
       clearInterval(_exportTimer);
-      // Can't auto-download on iOS â€” switch to "tap" state instead
+      // Can't auto-download on iOS — switch to "tap" state instead
       sub.textContent = 'Ready! Tap the button to save.';
-      btn.textContent = 'â¬‡ Download Now';
+      btn.textContent = '⬇ Download Now';
       btn.classList.add('ready');
     }}
   }}, 1000);
 
-  // window.open as a direct user-gesture call â€” works on iOS Safari
+  // window.open as a direct user-gesture call — works on iOS Safari
   btn.onclick = () => {{
     clearInterval(_exportTimer);
     // Swap to Pikachu, then download after 1s
     document.getElementById('exportPopupGif').src = 'https://media.giphy.com/media/ux2EQfCsCm3hJ0dZGv/giphy.gif';
-    sub.textContent = 'ðŸŽ‰ Downloadingâ€¦';
+    sub.textContent = '🎉 Downloading…';
     btn.disabled = true;
     const file = _exportFile;
     _exportFile = null;
@@ -1396,30 +1396,30 @@ function showExportPopup(filename) {{
 
 document.addEventListener('keydown', e => {{ if (e.key === 'Escape') {{ closeModal(); closeDrawer(); closeMoodsInfo(); closeStaffGuide(); }} }});
 
-// â”€â”€ Moods info modal â”€â”€
+// ── Moods info modal ──
 const MOOD_INFO = [
-  {{ key:'wind-down',      icon:'ðŸ˜´', name:'Wind Down',
+  {{ key:'wind-down',      icon:'😴', name:'Wind Down',
      science:'Myrcene binds GABA-A receptors causing sedation and muscle relaxation (Russo 2011). Linalool elevates adenosine and suppresses glutamate excitability. Together they create the classic "couch-lock" body stone ideal for sleep or unwinding.',
      terps:['Myrcene','Linalool','Caryophyllene'] }},
-  {{ key:'anxiety-relief', icon:'ðŸ§˜', name:'Anxiety Relief',
-     science:'Linalool raises GABA and lowers cortisol â€” the same mechanism as benzodiazepines but milder. Caryophyllene selectively activates CB2 (not CB1) reducing neuroinflammation. Limonene targets 5-HT1A serotonin receptors. Together this is the Kamal 2018 anxiolytic chemotype.',
+  {{ key:'anxiety-relief', icon:'🧘', name:'Anxiety Relief',
+     science:'Linalool raises GABA and lowers cortisol — the same mechanism as benzodiazepines but milder. Caryophyllene selectively activates CB2 (not CB1) reducing neuroinflammation. Limonene targets 5-HT1A serotonin receptors. Together this is the Kamal 2018 anxiolytic chemotype.',
      terps:['Linalool','Caryophyllene','Limonene'] }},
-  {{ key:'lift-up',        icon:'â¬†', name:'Lift Up',
+  {{ key:'lift-up',        icon:'⬆', name:'Lift Up',
      science:'Limonene elevates serotonin and dopamine within 10 minutes of inhalation (Komori 1995, Neuroimmunomodulation). Terpinolene adds cerebral, energizing uplift. Ocimene and Valencene contribute citrus energy without sedation.',
      terps:['Limonene','Terpinolene','Ocimene','Valencene'] }},
-  {{ key:'get-creative',   icon:'ðŸŽ¨', name:'Get Creative',
-     science:'Î±-Pinene inhibits acetylcholinesterase (AChE), the enzyme that breaks down acetylcholine â€” sharpening memory and focus (Miyazawa & Yamafuji 2005). This counters THC-induced short-term memory impairment and drives cerebral, focused creativity.',
+  {{ key:'get-creative',   icon:'🎨', name:'Get Creative',
+     science:'α-Pinene inhibits acetylcholinesterase (AChE), the enzyme that breaks down acetylcholine — sharpening memory and focus (Miyazawa & Yamafuji 2005). This counters THC-induced short-term memory impairment and drives cerebral, focused creativity.',
      terps:['Pinene','B Pinene','Terpinolene','Limonene'] }},
-  {{ key:'get-social',     icon:'ðŸ˜„', name:'Get Social',
+  {{ key:'get-social',     icon:'😄', name:'Get Social',
      science:'Terpinolene produces euphoria and lowers social inhibitions via serotonergic pathways. Limonene raises dopamine (the reward/motivation neurotransmitter). Combined they produce the giggly, talkative, social-butterfly high.',
      terps:['Limonene','Terpinolene','Ocimene'] }},
-  {{ key:'pain-body',      icon:'ðŸ’†', name:'Pain & Body',
-     science:'Caryophyllene is the only terpene that directly binds cannabinoid receptors (CB2 agonist, Gertsch 2008 PNAS) â€” reducing neuroinflammation and pain signaling. Myrcene is analgesic. Humulene suppresses prostaglandins (same mechanism as ibuprofen).',
+  {{ key:'pain-body',      icon:'💆', name:'Pain & Body',
+     science:'Caryophyllene is the only terpene that directly binds cannabinoid receptors (CB2 agonist, Gertsch 2008 PNAS) — reducing neuroinflammation and pain signaling. Myrcene is analgesic. Humulene suppresses prostaglandins (same mechanism as ibuprofen).',
      terps:['Caryophyllene','Myrcene','Humulene','Linalool'] }},
-  {{ key:'just-happy',     icon:'âœ¨', name:'Just Happy',
-     science:'Limonene + Linalool create a balanced euphoria without overstimulation. Terpinolene adds warmth and a gentle creative edge. This is the classic "feel-good" terpene trio â€” mood-elevating but grounded.',
+  {{ key:'just-happy',     icon:'✨', name:'Just Happy',
+     science:'Limonene + Linalool create a balanced euphoria without overstimulation. Terpinolene adds warmth and a gentle creative edge. This is the classic "feel-good" terpene trio — mood-elevating but grounded.',
      terps:['Limonene','Linalool','Terpinolene'] }},
-  {{ key:'aphrodisiac',    icon:'ðŸŒ¹', name:'Aphrodisiac',
+  {{ key:'aphrodisiac',    icon:'🌹', name:'Aphrodisiac',
      science:'Cannabis aphrodisiac use is documented across 3,000 years in India, Persia, and China (Russo 2011). Mechanistically: Limonene raises dopamine (desire), Linalool eliminates anxiety (the #1 arousal blocker), Geraniol (rose terpene) has historic romance associations, Caryophyllene (CB2) may enhance blood flow and tactile sensitivity, Terpinolene lowers inhibitions.',
      terps:['Limonene','Linalool','Geraniol','Caryophyllene','Terpinolene','Ocimene'] }},
 ];
@@ -1444,66 +1444,66 @@ function closeMoodsInfo() {{
   document.body.style.overflow = '';
 }}
 
-// â”€â”€ Staff guide modal â”€â”€
+// ── Staff guide modal ──
 function openStaffGuide() {{
   const container = document.getElementById('staffGuideContent');
   container.innerHTML = `
     <div class="sg-guide-section">
-      <div class="sg-guide-section-title">ðŸ“± Using the Menu</div>
+      <div class="sg-guide-section-title">📱 Using the Menu</div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸ—‚ï¸</span><span class="sg-guide-card-name">Category Tabs</span></div>
-        <div class="sg-guide-card-body">Tap <strong>Flower Â· Pre-Roll Â· Vapes Â· Edibles</strong> at the top to filter by type. Products added in the last 3 days appear in the <strong>âœ¨ New</strong> section automatically.</div>
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🗂️</span><span class="sg-guide-card-name">Category Tabs</span></div>
+        <div class="sg-guide-card-body">Tap <strong>Flower · Pre-Roll · Vapes · Edibles</strong> at the top to filter by type. Products added in the last 3 days appear in the <strong>✨ New</strong> section automatically.</div>
       </div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸ”</span><span class="sg-guide-card-name">Search</span></div>
-        <div class="sg-guide-card-body">The search bar scans everything â€” product names, terpenes, aroma descriptions, lineage, and therapeutic uses. Try:<br>
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🔍</span><span class="sg-guide-card-name">Search</span></div>
+        <div class="sg-guide-card-body">The search bar scans everything — product names, terpenes, aroma descriptions, lineage, and therapeutic uses. Try:<br>
           <span class="sg-guide-tag">anxiety</span><span class="sg-guide-tag">sleep</span><span class="sg-guide-tag">Myrcene</span><span class="sg-guide-tag">citrus</span><span class="sg-guide-tag">Cookies</span><span class="sg-guide-tag">PTSD</span>
         </div>
       </div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸŽ¯</span><span class="sg-guide-card-name">Mood Filter</span></div>
-        <div class="sg-guide-card-body">Tap any mood chip to score and sort every card 1â€“10 for that vibe. Border color shows match strength at a glance:<br><br>
-          <strong style="color:#16a34a">ðŸŸ¢ Green border</strong> â€” strong match (7+)<br>
-          <strong style="color:#ca8a04">ðŸŸ¡ Amber border</strong> â€” decent match (4â€“6)<br>
-          <strong style="color:#6b7280">âš« Gray border</strong> â€” weak match (1â€“3)<br><br>
-          Tap <strong>â„¹ï¸ How it works</strong> next to the mood chips for the full science breakdown.
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🎯</span><span class="sg-guide-card-name">Mood Filter</span></div>
+        <div class="sg-guide-card-body">Tap any mood chip to score and sort every card 1–10 for that vibe. Border color shows match strength at a glance:<br><br>
+          <strong style="color:#16a34a">🟢 Green border</strong> — strong match (7+)<br>
+          <strong style="color:#ca8a04">🟡 Amber border</strong> — decent match (4–6)<br>
+          <strong style="color:#6b7280">⚫ Gray border</strong> — weak match (1–3)<br><br>
+          Tap <strong>ℹ️ How it works</strong> next to the mood chips for the full science breakdown.
         </div>
       </div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸªŸ</span><span class="sg-guide-card-name">Strain Guide (Tap a Card)</span></div>
-        <div class="sg-guide-card-body">Tap any product card to open its full strain profile â€” lineage, therapeutic uses, aroma, terpenes, and general notes. Hit <strong>ï¼‹ Add to Profile</strong> to collect strains for a custom export.</div>
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🪟</span><span class="sg-guide-card-name">Strain Guide (Tap a Card)</span></div>
+        <div class="sg-guide-card-body">Tap any product card to open its full strain profile — lineage, therapeutic uses, aroma, terpenes, and general notes. Hit <strong>＋ Add to Profile</strong> to collect strains for a custom export.</div>
       </div>
     </div>
 
     <div class="sg-guide-section">
-      <div class="sg-guide-section-title">ðŸ—‚ï¸ Where the Info Comes From</div>
+      <div class="sg-guide-section-title">🗂️ Where the Info Comes From</div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸ’³</span><span class="sg-guide-card-name">Sweed POS â€” Product Data & Terpenes</span></div>
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">💳</span><span class="sg-guide-card-name">Sweed POS — Product Data & Terpenes</span></div>
         <div class="sg-guide-card-body">Name, brand, price, THC/CBD, weight, category, and <strong>terpenes</strong> all come directly from the Sweed POS system. Terpenes in particular come from the <strong>COA (Certificate of Analysis)</strong> each brand submits when they deliver product.<br><br>
-          <div class="sg-guide-note">âš ï¸ If terpenes look incomplete, the fix is in Sweed â€” update the COA data there and it'll reflect here on the next daily update (4:30 PM CST).</div>
+          <div class="sg-guide-note">⚠️ If terpenes look incomplete, the fix is in Sweed — update the COA data there and it'll reflect here on the next daily update (4:30 PM CST).</div>
         </div>
       </div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸ¤–</span><span class="sg-guide-card-name">Claude AI â€” Strain Profiles</span></div>
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🤖</span><span class="sg-guide-card-name">Claude AI — Strain Profiles</span></div>
         <div class="sg-guide-card-body">When a new strain appears, Claude AI generates its profile using published strain databases and cannabis genetics research. It fills in:<br><br>
           <span class="sg-guide-tag">Lineage</span><span class="sg-guide-tag">Therapeutic uses</span><span class="sg-guide-tag">Side effects</span><span class="sg-guide-tag">Aroma</span><span class="sg-guide-tag">Breeder notes</span><br><br>
           Profiles are generated <em>once per strain</em> and stored. They won't change unless manually updated.
         </div>
       </div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸ”¬</span><span class="sg-guide-card-name">Published Research â€” Mood Scoring</span></div>
-        <div class="sg-guide-card-body">Mood scores aren't invented â€” they're grounded in peer-reviewed pharmacology papers:<br><br>
-          <strong>Russo 2011</strong> (Br J Pharmacol) â€” cannabis terpene synergy and therapeutic applications<br>
-          <strong>Kamal et al. 2018</strong> (Front Neurosci) â€” terpene combinations driving anxiolytic effects<br>
-          <strong>Gertsch 2008</strong> (PNAS) â€” Caryophyllene as the only terpene that activates cannabinoid receptors (CB2)
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🔬</span><span class="sg-guide-card-name">Published Research — Mood Scoring</span></div>
+        <div class="sg-guide-card-body">Mood scores aren't invented — they're grounded in peer-reviewed pharmacology papers:<br><br>
+          <strong>Russo 2011</strong> (Br J Pharmacol) — cannabis terpene synergy and therapeutic applications<br>
+          <strong>Kamal et al. 2018</strong> (Front Neurosci) — terpene combinations driving anxiolytic effects<br>
+          <strong>Gertsch 2008</strong> (PNAS) — Caryophyllene as the only terpene that activates cannabinoid receptors (CB2)
         </div>
       </div>
     </div>
 
     <div class="sg-guide-section">
-      <div class="sg-guide-section-title">ðŸŽ¯ How Mood Scores Are Calculated</div>
+      <div class="sg-guide-section-title">🎯 How Mood Scores Are Calculated</div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-body">Scores are <strong>position-weighted</strong> â€” terpene order on the COA reflects concentration (highest first). The dominant terpene contributes far more than a trace one:<br><br>
+        <div class="sg-guide-card-body">Scores are <strong>position-weighted</strong> — terpene order on the COA reflects concentration (highest first). The dominant terpene contributes far more than a trace one:<br><br>
           <table class="sg-guide-table">
             <tr><th>COA Position</th><th>Points</th></tr>
             <tr><td>1st (dominant)</td><td>4.0 pts</td></tr>
@@ -1511,28 +1511,28 @@ function openStaffGuide() {{
             <tr><td>3rd</td><td>1.5 pts</td></tr>
             <tr><td>4th+ (minor)</td><td>0.75 pts</td></tr>
           </table><br>
-          Example â€” <strong>Pain &amp; Body</strong>: Caryophyllene is the only terpene proven to activate CB2 receptors (pain/inflammation). Listed 1st â†’ likely scores 7â€“8. Listed 3rd â†’ scores 4â€“5. Absent â†’ max 5 regardless of other terpenes.<br><br>
-          <em>Claude AI provides its own 1â€“10 rating using this same logic plus its knowledge of each strain. When Claude ratings exist, they take priority over the formula.</em>
+          Example — <strong>Pain &amp; Body</strong>: Caryophyllene is the only terpene proven to activate CB2 receptors (pain/inflammation). Listed 1st → likely scores 7–8. Listed 3rd → scores 4–5. Absent → max 5 regardless of other terpenes.<br><br>
+          <em>Claude AI provides its own 1–10 rating using this same logic plus its knowledge of each strain. When Claude ratings exist, they take priority over the formula.</em>
         </div>
       </div>
     </div>
 
     <div class="sg-guide-section">
-      <div class="sg-guide-section-title">â¬‡ï¸ Downloading Strain Guides</div>
+      <div class="sg-guide-section-title">⬇️ Downloading Strain Guides</div>
       <div class="sg-guide-card">
         <div class="sg-guide-card-body">
           <table class="sg-guide-table">
             <tr><th>Button</th><th>Contents</th></tr>
-            <tr><td>âœ… Available Now</td><td>Every product currently in stock, sorted Flower â†’ Pre-Roll â†’ Vapes</td></tr>
-            <tr><td>ðŸ“¦ Master Cache</td><td>Every strain ever enriched (including past products), same sort order</td></tr>
+            <tr><td>✅ Available Now</td><td>Every product currently in stock, sorted Flower → Pre-Roll → Vapes</td></tr>
+            <tr><td>📦 Master Cache</td><td>Every strain ever enriched (including past products), same sort order</td></tr>
           </table><br>
-          Click either button â†’ popup appears â†’ press <strong>Let's Go</strong> â†’ <code>.docx</code> file downloads. Open in Microsoft Word or Google Docs.<br><br>
+          Click either button → popup appears → press <strong>Let's Go</strong> → <code>.docx</code> file downloads. Open in Microsoft Word or Google Docs.<br><br>
           Documents rebuild automatically every day. A new strain added to Sweed today will appear in tomorrow's download.
         </div>
       </div>
       <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">ðŸ“‹</span><span class="sg-guide-card-name">Build a Custom Profile</span></div>
-        <div class="sg-guide-card-body">Tap any product card â†’ press <strong>ï¼‹ Add to Profile</strong> â†’ open the <strong>ðŸ“‹ My Profile</strong> button (bottom-right corner) â†’ press <strong>â¬‡ Download Strain Guide</strong> to save an HTML file you can open in Word. Good for building a handpicked reference sheet for a specific customer or use case.</div>
+        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">📋</span><span class="sg-guide-card-name">Build a Custom Profile</span></div>
+        <div class="sg-guide-card-body">Tap any product card → press <strong>＋ Add to Profile</strong> → open the <strong>📋 My Profile</strong> button (bottom-right corner) → press <strong>⬇ Download Strain Guide</strong> to save an HTML file you can open in Word. Good for building a handpicked reference sheet for a specific customer or use case.</div>
       </div>
     </div>
     <div style="height:20px"></div>
@@ -1546,17 +1546,17 @@ function closeStaffGuide() {{
   document.body.style.overflow = '';
 }}
 
-// â”€â”€ Dark mode â”€â”€
+// ── Dark mode ──
 function toggleDark() {{
   const dark = document.body.classList.toggle('dark');
   localStorage.setItem('lc-dark', dark ? '1' : '0');
-  document.getElementById('darkToggle').textContent = dark ? 'â˜€ï¸ Light' : 'ðŸŒ™ Dark';
+  document.getElementById('darkToggle').textContent = dark ? '☀️ Light' : '🌙 Dark';
 }}
 (function() {{
   if (localStorage.getItem('lc-dark') === '1') {{
     document.body.classList.add('dark');
     document.addEventListener('DOMContentLoaded', () => {{
-      document.getElementById('darkToggle').textContent = 'â˜€ï¸ Light';
+      document.getElementById('darkToggle').textContent = '☀️ Light';
     }});
   }}
 }})();
@@ -1588,47 +1588,47 @@ document.addEventListener('DOMContentLoaded', function() {{
 
   // Terpene tooltips
   var TERP = {{
-    'Myrcene':       'Earthy, musky Â· sedating, muscle relaxant',
-    'Caryophyllene': 'Spicy, peppery Â· anti-inflammatory, CB2 agonist',
-    'Limonene':      'Citrus Â· mood-lifting, stress relief',
-    'Pinene':        'Pine Â· alertness, memory retention',
-    'Linalool':      'Floral, lavender Â· calming, anti-anxiety',
-    'Terpinolene':   'Floral, herbal Â· cerebral, creative',
-    'Ocimene':       'Sweet, herbal Â· uplifting',
-    'Humulene':      'Earthy, woody Â· appetite suppressant',
-    'Bisabolol':     'Floral, nutty Â· soothing, anti-irritant',
-    'Geraniol':      'Rose, floral Â· relaxing, neuroprotective',
-    'Valencene':     'Citrus, sweet Â· anti-inflammatory',
+    'Myrcene':       'Earthy, musky · sedating, muscle relaxant',
+    'Caryophyllene': 'Spicy, peppery · anti-inflammatory, CB2 agonist',
+    'Limonene':      'Citrus · mood-lifting, stress relief',
+    'Pinene':        'Pine · alertness, memory retention',
+    'Linalool':      'Floral, lavender · calming, anti-anxiety',
+    'Terpinolene':   'Floral, herbal · cerebral, creative',
+    'Ocimene':       'Sweet, herbal · uplifting',
+    'Humulene':      'Earthy, woody · appetite suppressant',
+    'Bisabolol':     'Floral, nutty · soothing, anti-irritant',
+    'Geraniol':      'Rose, floral · relaxing, neuroprotective',
+    'Valencene':     'Citrus, sweet · anti-inflammatory',
   }};
   document.querySelectorAll('.terp').forEach(function(el) {{
     var name = el.textContent.trim();
-    if (TERP[name]) el.title = name + ' â€” ' + TERP[name];
+    if (TERP[name]) el.title = name + ' — ' + TERP[name];
   }});
 }});
 </script>
 
-<!-- â”€â”€ PIN overlay â”€â”€ -->
+<!-- ── PIN overlay ── -->
 <div class="pin-overlay hidden" id="pinOverlay">
   <div class="pin-box" id="pinBox">
     <h2>Staff Access</h2>
     <p>Enter your code to view the schedule</p>
     <input class="pin-input" id="pinInput" type="password" maxlength="4"
-           inputmode="numeric" placeholder="â€¢â€¢â€¢â€¢" autocomplete="off"
+           inputmode="numeric" placeholder="••••" autocomplete="off"
            oninput="checkPin(this.value)">
     <div class="pin-error" id="pinError"></div>
   </div>
   <div class="pin-box hidden" id="pinCaution">
-    <h2>âš  Use With Caution</h2>
+    <h2>⚠ Use With Caution</h2>
     <p style="margin:12px 0 18px;font-size:.9rem;line-height:1.6;color:#555;">This reflects the schedule as originally sent.<br><br>If changes were made after it was sent, refer to the <strong>physical schedule posted at work</strong>.</p>
-    <button onclick="dismissCaution()" style="background:#3d5c2e;color:#fff;border:none;border-radius:20px;padding:10px 28px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;">Got it â€” View Schedule</button>
+    <button onclick="dismissCaution()" style="background:#3d5c2e;color:#fff;border:none;border-radius:20px;padding:10px 28px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;">Got it — View Schedule</button>
   </div>
 </div>
 
-<!-- â”€â”€ Schedule section (injected into main by JS) â”€â”€ -->
+<!-- ── Schedule section (injected into main by JS) ── -->
 <template id="scheduleTemplate">
   <section id="scheduleSection">
     <div style="background:#fef3c7;border:2px solid #f59e0b;border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-size:.85rem;color:#92400e;font-weight:600;">
-      ðŸš§ <span><strong>Schedule â€” Work in Progress.</strong> Always verify shifts against the source images below or the physical schedule posted at work.</span>
+      🚧 <span><strong>Schedule — Work in Progress.</strong> Always verify shifts against the source images below or the physical schedule posted at work.</span>
     </div>
     <div class="sched-img-section">
       <p class="sched-img-label">May 2026</p>
@@ -1713,7 +1713,7 @@ function toggleSchedImages(btn) {{
   const hidden = wrap.classList.toggle('hidden');
   btn.classList.toggle('open', !hidden);
   btn.querySelector('.sched-img-toggle-sub').textContent = hidden
-    ? 'Tap to see the source calendar photos â€” always verify shifts here'
+    ? 'Tap to see the source calendar photos — always verify shifts here'
     : 'Tap to hide images';
 }}
 
@@ -1743,7 +1743,7 @@ function renderSchedule() {{
 
   // Nav label
   const fmt = d => d.toLocaleDateString('en-US', {{month:'short', day:'numeric'}});
-  document.getElementById('schedWeekLabel').textContent = fmt(windowStart) + ' â€“ ' + fmt(windowEnd);
+  document.getElementById('schedWeekLabel').textContent = fmt(windowStart) + ' – ' + fmt(windowEnd);
 
   // Nav buttons
   document.getElementById('schedPrevBtn').classList.toggle('disabled', schedOffset <= -35);
@@ -1800,7 +1800,7 @@ function renderSchedule() {{
         const row = document.createElement('div');
         row.className = 'sched-shift';
         row.innerHTML = `<span class="sched-shift-name">${{s.name}}</span>`
-          + `<span class="sched-shift-time">${{s.start}} â€“ ${{s.end}}</span>`;
+          + `<span class="sched-shift-time">${{s.start}} – ${{s.end}}</span>`;
         dayEl.appendChild(row);
       }});
     }}
@@ -1818,7 +1818,7 @@ function renderSchedule() {{
 </html>"""
 
     OUT.write_text(html, encoding="utf-8")
-    print(f"Built â†’ {OUT}  ({len(all_p)} products)")
+    print(f"Built → {OUT}  ({len(all_p)} products)")
 
     # Also regenerate both docx exports
     build_docx(all_p, db["products"], strains)
@@ -1832,7 +1832,7 @@ def _docx_section_header(doc, title):
     doc.add_paragraph()
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = p.add_run(f"{'â”€' * 20}   {title}   {'â”€' * 20}")
+    run = p.add_run(f"{'─' * 20}   {title}   {'─' * 20}")
     run.bold = True
     run.font.size = Pt(13)
     doc.add_paragraph()
@@ -1883,7 +1883,7 @@ def build_docx(all_p, products_db, strains):
         hr.font.size = Pt(18)
         sub = doc.add_paragraph()
         sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        sub.add_run(f"MN Legit Cannabis Â· South Metro Â· {datetime.now(CST).strftime('%B %d, %Y')}")
+        sub.add_run(f"Dinky Dope · Dinkytown · {datetime.now(CST).strftime('%B %d, %Y')}")
 
         by_cat = {c: [] for c in DOCX_CAT_ORDER}
         for key, p in items:
@@ -1901,12 +1901,12 @@ def build_docx(all_p, products_db, strains):
                 _docx_strain(doc, p.get("name", key), p, enriched)
 
         doc.save(path)
-        print(f"Built docx â†’ {path}  ({sum(len(v) for v in by_cat.values())} strains)")
+        print(f"Built docx → {path}  ({sum(len(v) for v in by_cat.values())} strains)")
 
-    # Available Now â€” only in-stock scraped products
+    # Available Now — only in-stock scraped products
     _write(docs_dir / "legit-available-guide.docx", all_p, "Available Now")
 
-    # Master Cache â€” all enriched keys, supplemented by products_db
+    # Master Cache — all enriched keys, supplemented by products_db
     master_keys = list({**{k: products_db[k] for k in products_db}, **{}}.keys())
     master_items = []
     for k in strains:
