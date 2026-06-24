@@ -1,5 +1,1798 @@
 {
-  "products": {},
-  "last_updated": null,
+  "products": {
+    "0332f6000648": {
+      "name": "Bangkok Purple",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "16.9%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Limonene",
+        "Caryophyllene",
+        "Terpinolene"
+      ],
+      "effects": [
+        "Calming",
+        "Energetic",
+        "Euphoric",
+        "Hungry",
+        "Relaxing",
+        "Tingly",
+        "Uplifting",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Citrus",
+        "Fruity",
+        "Sour",
+        "Sweet",
+        "Tropical"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779846924_84576d66-a1e6-4ac8-83de-c94d0e8d7a44.jpg",
+      "description": "Purple Thai X another Unknown hybrid strain\n\nTypically (75% sativa/25% indica or 80% sativa/20% indica)",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "2223f6ee76a3": {
+      "name": "LIT OG",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "29.4%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Linalool",
+        "Ocimene",
+        "Terpinolene",
+        "Geraniol",
+        "Bisabolol"
+      ],
+      "effects": [
+        "Calming",
+        "Euphoric",
+        "Focused",
+        "Happy",
+        "Relaxing",
+        "Sleepy",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Citrus",
+        "Creamy",
+        "Fruity",
+        "Pine",
+        "Sweet",
+        "Tropical",
+        "Woody"
+      ],
+      "weight": "4g",
+      "price": "$55.00",
+      "price_tiers": {
+        "4g": "$55.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675380_268caf11-7b29-42e7-b7d6-994e7d0953b0.jpg",
+      "description": "Tahoe OG x Runtz.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "99326fcf9900": {
+      "name": "Donny Burger",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Indica",
+      "thc": "23.4%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Aroused",
+        "Body High",
+        "Creative",
+        "Euphoric",
+        "Giggly",
+        "Happy",
+        "Hungry",
+        "Relaxing",
+        "Social",
+        "Tingly",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Ammonia",
+        "Cheese",
+        "Lemon",
+        "Pepper",
+        "Pungent",
+        "Rubber",
+        "Spice",
+        "Sweet"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675390_db1a4f9d-4652-4d46-8104-1959384fa86b.jpg",
+      "description": "GMO x Han-Solo Burger.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "265b210f94fe": {
+      "name": "Runtz",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid",
+      "thc": "19.5%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Calming",
+        "Euphoric",
+        "Giggly",
+        "Hungry",
+        "Relaxing",
+        "Sleepy",
+        "Social",
+        "Talkative",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Apricot",
+        "Citrus",
+        "Fruity",
+        "Pineapple",
+        "Spice",
+        "Sweet",
+        "Tropical"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675376_36d7a335-a029-4cb8-a25a-ef8a2703248d.jpg",
+      "description": "Zkittles x Gelato.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "c7bc9b6b18c2": {
+      "name": "Fight Club",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "22.3%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Limonene",
+        "Caryophyllene",
+        "Ocimene",
+        "Terpinolene"
+      ],
+      "effects": [
+        "Cerebral",
+        "Creative",
+        "Euphoric",
+        "Focused",
+        "Happy",
+        "Relaxing",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Citrus",
+        "Diesel",
+        "Earthy",
+        "Fruity",
+        "Pine",
+        "Sweet",
+        "Woody"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675408_1fcb4789-6e42-4b05-a34f-06bf69b63a1f.jpg",
+      "description": "The Soap x Velvet Runtz.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "1ff4b7efe819": {
+      "name": "Purple Octane",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "20.2%",
+      "cbd": "0.0%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Euphoric",
+        "Relaxing",
+        "Sleepy",
+        "Tingly",
+        "Unbothered",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Chemical",
+        "Diesel",
+        "Fruity",
+        "Grape",
+        "Sweet"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675404_53f4c35f-a9a7-45e6-9c94-b7dd52737379.jpg",
+      "description": "(Biscotti x Sherb BX1) x Jealousy F2.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "9bd115b860af": {
+      "name": "Cap Junky",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid",
+      "thc": "27.8%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene"
+      ],
+      "effects": [
+        "Giggly",
+        "Happy",
+        "Hungry",
+        "Tingly",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Apple",
+        "Apricot",
+        "Menthol"
+      ],
+      "weight": "4g",
+      "price": "$55.00",
+      "price_tiers": {
+        "4g": "$55.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1776365583_dffb68f0-e6df-47d9-8b38-ab752af4e0e5.jpg",
+      "description": "Alien Cookies x Kush Mints #11",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "4b794faff189": {
+      "name": "Glue 31",
+      "brand": "Grasslandz",
+      "category": "pre-roll",
+      "strain_type": "Hybrid",
+      "thc": "22.3%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Linalool",
+        "Caryophyllene",
+        "Terpinolene",
+        "Geraniol",
+        "Valencene",
+        "Bisabolol"
+      ],
+      "effects": [
+        "Calming",
+        "Euphoric",
+        "Focused",
+        "Head High",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Diesel",
+        "Earthy",
+        "Fruity",
+        "Gasoline",
+        "Nutty",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$18.00",
+      "price_tiers": {
+        "gram": "$18.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781886084_3dc6824f-7426-427b-b4bf-21f3e91c7541.png",
+      "description": "GG4 \u00d7 Jokerz #31",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "f9a02875b44a": {
+      "name": "MAC Stomper",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "26.1%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Linalool",
+        "Pinene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Aroused",
+        "Euphoric",
+        "Giggly",
+        "Happy",
+        "Relaxing",
+        "Sleepy",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Apple",
+        "Berry",
+        "Citrus",
+        "Fruity",
+        "Grape",
+        "Sour",
+        "Sweet"
+      ],
+      "weight": "4g",
+      "price": "$55.00",
+      "price_tiers": {
+        "4g": "$55.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1777320556_f7811ca4-e733-46d1-9226-767c901e3e3b.png",
+      "description": "MAC x Grape Stomper.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "6a06396da757": {
+      "name": "Super Boof",
+      "brand": "Grasslandz",
+      "category": "flower",
+      "strain_type": "Hybrid",
+      "thc": "25.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Creative",
+        "Euphoric",
+        "Focused",
+        "Giggly",
+        "Relaxing",
+        "Social",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Cherry",
+        "Citrus",
+        "Earthy",
+        "Grapefruit",
+        "Orange",
+        "Sour",
+        "Sweet"
+      ],
+      "weight": "3.5g",
+      "price": "$54.00",
+      "price_tiers": {
+        "eighth": "$54.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675604_1c045b68-3624-4ded-bc14-d29da066790a.jpg",
+      "description": "Black Cherry Punch x Tropicana Cookies.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "baa51ab3ca78": {
+      "name": "Purple Milk",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "16.8%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Linalool",
+        "Pinene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Calming",
+        "Creative",
+        "Euphoric",
+        "Happy",
+        "Relaxing",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Citrus",
+        "Fruity",
+        "Grape",
+        "Sour",
+        "Sweet",
+        "Vanilla"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779846533_c9ec4e9c-a05f-4412-bd7a-a933aaf66398.jpg",
+      "description": "Horchata with Grape Gasoline (some variations also stem from Purple OG Kush \n Bubba Kush)",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "829a9b926d61": {
+      "name": "Blue Dream",
+      "brand": "Grasslandz",
+      "category": "flower",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "15.9%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Linalool",
+        "Pinene",
+        "Limonene"
+      ],
+      "effects": [
+        "Creative",
+        "Euphoric",
+        "Happy"
+      ],
+      "flavors": [
+        "Berry",
+        "Blueberry",
+        "Fruity",
+        "Herbal",
+        "Sweet",
+        "Vanilla"
+      ],
+      "weight": "3.5g",
+      "price": "$48.00",
+      "price_tiers": {
+        "eighth": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781885500_0e100e54-38c6-432c-be0a-f7d2e20b9b07.jpg",
+      "description": "Blueberry X Haze",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "2fc15c23d6c8": {
+      "name": "Terp Poison",
+      "brand": "Campfire Cannabis",
+      "category": "flower",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "18.9%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Terpinolene"
+      ],
+      "effects": [
+        "Cerebral",
+        "Clarity",
+        "Creative",
+        "Energetic",
+        "Focused",
+        "Social",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Candy",
+        "Lemon",
+        "Lime",
+        "Sour",
+        "Sweet"
+      ],
+      "weight": "4g",
+      "price": "$48.00",
+      "price_tiers": {
+        "4g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781716196_b4dbaad6-cd14-4a12-bc83-0d3a9f4ccfc0.png",
+      "description": "Durban Poison S1 x AVL",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "2047e59be05a": {
+      "name": "Zesty Parm",
+      "brand": "Northpark",
+      "category": "flower",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "18.8%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Calming",
+        "Focused",
+        "Happy",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Citrus",
+        "Herbal",
+        "Sour",
+        "Spice",
+        "Woody"
+      ],
+      "weight": "3.5g",
+      "price": "$48.00",
+      "price_tiers": {
+        "eighth": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1780941359_1aeb1a1b-6913-4dc4-9a94-cdc0be08b2ed.png",
+      "description": "Cherry Kush X (Lemon Tree Papaya X GMO) X FroDo strains",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "d129639aaad3": {
+      "name": "Dark Rainbow 1",
+      "brand": "Grasslandz",
+      "category": "flower",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "16.8%",
+      "cbd": "0.0%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Caryophyllene",
+        "Terpinolene"
+      ],
+      "effects": [
+        "Euphoric",
+        "Giggly",
+        "Relaxing",
+        "Sleepy",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Citrus",
+        "Fruity",
+        "Lemon",
+        "Lime",
+        "Pepper",
+        "Sour",
+        "Tropical"
+      ],
+      "weight": "3.5g",
+      "price": "$48.00",
+      "price_tiers": {
+        "eighth": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781885842_65fc63f1-d486-47aa-b7a3-dca4afcfc788.jpg",
+      "description": "GMO X Rainbow Belts F1 strains",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "075e439689c0": {
+      "name": "Blueberry Muffin 5ct",
+      "brand": "Lifted North",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "19.3%",
+      "cbd": "0.0%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Calming",
+        "Creative",
+        "Euphoric",
+        "Happy",
+        "Relaxing",
+        "Tingly",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Blueberry",
+        "Butter",
+        "Herbal",
+        "Nutty",
+        "Sweet",
+        "Vanilla"
+      ],
+      "weight": ".5 gr each",
+      "price": "$30.00",
+      "price_tiers": {
+        "_5_gr_each": "$30.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1776960531_ee995efb-920c-4985-90df-0e795d5bfa65.png",
+      "description": "Strain info: Purple Panty Dropper x Blueberry \n\nThese mini pre-rolls are larger than your average mini at half a gram per pre-roll (normally .35 gr for minis). They come in a glass jar, which is perfect for preserving your remaining pre-rolls after opening.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "e2b95f79aa58": {
+      "name": "Froot by the Foot",
+      "brand": "Avion",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "20.1%",
+      "cbd": "0.3%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Body High",
+        "Calming",
+        "Happy",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Candy",
+        "Fruity",
+        "Spice",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$18.00",
+      "price_tiers": {
+        "gram": "$18.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779043557_1032cb51-c708-4fa6-b4bd-6c73e5ae7141.png",
+      "description": "Mythic OG X Candy Cane Auto",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "8ddb5a864d39": {
+      "name": "Blueberry Muffin",
+      "brand": "Grasslandz",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "17.9%",
+      "cbd": "0.0%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Body High",
+        "Focused",
+        "Happy",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Blueberry",
+        "Butter",
+        "Herbal",
+        "Nutty",
+        "Sweet",
+        "Vanilla"
+      ],
+      "weight": "1 G",
+      "price": "$16.00",
+      "price_tiers": {
+        "gram": "$16.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1776365360_0b1f1eec-9c0e-439c-ae69-c082ff4f075d.png",
+      "description": "Purple Panty Dropper x Blueberry",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "5f0071673ee9": {
+      "name": "Blue Dream 3pk - (0.33gr ea)",
+      "brand": "dizgo",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "15.9%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Linalool",
+        "Pinene",
+        "Limonene"
+      ],
+      "effects": [
+        "Creative",
+        "Euphoric",
+        "Happy"
+      ],
+      "flavors": [
+        "Berry",
+        "Blueberry",
+        "Fruity",
+        "Herbal",
+        "Sweet",
+        "Vanilla"
+      ],
+      "weight": "0.33g",
+      "price": "$17.00",
+      "price_tiers": {
+        "0_33g": "$17.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781027885_49f3116f-352c-4649-95c2-fec77ca554a1.png",
+      "description": "Atlas Star X Cotton Candy",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "7b052b7dd4f2": {
+      "name": "Frodo Sqeeze",
+      "brand": "Avion",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "17.1%",
+      "cbd": "0.3%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Terpinene"
+      ],
+      "effects": [
+        "Euphoric",
+        "Relaxing",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Earthy",
+        "Fruity",
+        "Herbal",
+        "Pine",
+        "Spice",
+        "Tropical"
+      ],
+      "weight": "1 G",
+      "price": "$18.00",
+      "price_tiers": {
+        "gram": "$18.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779043935_996624c8-af25-4598-8fe7-d5545b338de2.png",
+      "description": "(Fro\u2019Do x Alaskan Yeti) x LilMissHS",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "cb4b25d43504": {
+      "name": "Glue 31 - 10ct Mini",
+      "brand": "Grasslandz",
+      "category": "pre-roll",
+      "strain_type": "Hybrid",
+      "thc": "22.3%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Linalool",
+        "Caryophyllene",
+        "Terpinolene",
+        "Geraniol",
+        "Valencene",
+        "Bisabolol"
+      ],
+      "effects": [
+        "Creative",
+        "Euphoric",
+        "Relaxing",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Diesel",
+        "Earthy",
+        "Fruity",
+        "Gasoline",
+        "Nutty",
+        "Sweet"
+      ],
+      "weight": "0.35g",
+      "price": "$48.00",
+      "price_tiers": {
+        "0_35g": "$48.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1780412267_c04914fd-ba6e-4310-8915-d3c318ce5bf5.png",
+      "description": "Gorilla Glue #4 X Jokerz",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "849ca584178c": {
+      "name": "Top Gun 2pk - (0.5gr ea)",
+      "brand": "dizgo",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "17.0%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Linalool",
+        "Limonene",
+        "Caryophyllene",
+        "Humulene"
+      ],
+      "effects": [
+        "Body High",
+        "Cerebral",
+        "Energetic",
+        "Relaxing",
+        "Unbothered"
+      ],
+      "flavors": [
+        "Citrus",
+        "Cookies",
+        "Diesel",
+        "Nutty",
+        "Spice",
+        "Sweet"
+      ],
+      "weight": ".5",
+      "price": "$16.00",
+      "price_tiers": {
+        "_5": "$16.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781027035_d0bf617d-a801-4f9d-a8c3-1a08825352b8.png",
+      "description": "Atlas Star X Cotton Candy",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "184eb9c71846": {
+      "name": "Grape Canyon Zkittlez",
+      "brand": "Campfire Cannabis",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "20.9%",
+      "cbd": "0.0%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [
+        "Cerebral",
+        "Euphoric",
+        "Relaxing",
+        "Social",
+        "Unbothered"
+      ],
+      "flavors": [
+        "Banana",
+        "Citrus",
+        "Fruity",
+        "Spice"
+      ],
+      "weight": "1 G",
+      "price": "$18.00",
+      "price_tiers": {
+        "gram": "$18.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1777129956_0c1aaae1-29e4-4a7e-8a8b-abf1642ce36d.png",
+      "description": "Grape Ape x Zkittlez (aka Grape Zkittlez)",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "a48a03f9eb5a": {
+      "name": "Halle Berry",
+      "brand": "Redwood County Weed Management",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "16.1%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Aroused",
+        "Euphoric",
+        "Focused",
+        "Happy",
+        "Relaxing",
+        "Social",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Citrus",
+        "Creamy",
+        "Fruity",
+        "Orange",
+        "Sour",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$15.00",
+      "price_tiers": {
+        "gram": "$15.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779038503_88e1a04a-d6f0-4750-90e9-1d873c13b509.png",
+      "description": "Ice Cream Cake X Blockberry",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "03df98cc7bf8": {
+      "name": "Zesty Parm",
+      "brand": "Avion",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "17.2%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Calming",
+        "Focused",
+        "Happy",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Citrus",
+        "Herbal",
+        "Sour",
+        "Spice",
+        "Woody"
+      ],
+      "weight": "1 G",
+      "price": "$18.00",
+      "price_tiers": {
+        "gram": "$18.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779043338_021caff1-ecf4-4631-a9dd-ffc3ec067749.png",
+      "description": "Cherry Kush X (Lemon Tree Papaya X GMO) X FroDo strains.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "83fa406599ab": {
+      "name": "Bubblegum - Keif Coated",
+      "brand": "Lakeside Canna",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "25.5%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Creative",
+        "Euphoric",
+        "Happy",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Berry",
+        "Creamy",
+        "Fruity",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$26.00",
+      "price_tiers": {
+        "gram": "$26.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1780413589_fe6ae788-102f-48a2-a6ab-5ae931db7d2a.png",
+      "description": "Indiana Bubblegum X Unknown Indica Cannabis Strain",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "17d0ee83967d": {
+      "name": "Medusa 2pk - (0.5gr ea)",
+      "brand": "dizgo",
+      "category": "pre-roll",
+      "strain_type": "Hybrid",
+      "thc": "12.6%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Caryophyllene",
+        "Ocimene",
+        "Farnesene"
+      ],
+      "effects": [
+        "Euphoric",
+        "Happy",
+        "Relaxing"
+      ],
+      "flavors": [
+        "Berry",
+        "Sweet",
+        "Tea"
+      ],
+      "weight": ".5",
+      "price": "$16.00",
+      "price_tiers": {
+        "_5": "$16.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781027035_d0bf617d-a801-4f9d-a8c3-1a08825352b8.png",
+      "description": "Commonly referred to as \u201cThe Nirvana Strain\u201d is a hybrid of the cult favorite Misty strain with an unknown sativa to indica ratio. However, it is thought to be evenly balanced due to its powerful combination of sativa and indica effects that complement each other perfectly.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "c08f7e78f0cb": {
+      "name": "Jelly Breath",
+      "brand": "Redwood County Weed Management",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "15.9%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Body High",
+        "Euphoric",
+        "Relaxing",
+        "Tingly"
+      ],
+      "flavors": [
+        "Berry",
+        "Fruity",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$15.00",
+      "price_tiers": {
+        "gram": "$15.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779038503_88e1a04a-d6f0-4750-90e9-1d873c13b509.png",
+      "description": "Mendo Breath X Do-Si-Dos",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "ddfa12a62493": {
+      "name": "Block Party",
+      "brand": "Redwood County Weed Management",
+      "category": "pre-roll",
+      "strain_type": "Hybrid",
+      "thc": "15.4%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Limonene",
+        "Caryophyllene",
+        "Humulene"
+      ],
+      "effects": [
+        "Body High",
+        "Calming",
+        "Creative",
+        "Euphoric",
+        "Relaxing",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Citrus",
+        "Creamy",
+        "Fruity",
+        "Pine",
+        "Sour",
+        "Sweet",
+        "Woody"
+      ],
+      "weight": "1 G",
+      "price": "$15.00",
+      "price_tiers": {
+        "gram": "$15.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779038503_88e1a04a-d6f0-4750-90e9-1d873c13b509.png",
+      "description": "Super Sherbet X Blockberry",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "a4c17ff7e8ac": {
+      "name": "Cap Junky",
+      "brand": "Redwood County Weed Management",
+      "category": "pre-roll",
+      "strain_type": "Hybrid",
+      "thc": "16.3%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene"
+      ],
+      "effects": [
+        "Happy",
+        "Hungry",
+        "Relaxing",
+        "Tingly",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Apple",
+        "Apricot",
+        "Menthol"
+      ],
+      "weight": "1 G",
+      "price": "$15.00",
+      "price_tiers": {
+        "gram": "$15.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779038503_88e1a04a-d6f0-4750-90e9-1d873c13b509.png",
+      "description": "Kush Mintz  X  Alien Cookies",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "68387bbac1ce": {
+      "name": "Jacked Up Boof - Keif Coated",
+      "brand": "Lakeside Canna",
+      "category": "pre-roll",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "24.9%",
+      "cbd": "0.5%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Creative",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Citrus",
+        "Fruity",
+        "Spice",
+        "Sweet",
+        "Woody"
+      ],
+      "weight": "1 G",
+      "price": "$26.00",
+      "price_tiers": {
+        "gram": "$26.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1780413302_f5cffcb6-5ad9-40f3-8c1e-114056c5cf43.png",
+      "description": "Jack Herer X Time Wreck",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "cc4aa02c910d": {
+      "name": "Cherry Purgatory - Keif Coated",
+      "brand": "Lakeside Canna",
+      "category": "pre-roll",
+      "strain_type": "Hybrid",
+      "thc": "25.4%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Euphoric",
+        "Giggly",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Blueberry",
+        "Cherry",
+        "Grapefruit",
+        "Herbal",
+        "Orange"
+      ],
+      "weight": "1 G",
+      "price": "$26.00",
+      "price_tiers": {
+        "gram": "$26.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1781886319_1d54f32d-b0a4-4c1e-a321-b7e2fae87131.png",
+      "description": "Dante's Inferno (Oreoz \u00d7 Devil Driver) flower infused with Cherry Nirvana terpenes, rolled in kief.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "9934b135c2db": {
+      "name": "Raspberry",
+      "brand": "Grasslandz",
+      "category": "edibles",
+      "strain_type": "Hybrid",
+      "thc": "100.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [],
+      "flavors": [],
+      "weight": "100 MG/pkg",
+      "price": "$32.00",
+      "price_tiers": {
+        "100_mg/pkg": "$32.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779036434_ece141f1-68d9-47cf-b890-190ddb2c4a9d.avif",
+      "description": "10mg THC per Gummy - total of 100mg per package.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "f3490bc245c8": {
+      "name": "Munchies de Mayo - Mango Fuego",
+      "brand": "North Star Canna",
+      "category": "edibles",
+      "strain_type": "Hybrid",
+      "thc": "200.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [],
+      "flavors": [],
+      "weight": "200 MG/pkg",
+      "price": "$39.99",
+      "price_tiers": {
+        "200_mg/pkg": "$39.99"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1780411155_ac786fea-b718-4f8b-8056-69c9ebee7f08.jpg",
+      "description": "10mg THC per Gummy - total of 200mg per package. (20 pieces) \n\nFiesta-ready cannabis gummies crafted to spark spice, sweetness, and just the right amount of bliss!",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "961994b89518": {
+      "name": "Peach",
+      "brand": "Grasslandz",
+      "category": "edibles",
+      "strain_type": "Hybrid",
+      "thc": "100.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [],
+      "flavors": [],
+      "weight": "100 MG/pkg",
+      "price": "$32.00",
+      "price_tiers": {
+        "100_mg/pkg": "$32.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779036606_7ff22a7f-63e8-414c-927b-3a11aad6edc6.avif",
+      "description": "10mg THC per Gummy - total of 100mg per package.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "dd494fcaec3c": {
+      "name": "Sour Blueberry",
+      "brand": "Grasslandz",
+      "category": "edibles",
+      "strain_type": "Hybrid",
+      "thc": "100.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [],
+      "flavors": [],
+      "weight": "100 MG/pkg",
+      "price": "$32.00",
+      "price_tiers": {
+        "100_mg/pkg": "$32.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1780410658_fe5dcb30-b960-4b90-84ab-fe71969d044b.png",
+      "description": "10mg THC per Gummy - total of 100mg per package.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "a1d94f46edc0": {
+      "name": "Green Apple Gummy Bar",
+      "brand": "Nebula",
+      "category": "edibles",
+      "strain_type": "",
+      "thc": "100.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [],
+      "flavors": [],
+      "weight": "100 MG",
+      "price": "$24.00",
+      "price_tiers": {
+        "100_mg": "$24.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675317_b4d34862-6efe-4432-a1fd-bdce8d4ab363.png",
+      "description": "",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "487b0db2bda3": {
+      "name": "Cotton Candy Gummy Bar",
+      "brand": "Nebula",
+      "category": "edibles",
+      "strain_type": "",
+      "thc": "100.0%",
+      "cbd": "",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [],
+      "effects": [],
+      "flavors": [],
+      "weight": "100 MG",
+      "price": "$24.00",
+      "price_tiers": {
+        "100_mg": "$24.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675322_54e1f11f-1a57-43ef-a9b8-ea0ac67da977.png",
+      "description": "",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "e1138882d6cd": {
+      "name": "Sour Diesel",
+      "brand": "Grasslandz",
+      "category": "vapes",
+      "strain_type": "Sativa",
+      "thc": "80.3%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Energetic",
+        "Talkative",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Candy",
+        "Citrus",
+        "Diesel",
+        "Skunk",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1779035402_1de28f80-6d60-49f4-998c-e3316c30fe11.png",
+      "description": "Chemdawg x Super Skunk",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "d14cd84df475": {
+      "name": "ATF (Alaskan Thunder Fuck)",
+      "brand": "Nebula",
+      "category": "vapes",
+      "strain_type": "Sativa",
+      "thc": "76.8%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Cerebral",
+        "Creative",
+        "Energetic",
+        "Euphoric",
+        "Talkative",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Banana",
+        "Floral",
+        "Menthol",
+        "Mint",
+        "Orange",
+        "Pine",
+        "Sage"
+      ],
+      "weight": "0.5g",
+      "price": "$40.00",
+      "price_tiers": {
+        "0_5g": "$40.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675501_58eebed8-42e1-4738-920d-1f56c067ac4e.png",
+      "description": "Russian ruderalis x Northern Cali Sativa x Afghani landrace strain.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "5520aa9a6749": {
+      "name": "OG Kush",
+      "brand": "Grasslandz",
+      "category": "vapes",
+      "strain_type": "Hybrid (Indica)",
+      "thc": "77.2%",
+      "cbd": "0.8%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Giggly",
+        "Hungry",
+        "Relaxing",
+        "Social",
+        "Unbothered",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Citrus",
+        "Herbal",
+        "Pine",
+        "Skunk",
+        "Sour",
+        "Woody"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675481_4932b304-08ac-4c75-9aa6-de499fa4bb70.png",
+      "description": "Unknown Lineage - Though to be Chemdawg x Hindu Kush",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "c75916fb6cef": {
+      "name": "Forbidden Fruit",
+      "brand": "True Canna",
+      "category": "vapes",
+      "strain_type": "Hybrid",
+      "thc": "79.2%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Relaxing",
+        "Sleepy",
+        "Tingly"
+      ],
+      "flavors": [
+        "Berry",
+        "Fruity",
+        "Lemon"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1776365401_93806558-7ba2-4162-928a-1c4bedbe5ced.png",
+      "description": "Cherry Pie x Tangie",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "c0abb143f875": {
+      "name": "Insane Punch",
+      "brand": "True Canna",
+      "category": "vapes",
+      "strain_type": "Hybrid",
+      "thc": "79.7%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Calming",
+        "Happy",
+        "Hungry",
+        "Relaxing",
+        "Sleepy",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Berry",
+        "Blueberry",
+        "Floral",
+        "Grape",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1776365506_ecbd6eac-81fc-4c66-9614-bcdef11d32b0.png",
+      "description": "Purple Punch x Purple Train",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "aba964aa9cee": {
+      "name": "Romulan",
+      "brand": "Nebula",
+      "category": "vapes",
+      "strain_type": "Indica",
+      "thc": "79.3%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Cerebral",
+        "Euphoric",
+        "Hungry",
+        "Relaxing",
+        "Sleepy"
+      ],
+      "flavors": [
+        "Citrus",
+        "Earthy",
+        "Pine",
+        "Sweet",
+        "Woody"
+      ],
+      "weight": "0.5g",
+      "price": "$40.00",
+      "price_tiers": {
+        "0_5g": "$40.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675506_07d4c670-2f08-4842-97a6-dc3b9d483676.png",
+      "description": "North American Indica x White Rhino.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "800683c99214": {
+      "name": "Super Lemon Haze",
+      "brand": "Grasslandz",
+      "category": "vapes",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "77.3%",
+      "cbd": "0.8%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Caryophyllene",
+        "Terpinolene"
+      ],
+      "effects": [
+        "Aroused",
+        "Cerebral",
+        "Creative",
+        "Energetic",
+        "Euphoric",
+        "Focused",
+        "Happy",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Candy",
+        "Citrus",
+        "Lemon",
+        "Lime",
+        "Sweet",
+        "Tangy",
+        "Tart"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675620_065f9dc2-fc4c-4f96-b874-c6f1619a40f3.png",
+      "description": "Lemon Skunk x Super Silver Haze.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "bd8a138c30bf": {
+      "name": "Green Crack",
+      "brand": "Grasslandz",
+      "category": "vapes",
+      "strain_type": "Hybrid (Sativa)",
+      "thc": "76.5%",
+      "cbd": "0.1%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Limonene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Cerebral",
+        "Energetic",
+        "Focused",
+        "Happy",
+        "Talkative",
+        "Uplifting"
+      ],
+      "flavors": [
+        "Citrus",
+        "Earthy",
+        "Fruity",
+        "Mango",
+        "Pine",
+        "Sweet",
+        "Tangy"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1775675486_b15097bd-4804-4b82-8719-23344cd2c93f.png",
+      "description": "Skunk #1 x Unknown Indica.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    },
+    "b07cb1ec42ba": {
+      "name": "Sour Apple",
+      "brand": "Grasslandz",
+      "category": "vapes",
+      "strain_type": "Hybrid",
+      "thc": "76.8%",
+      "cbd": "0.2%",
+      "cbg": "",
+      "cbn": "",
+      "terpenes": [
+        "Myrcene",
+        "Pinene",
+        "Caryophyllene"
+      ],
+      "effects": [
+        "Body High",
+        "Creative",
+        "Hungry",
+        "Relaxing",
+        "Social"
+      ],
+      "flavors": [
+        "Apple",
+        "Citrus",
+        "Fruity",
+        "Lemon",
+        "Lime",
+        "Sweet"
+      ],
+      "weight": "1 G",
+      "price": "$70.00",
+      "price_tiers": {
+        "gram": "$70.00"
+      },
+      "in_stock": true,
+      "image": "https://media-prime.sweedpos.com/store/prime/1777410272_8d1a22b8-e117-4a18-ae61-3a8d82ca08be.png",
+      "description": "Sour Diesel x Cinderella 99.",
+      "first_seen": "2026-06-24T15:43:12.788727-06:00",
+      "last_seen": "2026-06-24T15:43:12.788727-06:00"
+    }
+  },
+  "last_updated": "2026-06-24T15:43:12.789350-06:00",
   "store": "Dinkytown"
 }
