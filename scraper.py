@@ -25,15 +25,29 @@ CST          = timezone(timedelta(hours=-6))
 
 TARGET_CATS  = ("flower", "pre-roll", "vapes", "edibles")
 
+STORE_ID = 609
+
+import urllib.parse as _urlparse, json as _json
+_last_store = _urlparse.quote(_json.dumps({
+    "id": STORE_ID,
+    "url": f"https://{STORE_DOMAIN}/{STORE_SLUG}",
+    "routeName": f"/{STORE_SLUG}",
+}))
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/124.0.0.0 Safari/537.36"
     ),
-    "Accept": "application/json, text/html, */*",
+    "Accept": "*/*",
     "Accept-Language": "en-US,en;q=0.9",
-    "Referer": f"https://{STORE_DOMAIN}/",
+    "Content-Type": "application/json",
+    "Origin": f"https://{STORE_DOMAIN}",
+    "Referer": f"https://{STORE_DOMAIN}/{STORE_SLUG}/menu",
+    "storeid": str(STORE_ID),
+    "ssr": "false",
+    "Cookie": f"last_store={_last_store}; swa_Common/isAgeChecked=true",
 }
 
 
