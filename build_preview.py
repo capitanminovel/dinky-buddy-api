@@ -217,18 +217,18 @@ def build():
   <style>
     *,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
     :root{{
-      --brand:#1a7a4a;--brand-lt:#e8f5ee;--text:#111827;--muted:#6b7280;
+      --brand:#C9A000;--brand-lt:#FFF8DC;--text:#111827;--muted:#6b7280;
       --border:#e5e7eb;--bg:#f3f4f6;--white:#ffffff;
       --indica:#7c3aed;--sativa:#d97706;--hybrid:#0891b2;--cbd:#2563eb;--cbg:#6366f1;
-      --new:#16a34a;--radius:14px;
-      --sg-green:#3d5c2e;--sg-pink:#e88fa2;--sg-cream:#f5f0e8;
-      --sg-dark:#2a3f1f;--sg-border:#4a7030;
+      --new:#C9A000;--radius:14px;
+      --sg-green:#1A1A1A;--sg-pink:#F5C228;--sg-cream:#f5f0e8;
+      --sg-dark:#111111;--sg-border:#1A1A1A;
     }}
     body.dark{{
-      --brand:#4ade80;--brand-lt:#0a1f12;--text:#ffffff;--muted:#9ca3af;
+      --brand:#F5C228;--brand-lt:#1A1200;--text:#ffffff;--muted:#9ca3af;
       --border:#1e1e1e;--bg:#000000;--white:#111111;
       --indica:#a78bfa;--sativa:#fbbf24;--hybrid:#38bdf8;--cbd:#60a5fa;--cbg:#818cf8;
-      --new:#4ade80;
+      --new:#F5C228;
     }}
     body.dark header,body.dark .tabs-wrap,body.dark .legend,body.dark footer{{background:#0a0a0a;border-color:#1e1e1e}}
     body.dark .card{{background:#111111;border-color:transparent;box-shadow:0 2px 10px rgba(0,0,0,.7)}}
@@ -237,17 +237,17 @@ def build():
     body.dark .no-img{{opacity:.25;filter:grayscale(1)}}
     body.dark .mood-bar{{background:#111111;border-color:#1e1e1e}}
     body.dark .mood-chip{{background:#111111;color:var(--text);border-color:#1e1e1e}}
-    body.dark .mood-chip:hover{{border-color:#4ade80}}
-    body.dark .mood-chip.on{{background:#0a2016;color:#4ade80;border-color:#4ade80}}
+    body.dark .mood-chip:hover{{border-color:#F5C228}}
+    body.dark .mood-chip.on{{background:#1A1200;color:#F5C228;border-color:#F5C228}}
     body.dark .search-input{{background:#111111;color:var(--text);border-color:#1e1e1e}}
-    body.dark .search-input:focus{{background:#1a1a1a;border-color:#4ade80}}
-    body.dark .new-arrivals-section{{background:linear-gradient(135deg,#0a1a10,#0a0a0a);border-color:#1e3a24}}
+    body.dark .search-input:focus{{background:#1a1a1a;border-color:#F5C228}}
+    body.dark .new-arrivals-section{{background:linear-gradient(135deg,#1A1200,#0a0a0a);border-color:#2A1E00}}
     body.dark .sold-section{{background:#0a0a0a;border-color:#1e1e1e}}
     body.dark .sold-row{{background:#0a0a0a}}
-    body.dark .terp{{background:#0a1a10;color:#4ade80;border-color:#1a3a22;cursor:help}}
+    body.dark .terp{{background:#1A1200;color:#F5C228;border-color:#2A1E00;cursor:help}}
     body.dark .tier{{background:#1a1a1a;border-color:#1e1e1e}}
-    body.dark .price-single{{color:#4ade80}}
-    body.dark .card.match-strong{{border-left:5px solid #4ade80;box-shadow:-2px 0 10px rgba(74,222,128,.3)}}
+    body.dark .price-single{{color:#F5C228}}
+    body.dark .card.match-strong{{border-left:5px solid #F5C228;box-shadow:-2px 0 10px rgba(245,194,40,.3)}}
     body.dark .card.match-good{{border-left:5px solid #fbbf24;box-shadow:none}}
     body.dark .card.match-weak{{border-left:5px solid #475569;box-shadow:none}}
     body.dark .top-bar{{background:#000000}}
@@ -257,19 +257,19 @@ def build():
     body.dark .sg-row{{color:#b2c9b8}}
     body.dark .profile-box{{background:#111111}}
     body.dark .profile-header{{background:#111111;border-color:#1e1e1e}}
-    body.dark [data-cat="flower"] .section-title{{border-left:3px solid #4ade80;padding-left:12px}}
+    body.dark [data-cat="flower"] .section-title{{border-left:3px solid #F5C228;padding-left:12px}}
     body.dark [data-cat="pre-roll"] .section-title{{border-left:3px solid #fb923c;padding-left:12px}}
     body.dark [data-cat="vapes"] .section-title{{border-left:3px solid #38bdf8;padding-left:12px}}
     body.dark [data-cat="edibles"] .section-title{{border-left:3px solid #e879f9;padding-left:12px}}
     .tab-count{{display:inline-block;background:#1e1e1e;color:#9ca3af;font-size:.65rem;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:4px;vertical-align:middle;letter-spacing:0}}
-    body.dark .tab.on .tab-count{{background:#0a2016;color:#4ade80}}
+    body.dark .tab.on .tab-count{{background:#1A1200;color:#F5C228}}
     .tabs-wrap .search-row{{padding:6px 24px 10px;border-top:1px solid #1e1e1e;max-width:640px}}
     .tabs-wrap .search-row .search-wrap{{max-width:100%}}
     body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px}}
-    .top-bar{{background:var(--brand);color:#fff;text-align:center;font-size:.75rem;padding:6px;letter-spacing:.3px}}
+    .top-bar{{background:#1A1A1A;color:#F5C228;text-align:center;font-size:.75rem;padding:6px;letter-spacing:.3px}}
     header{{background:var(--white);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:0;z-index:30}}
     .header-inner{{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:16px;height:70px}}
-    .logo{{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:var(--brand);text-decoration:none;white-space:nowrap}}
+    .logo{{display:flex;align-items:center;text-decoration:none}}
     .logo-leaf{{width:34px;height:34px;background:var(--brand);border-radius:50% 50% 50% 0;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;flex-shrink:0}}
     .mascot-wrap{{flex-shrink:0;cursor:default;user-select:none;display:flex;align-items:center}}
     .mascot-wrap img{{height:52px;width:auto;display:block}}
@@ -363,20 +363,20 @@ def build():
     .mood-status{{font-size:.78rem;color:var(--sg-green);font-weight:500;padding:2px 0 0;line-height:1.45}}
     .mood-status strong{{font-weight:700}}
     .mood-zero{{font-size:.85rem;color:var(--muted);text-align:center;padding:32px 0;font-weight:500}}
-    .card.match-strong{{border-left:5px solid #16a34a;box-shadow:-2px 0 10px rgba(22,163,74,.2)}}
+    .card.match-strong{{border-left:5px solid #C9A000;box-shadow:-2px 0 10px rgba(201,160,0,.2)}}
     .card.match-good{{border-left:5px solid #d97706}}
     .card.match-weak{{border-left:5px solid #94a3b8}}
 
     /* ── Rating badge shown on cards when mood active ── */
     .rating-badge{{display:none;position:absolute;top:8px;right:8px;min-width:28px;height:28px;border-radius:50%;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,.25);border:2px solid rgba(255,255,255,.6)}}
     .rating-badge.show{{display:flex}}
-    .rating-badge.rb-strong{{background:#16a34a;color:#fff}}
+    .rating-badge.rb-strong{{background:#C9A000;color:#fff}}
     .rating-badge.rb-good{{background:#d97706;color:#fff}}
     .rating-badge.rb-weak{{background:#94a3b8;color:#fff}}
-    body.dark .card.match-strong{{border-left:5px solid #4ade80;box-shadow:-2px 0 10px rgba(74,222,128,.3)}}
+    body.dark .card.match-strong{{border-left:5px solid #F5C228;box-shadow:-2px 0 10px rgba(245,194,40,.3)}}
     body.dark .card.match-good{{border-left:5px solid #fbbf24}}
     body.dark .card.match-weak{{border-left:5px solid #475569}}
-    body.dark .rating-badge.rb-strong{{background:#4ade80;color:#0d1a11}}
+    body.dark .rating-badge.rb-strong{{background:#F5C228;color:#0D0D00}}
     body.dark .rating-badge.rb-good{{background:#fbbf24;color:#1a1000}}
     body.dark .rating-badge.rb-weak{{background:#475569;color:#e2e8f0}}
 
@@ -396,7 +396,7 @@ def build():
     .mood-card-science{{font-size:.78rem;color:var(--text);line-height:1.55;margin-bottom:8px}}
     .mood-card-terps{{display:flex;gap:5px;flex-wrap:wrap}}
     .mood-card-terp{{font-size:.68rem;font-weight:700;background:var(--brand-lt);color:var(--brand);border:1px solid #bbf7d0;border-radius:10px;padding:2px 8px}}
-    body.dark .mood-card{{background:#1a2d20;border-color:var(--border)}}
+    body.dark .mood-card{{background:#1A1400;border-color:var(--border)}}
     body.dark .moods-modal-box{{background:var(--bg)}}
     body.dark .moods-modal-head{{background:var(--bg)}}
 
@@ -459,14 +459,14 @@ def build():
     .btn-export:hover{{background:var(--sg-dark)}}
     .export-bar{{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:8px 16px;background:var(--white);border-bottom:1px solid var(--border)}}
     .export-bar-label{{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}}
-    .btn-export-all{{background:#1a7a4a;color:#fff;border:none;border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
-    .btn-export-all:hover{{background:#145e38}}
-    .btn-export-avail{{background:var(--sg-pink);color:#fff;border:none;border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
-    .btn-export-avail:hover{{background:#d4708a}}
+    .btn-export-all{{background:#1A1A1A;color:#fff;border:none;border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
+    .btn-export-all:hover{{background:#333333}}
+    .btn-export-avail{{background:var(--sg-pink);color:#111;border:none;border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
+    .btn-export-avail:hover{{background:#DDB800}}
     body.dark .export-bar{{background:var(--white);border-color:var(--border)}}
-    body.dark .btn-export-all{{background:#4ade80;color:#0d1a11}}
-    body.dark .btn-export-all:hover{{background:#22c55e}}
-    body.dark .btn-export-avail{{background:#e88fa2;color:#1a0a0e}}
+    body.dark .btn-export-all{{background:#F5C228;color:#111100}}
+    body.dark .btn-export-all:hover{{background:#FDD000}}
+    body.dark .btn-export-avail{{background:#F5C228;color:#111100}}
     .btn-staff-guide{{background:transparent;color:var(--muted);border:1.5px solid var(--border);border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
     .btn-staff-guide:hover{{border-color:var(--brand);color:var(--brand)}}
 
@@ -498,14 +498,14 @@ def build():
     body.dark .sg-guide-note{{background:#1a1500;border-color:#713f12;color:#fde68a}}
     .export-popup-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;display:flex;align-items:center;justify-content:center}}
     .export-popup-overlay.hidden{{display:none}}
-    .export-popup-box{{background:#e8e0d0;border:3px solid #4a7030;border-radius:20px;padding:28px 32px;text-align:center;max-width:320px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:epPop .35s cubic-bezier(.175,.885,.32,1.275)}}
+    .export-popup-box{{background:#e8e0d0;border:3px solid #1A1A1A;border-radius:20px;padding:28px 32px;text-align:center;max-width:320px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:epPop .35s cubic-bezier(.175,.885,.32,1.275)}}
     @keyframes epPop{{from{{transform:scale(.7);opacity:0}}to{{transform:scale(1);opacity:1}}}}
-    .export-popup-gif{{width:190px;height:190px;object-fit:cover;border-radius:14px;border:3px solid #4a7030;margin-bottom:14px}}
-    .export-popup-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#2a3f1f;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}}
-    .export-popup-sub{{font-size:13px;color:#3d5c2e;font-weight:600;margin-bottom:18px}}
-    .export-popup-btn{{background:#3d5c2e;color:#e88fa2;border:none;border-radius:20px;padding:10px 28px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform .1s}}
-    .export-popup-btn:hover{{background:#2a3f1f}}
-    .export-popup-btn.ready{{animation:epPulse 0.9s ease-in-out infinite;background:#4a7030}}
+    .export-popup-gif{{width:190px;height:190px;object-fit:cover;border-radius:14px;border:3px solid #1A1A1A;margin-bottom:14px}}
+    .export-popup-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#111111;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}}
+    .export-popup-sub{{font-size:13px;color:#444444;font-weight:600;margin-bottom:18px}}
+    .export-popup-btn{{background:#1A1A1A;color:#F5C228;border:none;border-radius:20px;padding:10px 28px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform .1s}}
+    .export-popup-btn:hover{{background:#333333}}
+    .export-popup-btn.ready{{animation:epPulse 0.9s ease-in-out infinite;background:#1A1A1A}}
     @keyframes epPulse{{0%,100%{{transform:scale(1)}}50%{{transform:scale(1.06)}}}}
     .btn-clear{{background:transparent;color:#888;border:1px solid #ccc;border-radius:20px;padding:8px 14px;font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;cursor:pointer}}
     .btn-close-drawer{{background:transparent;color:var(--sg-green);border:2px solid var(--sg-green);border-radius:20px;padding:8px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;text-transform:uppercase;cursor:pointer}}
@@ -523,8 +523,8 @@ def build():
     #scheduleSection{{display:none;padding:24px}}
     #scheduleSection.active{{display:block}}
     .sched-img-section{{margin-bottom:24px}}
-    .sched-img-toggle{{width:100%;background:linear-gradient(135deg,#1a7a4a,#145e38);border:none;border-radius:14px;padding:18px 22px;font-size:1rem;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;box-shadow:0 4px 14px rgba(26,122,74,.25)}}
-    .sched-img-toggle:hover{{background:linear-gradient(135deg,#145e38,#0f4a2c);box-shadow:0 6px 20px rgba(26,122,74,.35);transform:translateY(-1px)}}
+    .sched-img-toggle{{width:100%;background:linear-gradient(135deg,#1A1A1A,#333333);border:none;border-radius:14px;padding:18px 22px;font-size:1rem;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;box-shadow:0 4px 14px rgba(0,0,0,.25)}}
+    .sched-img-toggle:hover{{background:linear-gradient(135deg,#333333,#111111);box-shadow:0 6px 20px rgba(0,0,0,.35);transform:translateY(-1px)}}
     .sched-img-toggle-left{{display:flex;align-items:center;gap:12px}}
     .sched-img-toggle-icon{{font-size:1.6rem;flex-shrink:0}}
     .sched-img-toggle-text{{display:flex;flex-direction:column;gap:2px}}
@@ -556,7 +556,7 @@ def build():
     .sched-filter-select:focus{{border-color:var(--brand)}}
     body.dark .sched-filter-select{{background-color:var(--white);border-color:var(--border)}}
     .sched-day{{margin-bottom:18px;background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden}}
-    .sched-day.today .sched-day-head{{background:var(--brand);color:#fff}}
+    .sched-day.today .sched-day-head{{background:#1A1A1A;color:#F5C228}}
     .sched-day-head{{padding:9px 16px;font-size:.82rem;font-weight:700;background:var(--bg);color:var(--text);display:flex;align-items:center;gap:8px}}
     .sched-today-badge{{background:#fff;color:var(--brand);font-size:.65rem;font-weight:800;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.05em}}
     .sched-shifts{{padding:4px 0}}
@@ -574,15 +574,9 @@ def build():
 <div class="top-bar">🌿 Dinky Dope · Dinkytown · Updated daily at 4:30 PM CST</div>
 <header>
   <div class="header-inner">
-    <div class="mascot-wrap">
-      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb216bXVxcmVpMm1zNTR3NWxob3hoeXloYWFlbWswcW13NnZ3MnlsMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5C29m5sRSYch78Ko3B/giphy.gif" alt="" loading="lazy">
-    </div>
     <a class="logo" href="#">
-      <div><div>Dinky Dope</div><div style="font-size:.7rem;font-weight:400;color:var(--muted)">Dinkytown</div></div>
+      <img src="https://dinkydope.com/wp-content/uploads/2025/10/DinkyDopeLogo-WEB-1.png" alt="Dinky Dope Dispensary" style="height:52px;width:auto;display:block">
     </a>
-    <div class="mascot-wrap">
-      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHAxcXpnaHdqN3QyaGtmaDM5azkyd2hlZndvNHZocncwamd6Y2Z5aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VRvFAP4CXxUQw/giphy.gif" alt="" loading="lazy">
-    </div>
     <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">🌙 Dark</button>
     <div class="header-meta">
       <div>Last updated: <strong>{ts}</strong></div>
@@ -592,8 +586,8 @@ def build():
 </header>
 <div class="export-bar">
   <span class="export-bar-label">⬇ Export Strain Profiles:</span>
-  <button class="btn-export-avail" onclick="showExportPopup('legit-available-guide.docx')">✅ Available Now ({len(all_p)} products)</button>
-  <button class="btn-export-all"   onclick="showExportPopup('legit-master-guide.docx')">📦 Master Cache (all strains)</button>
+  <button class="btn-export-avail" onclick="showExportPopup('dinky-available-guide.docx')">✅ Available Now ({len(all_p)} products)</button>
+  <button class="btn-export-all"   onclick="showExportPopup('dinky-master-guide.docx')">📦 Master Cache (all strains)</button>
   <button class="btn-staff-guide"  onclick="openStaffGuide()" style="margin-left:auto">📖 Staff Guide</button>
 </div>
 
@@ -958,19 +952,19 @@ function clearProfile() {{
 const EXPORT_POPUP_CSS = `
   .welcome-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;display:flex;align-items:center;justify-content:center;animation:fadeIn .3s ease}}
   @keyframes fadeIn{{from{{opacity:0}}to{{opacity:1}}}}
-  .welcome-box{{background:#e8e0d0;border:3px solid #4a7030;border-radius:20px;padding:28px 32px;text-align:center;max-width:340px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:popIn .35s cubic-bezier(.175,.885,.32,1.275)}}
+  .welcome-box{{background:#e8e0d0;border:3px solid #1A1A1A;border-radius:20px;padding:28px 32px;text-align:center;max-width:340px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:popIn .35s cubic-bezier(.175,.885,.32,1.275)}}
   @keyframes popIn{{from{{transform:scale(.7);opacity:0}}to{{transform:scale(1);opacity:1}}}}
-  .welcome-gif{{width:200px;height:200px;object-fit:cover;border-radius:14px;margin-bottom:14px;border:3px solid #4a7030}}
-  .welcome-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#2a3f1f;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}}
-  .welcome-sub{{font-size:13px;color:#3d5c2e;font-weight:600;margin-bottom:18px}}
-  .welcome-close{{background:#3d5c2e;color:#e88fa2;border:none;border-radius:20px;padding:9px 24px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}}
-  .welcome-close:hover{{background:#2a3f1f}}
+  .welcome-gif{{width:200px;height:200px;object-fit:cover;border-radius:14px;margin-bottom:14px;border:3px solid #1A1A1A}}
+  .welcome-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#111111;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}}
+  .welcome-sub{{font-size:13px;color:#444444;font-weight:600;margin-bottom:18px}}
+  .welcome-close{{background:#1A1A1A;color:#F5C228;border:none;border-radius:20px;padding:9px 24px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}}
+  .welcome-close:hover{{background:#333333}}
 `;
 const EXPORT_POPUP_HTML = `
 <div class="welcome-overlay" id="welcomeOverlay" onclick="if(event.target===this)dismissWelcome()">
   <div class="welcome-box">
     <img class="welcome-gif" src="https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif" alt="Welcome">
-    <div class="welcome-title">Welcome to Legit 🍃</div>
+    <div class="welcome-title">Welcome to Dinky Dope ✨</div>
     <div class="welcome-sub">Your strain guide is ready. Enjoy!</div>
     <button class="welcome-close" onclick="dismissWelcome()">Let's Go</button>
   </div>
@@ -993,7 +987,7 @@ function exportGuide() {{
 <title>Dinky Dope – Strain Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root{{--green:#3d5c2e;--pink:#e88fa2;--cream:#f5f0e8;--dark-green:#2a3f1f;--border-green:#4a7030;--text:#1a1a1a}}
+  :root{{--green:#1A1A1A;--pink:#F5C228;--cream:#f5f0e8;--dark-green:#111111;--border-green:#1A1A1A;--text:#1a1a1a}}
   *{{box-sizing:border-box;margin:0;padding:0}}
   body{{background:#e8e0d0;font-family:'Nunito Sans',sans-serif;padding:24px 16px;color:var(--text)}}
   .page{{max-width:720px;margin:0 auto}}
@@ -1030,11 +1024,11 @@ function exportGuide() {{
 ${{EXPORT_POPUP_HTML}}
 <div class="page">
   <div class="header">
-    <div class="logo-badge"><span class="leaf">🍃</span><div class="name">LEGIT<br>CANNABIS</div></div>
+    <div class="logo-badge"><span class="leaf">✨</span><div class="name">DINKY<br>DOPE</div></div>
     <div><div class="header-title">Strain Guide</div><div class="header-sub">Staff Reference · ${{today}}</div></div>
   </div>
   <div class="info-box">
-    <div class="info-title">🍃 Legit Staff Buddy — Staff Guide</div>
+    <div class="info-title">✨ Dinky Dope — Staff Guide</div>
 
     <div style="margin-bottom:12px;">
       <strong>Access:</strong> capitanminovel.github.io/dinky-buddy-api<br>
@@ -1084,7 +1078,7 @@ ${{EXPORT_POPUP_HTML}}
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  a.download = 'legit-strain-guide.html';
+  a.download = 'dinky-strain-guide.html';
   a.click();
   URL.revokeObjectURL(url);
 }}
@@ -1117,16 +1111,16 @@ function exportAll(mode) {{
 
   const cards = keys.map(k => buildSgCard(k, true)).join('');
   const title = mode === 'avail' ? 'Available Now' : 'Master Strain Cache';
-  const fname = mode === 'avail' ? 'legit-available-guide.html' : 'legit-master-guide.html';
+  const fname = mode === 'avail' ? 'dinky-available-guide.html' : 'dinky-master-guide.html';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Legit Cannabis – ${{title}}</title>
+<title>Dinky Dope – ${{title}}</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root{{--green:#3d5c2e;--pink:#e88fa2;--cream:#f5f0e8;--dark-green:#2a3f1f;--border-green:#4a7030;--text:#1a1a1a}}
+  :root{{--green:#1A1A1A;--pink:#F5C228;--cream:#f5f0e8;--dark-green:#111111;--border-green:#1A1A1A;--text:#1a1a1a}}
   *{{box-sizing:border-box;margin:0;padding:0}}
   body{{background:#e8e0d0;font-family:'Nunito Sans',sans-serif;padding:24px 16px;color:var(--text)}}
   .page{{max-width:720px;margin:0 auto}}
@@ -1157,7 +1151,7 @@ function exportAll(mode) {{
 ${{EXPORT_POPUP_HTML}}
 <div class="page">
   <div class="header">
-    <div class="logo-badge"><span class="leaf">🍃</span><div class="name">LEGIT<br>CANNABIS</div></div>
+    <div class="logo-badge"><span class="leaf">✨</span><div class="name">DINKY<br>DOPE</div></div>
     <div><div class="header-title">${{title}}</div><div class="header-sub">Staff Reference · ${{today}}</div></div>
   </div>
   ${{cards}}
@@ -1463,7 +1457,7 @@ function openStaffGuide() {{
       <div class="sg-guide-card">
         <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🎯</span><span class="sg-guide-card-name">Mood Filter</span></div>
         <div class="sg-guide-card-body">Tap any mood chip to score and sort every card 1–10 for that vibe. Border color shows match strength at a glance:<br><br>
-          <strong style="color:#16a34a">🟢 Green border</strong> — strong match (7+)<br>
+          <strong style="color:#C9A000">🟡 Gold border</strong> — strong match (7+)<br>
           <strong style="color:#ca8a04">🟡 Amber border</strong> — decent match (4–6)<br>
           <strong style="color:#6b7280">⚫ Gray border</strong> — weak match (1–3)<br><br>
           Tap <strong>ℹ️ How it works</strong> next to the mood chips for the full science breakdown.
@@ -1620,7 +1614,7 @@ document.addEventListener('DOMContentLoaded', function() {{
   <div class="pin-box hidden" id="pinCaution">
     <h2>⚠ Use With Caution</h2>
     <p style="margin:12px 0 18px;font-size:.9rem;line-height:1.6;color:#555;">This reflects the schedule as originally sent.<br><br>If changes were made after it was sent, refer to the <strong>physical schedule posted at work</strong>.</p>
-    <button onclick="dismissCaution()" style="background:#3d5c2e;color:#fff;border:none;border-radius:20px;padding:10px 28px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;">Got it — View Schedule</button>
+    <button onclick="dismissCaution()" style="background:#1A1A1A;color:#F5C228;border:none;border-radius:20px;padding:10px 28px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;">Got it — View Schedule</button>
   </div>
 </div>
 
@@ -1904,7 +1898,7 @@ def build_docx(all_p, products_db, strains):
         print(f"Built docx → {path}  ({sum(len(v) for v in by_cat.values())} strains)")
 
     # Available Now — only in-stock scraped products
-    _write(docs_dir / "legit-available-guide.docx", all_p, "Available Now")
+    _write(docs_dir / "dinky-available-guide.docx", all_p, "Available Now")
 
     # Master Cache — all enriched keys, supplemented by products_db
     master_keys = list({**{k: products_db[k] for k in products_db}, **{}}.keys())
@@ -1912,7 +1906,7 @@ def build_docx(all_p, products_db, strains):
     for k in strains:
         p = products_db.get(k, {"name": k, "category": "flower"})
         master_items.append((k, p))
-    _write(docs_dir / "legit-master-guide.docx", master_items, "Master Strain Cache")
+    _write(docs_dir / "dinky-master-guide.docx", master_items, "Master Strain Cache")
 
 
 build()
