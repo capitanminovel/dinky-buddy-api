@@ -573,7 +573,7 @@ def product_key(p: dict) -> str:
 
 def load_db() -> dict:
     if DATA_FILE.exists():
-        with open(DATA_FILE) as f: return json.load(f)
+        with open(DATA_FILE, encoding='utf-8-sig') as f: return json.load(f)
     return {"products": {}, "last_updated": None, "store": "Dinkytown"}
 
 def save_db(db: dict):
