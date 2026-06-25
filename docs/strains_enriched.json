@@ -544,13 +544,21 @@
     }
   },
   "9934b135c2db": {
-    "lineage": "N/A — distillate edible",
-    "therapeutic": "",
-    "negative": "",
-    "aroma": "",
-    "misc": "",
-    "mood_ratings": {},
-    "strain_type": "hybrid"
+    "lineage": "Not strain-specific — THC distillate infused gummies",
+    "therapeutic": "Chronic pain, insomnia, stress, anxiety — long-lasting body-focused relief (4–8 hours)",
+    "negative": "Delayed onset 30–90 min. Do NOT re-dose too early. Dry mouth, possible paranoia if over-consumed. Start low.",
+    "aroma": "N/A — raspberry candy flavor",
+    "misc": "Grasslandz brand. 100mg total THC per package — 10mg per piece (10 pieces). Lab-tested distillate. Edibles provide longer-lasting, body-focused effects vs inhalation. Onset 30–90 min, peak 2–4 hrs, total duration 4–8 hrs. Ideal for sleep and extended pain relief. New consumers: start with 5mg (half piece).",
+    "mood_ratings": {
+      "wind_down": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
   },
   "f3490bc245c8": {
     "lineage": "N/A — distillate edible",
@@ -562,40 +570,72 @@
     "strain_type": "hybrid"
   },
   "961994b89518": {
-    "lineage": "N/A — distillate edible",
-    "therapeutic": "",
-    "negative": "",
-    "aroma": "",
-    "misc": "",
-    "mood_ratings": {},
-    "strain_type": "hybrid"
+    "lineage": "Not strain-specific — THC distillate infused gummies",
+    "therapeutic": "Chronic pain, insomnia, stress, anxiety — long-lasting body-focused relief (4–8 hours)",
+    "negative": "Delayed onset 30–90 min. Do NOT re-dose too early. Dry mouth, possible paranoia if over-consumed. Start low.",
+    "aroma": "N/A — peach candy flavor",
+    "misc": "Grasslandz brand. 100mg total THC per package — 10mg per piece (10 pieces). Lab-tested distillate. Edibles ideal for those who prefer not to inhale or need longer-duration relief. Onset 30–90 min. New consumers: start with 5mg (half piece) and wait the full 90 minutes before re-evaluating.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
   },
   "dd494fcaec3c": {
-    "lineage": "N/A — distillate edible",
-    "therapeutic": "",
-    "negative": "",
-    "aroma": "",
-    "misc": "",
-    "mood_ratings": {},
-    "strain_type": "hybrid"
+    "lineage": "Edible product — exact strain genetics not specified; 'Sour Blueberry' likely draws inspiration from Sour Diesel x Blueberry (DJ Short's Blueberry) hybrid flavor profiles used in formulation",
+    "therapeutic": "Stress relief, mild to moderate pain management, anxiety reduction, appetite stimulation, mood elevation, insomnia support at higher doses",
+    "negative": "Overconsumption risk due to high potency concentrate (94.2% THC distillate); possible dry mouth, paranoia, dizziness, anxiety, or couch-lock — especially for new or low-tolerance users; delayed onset (30–120 min) increases accidental overconsumption risk",
+    "aroma": "As an edible, expect a candy-forward scent blending sweet ripe blueberry with a tangy sour citrus bite. The flavor profile is likely dominated by artificial or natural fruit flavoring designed to mimic a blueberry sour candy experience.",
+    "misc": "Each piece contains 10mg THC — a standard single serving recommended for most adults; beginners should start with 2.5–5mg (half or quarter piece). The 94.2% THC figure refers to the distillate concentrate used in formulation, not the per-piece dose. Wait at least 90 minutes before re-dosing to accurately assess effects. Grasslandz is a cannabis brand focused on accessible, consistent dosing in edible form.",
+    "mood_ratings": {
+      "wind_down": 5,
+      "anxiety_relief": 4,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
   },
   "a1d94f46edc0": {
-    "lineage": "N/A — distillate edible",
-    "therapeutic": "",
-    "negative": "",
-    "aroma": "",
-    "misc": "",
-    "mood_ratings": {},
-    "strain_type": "hybrid"
+    "lineage": "Infused edible product — no specific strain lineage applicable. This is a manufactured cannabis edible by Nebula, dosed at 10mg THC per serving with 10 servings per bar (100mg total).",
+    "therapeutic": "Stress relief, mild to moderate pain management, appetite stimulation, sleep aid (at higher doses), anxiety reduction",
+    "negative": "Delayed onset (30–120 minutes) may lead to overconsumption; dry mouth, elevated heart rate, anxiety or paranoia if dose exceeded, couch-lock, impaired coordination and cognition, not recommended for first-time consumers without guidance",
+    "aroma": "As a gummy edible, this product carries a bright, tart green apple candy scent with a sugary-sweet finish. The aroma is artificially flavored, evoking crisp Granny Smith apple with minimal cannabis odor.",
+    "misc": "This is a 100mg THC edible bar by Nebula, broken into 10mg per-piece servings — a standard beginner-to-intermediate dose. New consumers should start with half a serving (5mg) and wait at least 90 minutes before redosing to assess tolerance. Experienced consumers may find 10–20mg appropriate; the THC percentage listed (101%) likely reflects concentration within the infused oil or extract used, not the product as a whole.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
   },
   "487b0db2bda3": {
-    "lineage": "N/A — distillate edible",
-    "therapeutic": "",
-    "negative": "",
-    "aroma": "",
-    "misc": "",
-    "mood_ratings": {},
-    "strain_type": "hybrid"
+    "lineage": "Cannabis-infused edible product by Nebula; no specific strain lineage disclosed. Formulated with distillate or concentrate at 91.6% THC potency per extract used in production.",
+    "therapeutic": "Stress relief, anxiety reduction, mild to moderate pain management, appetite stimulation, insomnia support, mood elevation",
+    "negative": "Overconsumption risk for novice users, dry mouth, elevated heart rate, anxiety or paranoia if dose exceeded, delayed onset may lead to accidental overconsumption, not recommended for those sensitive to THC or with heart conditions",
+    "aroma": "True to its name, this edible carries a sweet, carnival-style cotton candy aroma with sugary notes of spun sugar and fruity candy undertones. The gummy bar format delivers a confection-forward scent profile with no notable cannabis odor.",
+    "misc": "Each bar contains 100mg total THC divided into 10mg servings, making it beginner-accessible when dosed carefully. Nebula's Cotton Candy Gummy Bar is formulated with high-potency distillate (91.6% THC), meaning a small amount of extract delivers significant effect. New consumers should start with one serving (10mg), wait 60–90 minutes before redosing, as edible onset varies greatly depending on metabolism, body weight, and whether consumed with food.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
   },
   "e1138882d6cd": {
     "lineage": "Chemdawg 91 x Super Skunk (Original breeder widely attributed to AJ/Asshole Joe & Weasel, New York, early 1990s; later popularized through East Coast cannabis circles)",

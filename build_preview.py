@@ -88,9 +88,10 @@ def build_card(p, key):
     brand_h  = f'<div class="card-brand">{p["brand"]}</div>'   if p.get("brand")  else ""
 
     terpenes_csv = ",".join(p.get("terpenes") or [])
+    strain_key   = (p.get("strain_type") or "").lower().split("(")[0].strip()
 
     return f"""
-    <div class="card" data-key="{key}" data-terpenes="{terpenes_csv}" onclick="openModal('{key}')">
+    <div class="card" data-key="{key}" data-terpenes="{terpenes_csv}" data-strain="{strain_key}" onclick="openModal('{key}')">
       <div class="card-img">{img}{badges}{potency}<div class="rating-badge"></div></div>
       <div class="card-body">
         {brand_h}
@@ -361,6 +362,16 @@ def build():
     .mood-chip.on{{background:var(--sg-green);color:var(--sg-pink);border-color:var(--sg-green);font-weight:700}}
     .mood-clear{{border:none;background:none;color:var(--muted);font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 8px;border-radius:20px;white-space:nowrap;font-family:inherit}}
     .mood-clear:hover{{color:#e53e3e}}
+    .type-filter-row{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:2px}}
+    .type-filter-label{{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}}
+    .type-chips{{display:flex;gap:5px;flex-wrap:wrap}}
+    .type-chip{{border:1.5px solid var(--border);background:var(--bg);color:var(--muted);border-radius:20px;padding:4px 11px;font-size:.73rem;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit}}
+    .type-chip:hover{{border-color:var(--brand);color:var(--brand)}}
+    .type-chip.on[data-type=""]{{background:var(--brand);color:#fff;border-color:var(--brand)}}
+    .type-chip.on[data-type="indica"]{{background:var(--indica);color:#fff;border-color:var(--indica)}}
+    .type-chip.on[data-type="sativa"]{{background:var(--sativa);color:#fff;border-color:var(--sativa)}}
+    .type-chip.on[data-type="hybrid"]{{background:var(--hybrid);color:#fff;border-color:var(--hybrid)}}
+    .type-chip.on[data-type="cbd"]{{background:var(--cbd);color:#fff;border-color:var(--cbd)}}
     .mood-status{{font-size:.78rem;color:var(--sg-green);font-weight:500;padding:2px 0 0;line-height:1.45}}
     .mood-status strong{{font-weight:700}}
     .mood-zero{{font-size:.85rem;color:var(--muted);text-align:center;padding:32px 0;font-weight:500}}
@@ -629,6 +640,16 @@ def build():
       <button class="mood-clear hidden" id="moodClear" onclick="clearMood()">✕ Mood</button>
       <button class="mood-info-btn" onclick="openMoodsInfo()" title="Learn the science behind each mood filter">ℹ️ How it works</button>
     </div>
+    <div class="type-filter-row">
+      <span class="type-filter-label">Type</span>
+      <div class="type-chips" id="typeChips">
+        <button class="type-chip on" data-type="" onclick="filterType(this)">All</button>
+        <button class="type-chip" data-type="indica" onclick="filterType(this)">Indica</button>
+        <button class="type-chip" data-type="sativa" onclick="filterType(this)">Sativa</button>
+        <button class="type-chip" data-type="hybrid" onclick="filterType(this)">Hybrid</button>
+        <button class="type-chip" data-type="cbd" onclick="filterType(this)">CBD</button>
+      </div>
+    </div>
     <div class="search-row">
       <div class="search-wrap">
         <span class="search-icon">🔍</span>
@@ -777,6 +798,7 @@ let profileKeys  = [];
 let activeMood   = null;
 let activeCat    = 'all';
 let activeSearch = '';
+let activeType   = '';
 let searchTimer  = null;
 
 // Research-backed terpene → effect map (Russo 2011, Kamal 2018, Smith 2022)
@@ -850,7 +872,7 @@ function buildSgCard(key, forExport) {{
   const tx      = p.terpenes || [];
   const derived = derivedEffects(tx);
   const rows = [
-    s.lineage    ? `<div class="sg-row"><strong>Lineage:</strong> ${{s.lineage}}</div>` : '',
+    s.lineage && s.lineage !== 'N/A — distillate edible' ? `<div class="sg-row"><strong>Lineage:</strong> ${{s.lineage}}</div>` : '',
     derived.length ? `<div class="sg-row"><strong>Effects</strong> <span style="font-size:10px;color:#888;font-weight:400">(from COA terpenes)</span><strong>:</strong> ${{fmtList(derived)}}</div>` : '',
     p.flavors?.length ? `<div class="sg-row"><strong>Flavors:</strong> ${{fmtList(p.flavors)}}</div>` : '',
     tx.length    ? `<div class="sg-row"><strong>Terpenes:</strong> ${{fmtList(tx)}}</div>` : '',
@@ -858,6 +880,7 @@ function buildSgCard(key, forExport) {{
     s.negative   ? `<div class="sg-row"><strong>Negative:</strong> ${{s.negative}}</div>` : '',
     s.aroma      ? `<div class="sg-row"><strong>Aroma:</strong> ${{s.aroma}}</div>` : '',
     s.misc       ? `<div class="sg-row"><strong>Misc:</strong> ${{s.misc}}</div>` : '',
+    (!s.misc && p.description) ? `<div class="sg-row"><strong>About:</strong> ${{p.description}}</div>` : '',
   ].join('');
 
   return `
@@ -1180,6 +1203,9 @@ function applyFilters() {{
     const section = card.closest('.section');
     const catOk = activeCat === 'all' || (section && section.dataset.cat === activeCat);
 
+    // Strain type check
+    const typeOk = !activeType || (card.dataset.strain || '') === activeType;
+
     // Mood check — driven entirely by COA terpenes, not dispensary effect labels
     let moodOk = true;
     if (mood) {{
@@ -1207,7 +1233,7 @@ function applyFilters() {{
       searchOk = blob.includes(q);
     }}
 
-    const visible = catOk && moodOk && searchOk;
+    const visible = catOk && typeOk && moodOk && searchOk;
     card.classList.toggle('hidden', !visible);
 
     // Rating badge + match border
@@ -1334,6 +1360,13 @@ function clearMood() {{
   activeMood = null;
   document.querySelectorAll('.mood-chip').forEach(c => c.classList.remove('on'));
   document.getElementById('moodClear').classList.add('hidden');
+  applyFilters();
+}}
+
+function filterType(btn) {{
+  document.querySelectorAll('.type-chip').forEach(c => c.classList.remove('on'));
+  btn.classList.add('on');
+  activeType = btn.dataset.type;
   applyFilters();
 }}
 

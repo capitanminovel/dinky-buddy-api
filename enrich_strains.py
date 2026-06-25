@@ -179,19 +179,7 @@ def run():
             cat = (product.get("category") or "").lower()
 
             if cat in EDIBLE_CATEGORIES:
-                print(f"  → {product.get('name')} — edible, skipping enrichment")
-                existing[key] = {
-                    "lineage": "N/A — distillate edible",
-                    "therapeutic": "",
-                    "negative": "",
-                    "aroma": "",
-                    "misc": "",
-                    "mood_ratings": {},
-                    "strain_type": "hybrid",
-                }
-                with open(STRAINS_PATH, "w") as f:
-                    json.dump(existing, f, indent=2, ensure_ascii=False)
-                continue
+                print(f"  → {product.get('name')} — edible, enriching with dosing focus")
 
             # Check cross-store cache first — same name+brand means same supplier SKU
             if key in cross_store:
