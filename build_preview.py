@@ -56,8 +56,11 @@ def build_card(p, key):
            if p.get("image")
            else f'<div class="no-img">{ci}</div>')
 
-    strain_b = (f'<span class="strain-badge {strain_class(p["strain_type"])}">{p["strain_type"]}</span>'
-                if p.get("strain_type") else "")
+    _STRAIN_LABELS = {"Hybrid (Sativa)": "Sativa Hybrid", "Hybrid (Indica)": "Indica Hybrid"}
+    strain_raw     = p.get("strain_type") or ""
+    strain_label   = _STRAIN_LABELS.get(strain_raw, strain_raw)
+    strain_b = (f'<span class="strain-badge {strain_class(strain_raw)}">{strain_label}</span>'
+                if strain_raw else "")
     age_b    = new_badge(p.get("first_seen", ""))
     badges   = f'<div class="badges">{age_b}</div>' if age_b else ""
 
@@ -88,7 +91,12 @@ def build_card(p, key):
     brand_h  = f'<div class="card-brand">{p["brand"]}</div>'   if p.get("brand")  else ""
 
     terpenes_csv = ",".join(p.get("terpenes") or [])
-    strain_key   = (p.get("strain_type") or "").lower().split("(")[0].strip()
+    _st = (p.get("strain_type") or "").lower()
+    if "sativa" in _st:   strain_key = "sativa"
+    elif "indica" in _st: strain_key = "indica"
+    elif "hybrid" in _st: strain_key = "hybrid"
+    elif "cbd"    in _st: strain_key = "cbd"
+    else:                 strain_key = _st.split()[0] if _st else ""
 
     return f"""
     <div class="card" data-key="{key}" data-terpenes="{terpenes_csv}" data-strain="{strain_key}" onclick="openModal('{key}')">
