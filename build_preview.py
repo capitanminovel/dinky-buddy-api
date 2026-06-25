@@ -59,7 +59,7 @@ def build_card(p, key):
     strain_b = (f'<span class="strain-badge {strain_class(p["strain_type"])}">{p["strain_type"]}</span>'
                 if p.get("strain_type") else "")
     age_b    = new_badge(p.get("first_seen", ""))
-    badges   = f'<div class="badges">{age_b}{strain_b}</div>' if (strain_b or age_b) else ""
+    badges   = f'<div class="badges">{age_b}</div>' if age_b else ""
 
     thc_pill = f'<span class="potency-pill thc">THC {p["thc"]}</span>' if p.get("thc") else ""
     cbd_pill = f'<span class="potency-pill cbd">CBD {p["cbd"]}</span>' if p.get("cbd") else ""
@@ -94,6 +94,7 @@ def build_card(p, key):
       <div class="card-img">{img}{badges}{potency}<div class="rating-badge"></div></div>
       <div class="card-body">
         {brand_h}
+        {strain_b}
         <div class="card-name">{p["name"]}</div>
         {weight_h}{minor_h}{terp_h}
         <div class="price-section">{price_h}</div>
@@ -203,7 +204,7 @@ def build():
     products_js  = json.dumps({k: v for k, v in db["products"].items()}, ensure_ascii=False)
     strains_js   = json.dumps(strains, ensure_ascii=False)
     schedule_js  = json.dumps(schedule, ensure_ascii=False)
-    tab_btns    += '\n<button class="tab sched-tab" data-cat="schedule" onclick="openScheduleTab(this)">📅 Schedule</button>'
+    tab_btns    += '\n<!-- <button class="tab sched-tab" data-cat="schedule" onclick="openScheduleTab(this)">📅 Schedule</button> -->'
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -585,9 +586,9 @@ def build():
   </div>
 </header>
 <div class="export-bar">
-  <span class="export-bar-label">⬇ Export Strain Profiles:</span>
+  <!-- <span class="export-bar-label">⬇ Export Strain Profiles:</span>
   <button class="btn-export-avail" onclick="showExportPopup('dinky-available-guide.docx')">✅ Available Now ({len(all_p)} products)</button>
-  <button class="btn-export-all"   onclick="showExportPopup('dinky-master-guide.docx')">📦 Master Cache (all strains)</button>
+  <button class="btn-export-all"   onclick="showExportPopup('dinky-master-guide.docx')">📦 Master Cache (all strains)</button> -->
   <button class="btn-staff-guide"  onclick="openStaffGuide()" style="margin-left:auto">📖 Staff Guide</button>
 </div>
 
@@ -600,7 +601,7 @@ def build():
     <button class="export-popup-btn" id="exportGoBtn">Let's Go ⬇</button>
   </div>
 </div>
-<div class="legend">
+<!-- <div class="legend">
   <div class="legend-item"><span class="strain-badge strain-indica">Indica</span></div>
   <div class="legend-item"><span class="strain-badge strain-sativa">Sativa</span></div>
   <div class="legend-item"><span class="strain-badge strain-hybrid">Hybrid</span></div>
@@ -609,7 +610,7 @@ def build():
   <div class="legend-item"><span class="recent-badge">New (2d)</span> Within 3 days</div>
   <div class="legend-item"><span class="sold-thc" style="background:#fde68a;color:#92400e;padding:2px 7px;border-radius:10px;font-size:.75rem;font-weight:600">🚫 Gone</span> Sold out in last 2 days</div>
   <div class="legend-item" style="margin-left:auto;color:var(--brand);font-weight:600">Tap any product for strain guide →</div>
-</div>
+</div> -->
 <div class="tabs-wrap"><div class="tabs" id="tabs">{tab_btns}</div></div>
 <main>
   <div class="mood-bar" id="moodBar">
