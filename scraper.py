@@ -568,7 +568,10 @@ def _normalize(s: str) -> str:
     return s.rstrip(" -–—.,")
 
 def product_key(p: dict) -> str:
-    key = f"{_normalize(p.get('name',''))}-{_normalize(p.get('brand',''))}"
+    # Include category so same-name products in different form factors (flower vs pre-roll)
+    # get distinct keys and don't overwrite each other during the scrape loop.
+    cat = _normalize(p.get('category', ''))
+    key = f"{_normalize(p.get('name',''))}-{_normalize(p.get('brand',''))}-{cat}"
     return hashlib.md5(key.encode()).hexdigest()[:12]
 
 def load_db() -> dict:
