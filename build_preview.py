@@ -1,6 +1,7 @@
 """Renders products.json into a fully static HTML file — no JS fetch needed."""
 import json
 import os
+import base64
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from docx import Document
@@ -13,6 +14,8 @@ STRAINS_DATA = Path(__file__).parent / "docs" / "strains_enriched.json"
 OUT          = Path(__file__).parent / "docs" / "index.html"
 NEW_DAYS     = 3
 SOLD_DAYS    = 2
+REFRESH_TOKEN = os.environ.get('REFRESH_TOKEN', '')
+REFRESH_TOKEN_B64 = base64.b64encode(REFRESH_TOKEN.encode()).decode() if REFRESH_TOKEN else ''
 
 CAT_ICONS = {
     "flower":"🌿","pre-roll":"🚬","pre_roll":"🚬","preroll":"🚬",
@@ -603,7 +606,7 @@ def build():
     </a>
     <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">🌙 Dark Theme</button>
     <div class="header-meta">
-      <div>Last updated: <strong>{ts}</strong> <button class='refresh-btn' id='refreshBtn' onclick='triggerScrape()' title='Trigger a fresh scrape'>🔄</button></div>
+      <div>Last updated: <strong>{ts}</strong> {"<button class='refresh-btn' id='refreshBtn' onclick='triggerScrape()' title='Trigger a fresh scrape'>🔄</button>" if REFRESH_TOKEN else ""}</div>
       <div>{len(all_p)} products in stock</div>
     </div>
   </div>
@@ -1658,20 +1661,13 @@ document.addEventListener('DOMContentLoaded', function() {{
 async function triggerScrape() {{
   var btn = document.getElementById('refreshBtn');
   if (!btn) return;
-  var token = localStorage.getItem('dinky-refresh-token');
-  if (!token) {{
-    token = prompt('Enter your GitHub PAT (workflow scope) to enable menu refresh:');
-    if (!token) return;
-    localStorage.setItem('dinky-refresh-token', token.trim());
-    token = token.trim();
-  }}
   btn.disabled = true;
   btn.textContent = '⏳';
   try {{
     var r = await fetch('https://api.github.com/repos/capitanminovel/dinky-buddy-api/actions/workflows/daily-scrape.yml/dispatches', {{
       method: 'POST',
       headers: {{
-        'Authorization': 'Bearer ' + token,
+        'Authorization': 'Bearer ' + atob('{REFRESH_TOKEN_B64}'),
         'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json'
       }},
@@ -1680,11 +1676,6 @@ async function triggerScrape() {{
     if (r.status === 204) {{
       btn.textContent = '✓';
       btn.title = 'Triggered! Refresh the page in ~2 minutes.';
-    }} else if (r.status === 401) {{
-      localStorage.removeItem('dinky-refresh-token');
-      btn.textContent = '⚠️';
-      btn.title = 'Bad token — cleared. Click again to re-enter.';
-      btn.disabled = false;
     }} else {{
       btn.textContent = '⚠️';
       btn.title = 'Failed (status ' + r.status + ')';
