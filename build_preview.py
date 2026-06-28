@@ -1,6 +1,7 @@
 """Renders products.json into a fully static HTML file — no JS fetch needed."""
 import json
 import os
+import base64
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from docx import Document
@@ -14,6 +15,7 @@ OUT          = Path(__file__).parent / "docs" / "index.html"
 NEW_DAYS     = 3
 SOLD_DAYS    = 2
 REFRESH_TOKEN = os.environ.get('REFRESH_TOKEN', '')
+REFRESH_TOKEN_B64 = base64.b64encode(REFRESH_TOKEN.encode()).decode() if REFRESH_TOKEN else ''
 
 CAT_ICONS = {
     "flower":"🌿","pre-roll":"🚬","pre_roll":"🚬","preroll":"🚬",
@@ -1665,7 +1667,7 @@ async function triggerScrape() {{
     var r = await fetch('https://api.github.com/repos/capitanminovel/dinky-buddy-api/actions/workflows/daily-scrape.yml/dispatches', {{
       method: 'POST',
       headers: {{
-        'Authorization': 'Bearer {REFRESH_TOKEN}',
+        'Authorization': 'Bearer ' + atob('{REFRESH_TOKEN_B64}'),
         'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json'
       }},
