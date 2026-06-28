@@ -45,8 +45,6 @@ jobs:
         run: python enrich_strains.py
 
       - name: Build static HTML from scraped data
-        env:
-          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: python build_preview.py
 
       - name: Commit updated data
