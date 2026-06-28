@@ -1,5 +1,6 @@
 """Renders products.json into a fully static HTML file — no JS fetch needed."""
 import json
+import os
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from docx import Document
@@ -12,6 +13,7 @@ STRAINS_DATA = Path(__file__).parent / "docs" / "strains_enriched.json"
 OUT          = Path(__file__).parent / "docs" / "index.html"
 NEW_DAYS     = 3
 SOLD_DAYS    = 2
+REFRESH_TOKEN = os.environ.get('REFRESH_TOKEN', '')
 
 CAT_ICONS = {
     "flower":"🌿","pre-roll":"🚬","pre_roll":"🚬","preroll":"🚬",
@@ -288,6 +290,9 @@ def build():
     .dark-toggle:hover{{border-color:var(--brand);color:var(--brand)}}
     .header-meta{{margin-left:auto;text-align:right;font-size:.75rem;color:var(--muted);line-height:1.5}}
     .header-meta strong{{color:var(--brand)}}
+    .refresh-btn{{background:none;border:none;cursor:pointer;font-size:.85rem;opacity:.45;padding:0 2px;vertical-align:middle;transition:opacity .15s;line-height:1}}
+    .refresh-btn:hover{{opacity:1}}
+    .refresh-btn:disabled{{cursor:default;opacity:.3}}
     .tabs-wrap{{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:20}}
     .tabs{{max-width:1400px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;padding:0 24px;scrollbar-width:none}}
     .tabs::-webkit-scrollbar{{display:none}}
@@ -597,9 +602,9 @@ def build():
     <a class="logo" href="#">
       <img src="https://dinkydope.com/wp-content/uploads/2025/10/DinkyDopeLogo-WEB-1.png" alt="Dinky Dope Dispensary" style="height:52px;width:auto;display:block">
     </a>
-    <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">🌙 Dark</button>
+    <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">🌙 Dark Theme</button>
     <div class="header-meta">
-      <div>Last updated: <strong>{ts}</strong></div>
+      <div>Last updated: <strong>{ts}</strong> {"<button class='refresh-btn' id='refreshBtn' onclick='triggerScrape()' title='Trigger a fresh scrape'>🔄</button>" if REFRESH_TOKEN else ""}</div>
       <div>{len(all_p)} products in stock</div>
     </div>
   </div>
@@ -1595,13 +1600,13 @@ function closeStaffGuide() {{
 function toggleDark() {{
   const dark = document.body.classList.toggle('dark');
   localStorage.setItem('lc-dark', dark ? '1' : '0');
-  document.getElementById('darkToggle').textContent = dark ? '☀️ Light' : '🌙 Dark';
+  document.getElementById('darkToggle').textContent = dark ? '☀️ Light Theme' : '🌙 Dark Theme';
 }}
 (function() {{
   if (localStorage.getItem('lc-dark') === '1') {{
     document.body.classList.add('dark');
     document.addEventListener('DOMContentLoaded', () => {{
-      document.getElementById('darkToggle').textContent = '☀️ Light';
+      document.getElementById('darkToggle').textContent = '☀️ Light Theme';
     }});
   }}
 }})();
@@ -1650,6 +1655,36 @@ document.addEventListener('DOMContentLoaded', function() {{
     if (TERP[name]) el.title = name + ' — ' + TERP[name];
   }});
 }});
+
+async function triggerScrape() {{
+  var btn = document.getElementById('refreshBtn');
+  if (!btn) return;
+  btn.disabled = true;
+  btn.textContent = '⏳';
+  try {{
+    var r = await fetch('https://api.github.com/repos/capitanminovel/dinky-buddy-api/actions/workflows/daily-scrape.yml/dispatches', {{
+      method: 'POST',
+      headers: {{
+        'Authorization': 'Bearer {REFRESH_TOKEN}',
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      }},
+      body: JSON.stringify({{ref: 'main'}})
+    }});
+    if (r.status === 204) {{
+      btn.textContent = '✓';
+      btn.title = 'Triggered! Refresh the page in ~2 minutes.';
+    }} else {{
+      btn.textContent = '⚠️';
+      btn.title = 'Failed (status ' + r.status + ')';
+      btn.disabled = false;
+    }}
+  }} catch(e) {{
+    btn.textContent = '⚠️';
+    btn.title = 'Network error';
+    btn.disabled = false;
+  }}
+}}
 </script>
 
 <!-- ── PIN overlay ── -->

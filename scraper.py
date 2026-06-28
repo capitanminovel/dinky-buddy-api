@@ -292,7 +292,10 @@ def try_sweed_api() -> list[dict]:
                     break
                 any_success = True
                 for p in found:
-                    all_products[product_key(p)] = p
+                    k = product_key(p)
+                    if k in all_products:
+                        log(f"  COLLISION [{cat_name}]: '{p['name']}' ({p.get('weight','')}) overwrites '{all_products[k]['name']}' ({all_products[k].get('weight','')})")
+                    all_products[k] = p
                 log(f"Direct API [{cat_name}] page {page_num}: {len(found)} products")
                 if len(found) < 24:
                     break
