@@ -8,8 +8,7 @@ on:
     - cron: '0 19 * * *'
     # 4:30 PM CST = 22:30 UTC
     - cron: '30 22 * * *'
-    # 10:00 PM CST = 04:00 UTC
-    - cron: '0 4 * * *'
+
     # targets ~7:00 AM CST (sched 5:00 AM CST = 11:00 UTC, ~2hr delay)
     - cron: '0 11 * * *'
     # targets ~8:00 PM CST (sched 6:30 PM CST = 00:30 UTC, ~1.5hr delay)
