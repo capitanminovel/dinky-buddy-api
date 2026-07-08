@@ -1102,5 +1102,23 @@
     "negative": "Delayed onset (30–120 minutes), overconsumption risk for new users, dry mouth, increased heart rate, anxiety or paranoia at high doses, impaired coordination and cognition",
     "aroma": "Bright and candy-like with a punchy sweet cherry note layered over a zesty citrus lime tartness. The aroma mimics a classic sour gummy candy, inviting and fruit-forward with no detectable cannabis scent.",
     "misc": "Each Cherry Lime Gummy Bar by Nebula contains 10mg THC per gummy piece and 100mg THC total per bar, making it suitable for both beginner and experienced consumers depending on portion size. New users should start with half a gummy (5mg) or one full gummy (10mg) and wait at least 90 minutes before redosing to avoid overconsumption. Experienced users may consume 2–3 gummies for stronger effects; store in a cool, dry place and keep out of reach of children and pets."
+  },
+  "a1f133edf450": {
+    "lineage": "MAC (Miracle Alien Cookies) x Grape Stomper — MAC is a three-way cross of Alien Cookies F2 x (Colombian x Starfighter) developed by Capulator; Grape Stomper (aka Sour Grapes) is a cross of Chemdawg Sour D x Purple Elephant from Elite Seeds",
+    "therapeutic": "Stress relief, anxiety reduction, mild depression, chronic pain, muscle tension, appetite stimulation, insomnia (later in the experience)",
+    "negative": "Dry mouth, dry eyes, possible dizziness or mild paranoia at higher doses, couch-lock and sedation as effects progress — pace consumption accordingly",
+    "aroma": "MAC Stomper opens with a pungent, grape-forward sweetness layered over creamy citrus and sour apple, evoking a fruit basket dipped in diesel. As the buds are broken apart, earthy floral undertones emerge — courtesy of linalool and myrcene — with a faint piney sharpness rounding out the bouquet.",
+    "misc": "Produced by Campfire Cannabis, MAC Stomper is a well-balanced indica-leaning hybrid sitting at a potent 23.4% THC, making it best suited for intermediate to experienced consumers. Buds typically display dense, resinous structure with deep purple hues inherited from the Grape Stomper lineage, frosted heavily in trichomes consistent with MAC's genetic legacy. Best consumed in the early evening, as the initial euphoric and giggly uplift gradually transitions into full-body relaxation and sleepiness — ideal for unwinding after a long day or social settings that roll into a restful night.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 7,
+      "anxiety_relief": 5,
+      "lift_up": 2,
+      "get_creative": 4,
+      "get_social": 2,
+      "pain_body": 5,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
   }
 }
