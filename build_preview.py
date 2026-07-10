@@ -253,7 +253,6 @@ def build():
     body.dark .card.match-strong{{border-left:5px solid #F5C228;box-shadow:-2px 0 10px rgba(245,194,40,.3)}}
     body.dark .card.match-good{{border-left:5px solid #fbbf24;box-shadow:none}}
     body.dark .card.match-weak{{border-left:5px solid #475569;box-shadow:none}}
-    body.dark .top-bar{{background:#000000}}
     body.dark .modal-box{{background:#111111}}
     body.dark .sg-card{{background:#1a1a1a;border-color:#1e1e1e}}
     body.dark .sg-name,.dark .sg-row strong{{color:#c8f5d4}}
@@ -267,7 +266,6 @@ def build():
     .tabs-wrap .search-row{{padding:6px 24px 10px;border-top:1px solid #1e1e1e;max-width:640px}}
     .tabs-wrap .search-row .search-wrap{{max-width:100%}}
     body{{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px}}
-    .top-bar{{background:#1A1A1A;color:#F5C228;text-align:center;font-size:.75rem;padding:6px;letter-spacing:.3px}}
     header{{background:var(--white);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:0;z-index:30}}
     .header-inner{{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:16px;height:70px}}
     .logo{{display:flex;align-items:center;text-decoration:none}}
@@ -489,7 +487,6 @@ def build():
   </style>
 </head>
 <body>
-<div class="top-bar">🌿 Dinky Dope · Dinkytown · Updated daily at 4:30 PM CST</div>
 <header>
   <div class="header-inner">
     <a class="logo" href="#">
@@ -1127,7 +1124,13 @@ document.addEventListener('DOMContentLoaded', function() {{
     var cat = tab.dataset.cat;
     var total;
     if (cat === 'all') {{
-      total = document.querySelectorAll('.card').length;
+      // Sum per-category totals rather than counting every .card — new-arrival
+      // cards are intentionally rendered twice (once in the New banner, once
+      // in their category section), which would double-count them here.
+      total = 0;
+      document.querySelectorAll('.section-count[data-total]').forEach(function(el) {{
+        total += parseInt(el.dataset.total, 10) || 0;
+      }});
     }} else {{
       var section = document.querySelector('.section[data-cat="' + cat + '"]');
       if (!section) return;
