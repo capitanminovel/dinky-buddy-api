@@ -1105,7 +1105,7 @@ function toggleDark() {{
   document.getElementById('darkToggle').textContent = dark ? '☀️ Light Theme' : '🌙 Dark Theme';
 }}
 (function() {{
-  if (localStorage.getItem('lc-dark') === '1') {{
+  if (localStorage.getItem('lc-dark') !== '0') {{
     document.body.classList.add('dark');
     document.addEventListener('DOMContentLoaded', () => {{
       document.getElementById('darkToggle').textContent = '☀️ Light Theme';
