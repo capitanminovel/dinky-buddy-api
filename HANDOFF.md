@@ -31,6 +31,14 @@ products.json   strains_enriched.json   docs/index.html
 
 4. **GitHub Actions** (`.github/workflows/daily-scrape.yml`) runs steps 1–3 on a schedule, then commits the updated `docs/` folder back to the repo. GitHub Pages serves `docs/index.html` directly — this is the entire hosting story. There is no droplet, no database, no runtime server.
 
+### Schedule
+
+The workflow is scheduled to target roughly 5 runs a day: **~7:00 AM, 9:00 AM, 1:00 PM, 4:30 PM, and 8:00 PM** (see the `cron` entries and comments in `daily-scrape.yml`). Each run takes about a minute end-to-end.
+
+GitHub's free scheduled-workflow system does not guarantee exact timing — runs can lag by anywhere from a few minutes to a couple hours during high-traffic periods across GitHub, independent of anything in this repo. A couple of the cron entries are deliberately scheduled earlier than their target time specifically to absorb that expected delay (see the inline comments). This is a known limitation of free scheduled automation, not a bug.
+
+To force an immediate update instead of waiting for the next scheduled run: **Actions → Daily Menu Scrape → Run workflow**.
+
 ---
 
 ## Where the Data Comes From — and What Happens When It's Wrong
