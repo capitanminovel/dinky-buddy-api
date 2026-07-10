@@ -1120,5 +1120,41 @@
       "just_happy": 4,
       "aphrodisiac": 3
     }
+  },
+  "2c19a0f54dff": {
+    "lineage": "Ice Cream Cake x Blockberry (Redwood County Weed Management); Ice Cream Cake is itself a cross of Wedding Cake x Gelato #33 (Seed Junky Genetics), while Blockberry is believed to carry berry-forward genetics contributing deep fruity and tangy characteristics",
+    "therapeutic": "Stress relief, anxiety management, mood elevation, mild fatigue, social anxiety, low-grade depression, lack of focus",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible dizziness for low-tolerance users, overconsumption may lead to anxiety due to sativa-leaning profile",
+    "aroma": "Halle Berry bursts with a lush medley of ripe mixed berries and tangy citrus zest, underpinned by a smooth, creamy vanilla sweetness reminiscent of its Ice Cream Cake heritage. On the exhale, a subtle sour orange note lingers alongside a faint earthiness that keeps the profile grounded and complex.",
+    "misc": "Produced by Redwood County Weed Management, Halle Berry sits at a approachable 17.8% THC, making it suitable for intermediate consumers seeking a functional, feel-good experience without overwhelming potency. Buds are typically dense with frosty trichome coverage, showcasing purple and green hues inherited from its berry-rich parentage. Best enjoyed during daytime or early evening social settings where creativity, conversation, and a uplifted mood are desired.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "b2e1fc237289": {
+    "lineage": "Blueberry (DJ Short) x Haze (Santa Cruz Haze phenotype) — popularized by breeders in the Santa Cruz, California region",
+    "therapeutic": "Depression, anxiety, chronic pain, fatigue, stress, mild nausea, PTSD, ADD/ADHD",
+    "negative": "Dry mouth, dry eyes, occasional mild paranoia or anxiety at higher doses, slight dizziness in novice consumers",
+    "aroma": "A lush wave of sweet blueberry and fresh berry fruit leads the nose, underscored by a light floral note from the linalool and a crisp, piney earthiness. Subtle hints of vanilla and herbal spice round out the bouquet, giving it a complex yet approachable sweetness.",
+    "misc": "Blue Dream is one of the most iconic and widely consumed strains in the United States, particularly dominant in West Coast markets throughout the 2010s. At 12.4% THC, this batch sits on the lower-to-moderate end of the typical Blue Dream range (17–24%), making it an excellent choice for beginners or those seeking functional daytime relief without heavy intoxication. Buds typically display a dense, medium-large structure with deep green coloring, vivid orange pistils, and a generous coat of silvery trichomes; best consumed in the morning or early afternoon when its sativa-leaning, cerebral uplift can be fully appreciated.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 6,
+      "anxiety_relief": 5,
+      "lift_up": 4,
+      "get_creative": 6,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
   }
 }
