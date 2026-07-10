@@ -233,7 +233,7 @@ def build():
       --indica:#a78bfa;--sativa:#fbbf24;--hybrid:#38bdf8;--cbd:#60a5fa;--cbg:#818cf8;
       --new:#F5C228;
     }}
-    body.dark header,body.dark .tabs-wrap,body.dark .legend,body.dark footer{{background:#0a0a0a;border-color:#1e1e1e}}
+    body.dark header,body.dark .tabs-wrap,body.dark footer{{background:#0a0a0a;border-color:#1e1e1e}}
     body.dark .card{{background:#111111;border-color:transparent;box-shadow:0 2px 10px rgba(0,0,0,.7)}}
     body.dark .card:hover{{background:#1a1a1a;box-shadow:0 10px 36px rgba(0,0,0,.9)}}
     body.dark .card-img{{background:#1a1a1a;border-bottom-color:transparent}}
@@ -283,8 +283,6 @@ def build():
     .tab{{flex-shrink:0;padding:14px 18px;border:none;background:none;font-family:inherit;font-size:.86rem;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap}}
     .tab:hover{{color:var(--brand)}}
     .tab.on{{color:var(--brand);border-bottom-color:var(--brand)}}
-    .legend{{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:10px 24px;background:var(--white);border-bottom:1px solid var(--border);font-size:.74rem;color:var(--muted)}}
-    .legend-item{{display:flex;align-items:center;gap:5px}}
     main{{max-width:1400px;margin:0 auto;padding:28px 24px 100px}}
     .section{{margin-bottom:56px}}
     .section-head{{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}}
@@ -420,7 +418,7 @@ def build():
     .search-clear:hover{{color:#e53e3e}}
 
     @media(max-width:640px){{
-      header{{padding:0 14px}}.tabs{{padding:0 14px}}main{{padding:18px 14px 100px}}.legend{{padding:10px 14px}}
+      header{{padding:0 14px}}.tabs{{padding:0 14px}}main{{padding:18px 14px 100px}}
       .grid{{grid-template-columns:repeat(2,1fr);gap:10px}}.card-img{{height:145px}}
       .mood-bar{{padding:12px 14px}}.mood-chips{{gap:5px}}.mood-chip{{font-size:.73rem;padding:5px 10px}}
     }}
@@ -502,16 +500,6 @@ def build():
 <div class="export-bar">
   <button class="btn-staff-guide"  onclick="openStaffGuide()" style="margin-left:auto">📖 Staff Guide</button>
 </div>
-<!-- <div class="legend">
-  <div class="legend-item"><span class="strain-badge strain-indica">Indica</span></div>
-  <div class="legend-item"><span class="strain-badge strain-sativa">Sativa</span></div>
-  <div class="legend-item"><span class="strain-badge strain-hybrid">Hybrid</span></div>
-  <div class="legend-item"><span class="strain-badge strain-cbd">CBD</span></div>
-  <div class="legend-item"><span class="new-badge">New Today</span> Added today</div>
-  <div class="legend-item"><span class="recent-badge">New (2d)</span> Within 3 days</div>
-  <div class="legend-item"><span class="sold-thc" style="background:#fde68a;color:#92400e;padding:2px 7px;border-radius:10px;font-size:.75rem;font-weight:600">🚫 Gone</span> Sold out in last 2 days</div>
-  <div class="legend-item" style="margin-left:auto;color:var(--brand);font-weight:600">Tap any product for strain guide →</div>
-</div> -->
 <div class="tabs-wrap"><div class="tabs" id="tabs">{tab_btns}</div></div>
 <main>
   <div class="mood-bar" id="moodBar">
