@@ -269,10 +269,6 @@ def build():
     header{{background:var(--white);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:0;z-index:30}}
     .header-inner{{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:16px;height:70px}}
     .logo{{display:flex;align-items:center;text-decoration:none}}
-    .logo-leaf{{width:34px;height:34px;background:var(--brand);border-radius:50% 50% 50% 0;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;flex-shrink:0}}
-    .mascot-wrap{{flex-shrink:0;cursor:default;user-select:none;display:flex;align-items:center}}
-    .mascot-wrap img{{height:52px;width:auto;display:block}}
-    .mascot-flip{{transform:scaleX(-1)}}
     .dark-toggle{{margin-left:auto;background:none;border:1.5px solid var(--border);border-radius:20px;padding:5px 12px;font-size:.78rem;font-weight:600;cursor:pointer;color:var(--muted);font-family:inherit;transition:all .15s;white-space:nowrap;flex-shrink:0}}
     .dark-toggle:hover{{border-color:var(--brand);color:var(--brand)}}
     .header-meta{{margin-left:auto;text-align:right;font-size:.75rem;color:var(--muted);line-height:1.5}}
@@ -325,7 +321,7 @@ def build():
     @media(min-width:768px){{.footer-sticky{{display:none}}}}
     @media(max-width:600px){{
       .header-meta{{display:none}}
-      .mascot-wrap img{{height:36px}}
+      .logo img{{height:36px}}
       .dark-toggle{{padding:4px 8px;font-size:.7rem}}
       .header-inner{{gap:10px}}
     }}
