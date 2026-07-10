@@ -4,14 +4,8 @@ Also rates each strain 1-10 for every mood category based on COA terpenes.
 Run after scraper.py to fill in lineage, therapeutic, negative, aroma, misc,
 and mood_ratings for any products not yet in docs/strains_enriched.json.
 
-Cross-store cache: if CROSS_STORE_ENRICHED is set to a path pointing to another
-store's strains_enriched.json (e.g. the South Metro one), products with the same
-name + brand will have their enrichment copied over instead of calling the API.
-This avoids paying for duplicate calls when both stores carry the same supplier SKU.
-
 Usage:
   ANTHROPIC_API_KEY=sk-ant-... python enrich_strains.py
-  CROSS_STORE_ENRICHED=/opt/legit-buddy-private/docs/strains_enriched.json python enrich_strains.py
 """
 
 import json
@@ -21,9 +15,11 @@ from pathlib import Path
 
 import anthropic
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 PRODUCTS_PATH     = Path(__file__).parent / "docs" / "products.json"
 STRAINS_PATH      = Path(__file__).parent / "docs" / "strains_enriched.json"
-CROSS_STORE_PATH  = Path(os.environ.get("CROSS_STORE_ENRICHED", ""))
 
 PROFILE_PROMPT = """You are a cannabis strain expert. Given the product info below, provide a detailed strain profile.
 
@@ -156,17 +152,6 @@ def run():
         with open(STRAINS_PATH) as f:
             existing = json.load(f)
 
-    # Load cross-store enrichment cache (another store's strains_enriched.json).
-    # Products with the same name + brand produce the same key, so we can copy
-    # their enrichment directly and skip the API call.
-    cross_store = {}
-    if CROSS_STORE_PATH.is_file():
-        with open(CROSS_STORE_PATH) as f:
-            cross_store = json.load(f)
-        print(f"Cross-store cache loaded: {len(cross_store)} entries from {CROSS_STORE_PATH}")
-    else:
-        print("No cross-store cache — all new strains will call the API.")
-
     client = anthropic.Anthropic(api_key=api_key)
 
     EDIBLE_CATEGORIES = {"edibles", "gummies", "chocolates", "beverages", "tinctures", "capsules"}
@@ -181,14 +166,6 @@ def run():
 
             if cat in EDIBLE_CATEGORIES:
                 print(f"  → {product.get('name')} — edible, enriching with dosing focus")
-
-            # Check cross-store cache first — same name+brand means same supplier SKU
-            if key in cross_store:
-                print(f"  → {product.get('name')} — copied from cross-store cache (no API call)")
-                existing[key] = cross_store[key]
-                with open(STRAINS_PATH, "w") as f:
-                    json.dump(existing, f, indent=2, ensure_ascii=False)
-                continue
 
             print(f"  → {product.get('name')} ({product.get('brand')})")
             result = enrich_product(client, key, product)

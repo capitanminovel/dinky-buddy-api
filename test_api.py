@@ -1,4 +1,4 @@
-﻿"""
+"""
 Quick pre-flight test for the Sweed API.
 Run this directly (python test_api.py) to verify the API is reachable and
 returning products before kicking off the full Playwright scraper.
@@ -13,6 +13,9 @@ import time
 from datetime import datetime
 
 import requests
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 STORE_DOMAIN = "shop.dinkydope.com"
 MENU_URL     = f"https://{STORE_DOMAIN}/dinkytown/menu"
@@ -94,7 +97,7 @@ def run_test():
     session.headers.update(HEADERS)
 
     print(f"\n{'='*60}")
-    print(f"  Sweed API Test â€” {STORE_DOMAIN}")
+    print(f"  Sweed API Test — {STORE_DOMAIN}")
     print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*60}\n")
 
@@ -108,14 +111,14 @@ def run_test():
             ms   = int((time.time() - t0) * 1000)
 
             if resp.status_code != 200:
-                print(f"  [{cat_name:<9}]  HTTP {resp.status_code}  ({ms}ms)  âœ— BLOCKED")
+                print(f"  [{cat_name:<9}]  HTTP {resp.status_code}  ({ms}ms)  ✗ BLOCKED")
                 failed += 1
                 continue
 
             try:
                 data = resp.json()
             except Exception:
-                print(f"  [{cat_name:<9}]  HTTP 200  ({ms}ms)  âœ— Invalid JSON")
+                print(f"  [{cat_name:<9}]  HTTP 200  ({ms}ms)  ✗ Invalid JSON")
                 failed += 1
                 continue
 
@@ -123,30 +126,30 @@ def run_test():
             sample = _sample_name(data)
 
             if count == 0:
-                print(f"  [{cat_name:<9}]  HTTP 200  ({ms}ms)  âœ— 0 products  (response keys: {list(data.keys()) if isinstance(data, dict) else type(data).__name__})")
+                print(f"  [{cat_name:<9}]  HTTP 200  ({ms}ms)  ✗ 0 products  (response keys: {list(data.keys()) if isinstance(data, dict) else type(data).__name__})")
                 failed += 1
             else:
-                print(f"  [{cat_name:<9}]  HTTP 200  ({ms}ms)  âœ“ {count} products  (e.g. \"{sample}\")")
+                print(f"  [{cat_name:<9}]  HTTP 200  ({ms}ms)  ✓ {count} products  (e.g. \"{sample}\")")
                 passed += 1
 
         except requests.exceptions.ConnectionError:
-            print(f"  [{cat_name:<9}]  âœ— Connection error")
+            print(f"  [{cat_name:<9}]  ✗ Connection error")
             failed += 1
         except requests.exceptions.Timeout:
-            print(f"  [{cat_name:<9}]  âœ— Timeout")
+            print(f"  [{cat_name:<9}]  ✗ Timeout")
             failed += 1
         except Exception as e:
-            print(f"  [{cat_name:<9}]  âœ— {e}")
+            print(f"  [{cat_name:<9}]  ✗ {e}")
             failed += 1
 
     print(f"\n  Result: {passed}/{passed+failed} categories reachable via direct HTTP\n")
 
     if passed == 0:
-        print("  â†’ API is WAF-blocked. Scraper will use Playwright (browser) instead.")
-        print("    This is expected â€” the full scraper should still work.\n")
+        print("  → API is WAF-blocked. Scraper will use Playwright (browser) instead.")
+        print("    This is expected — the full scraper should still work.\n")
         return False
     else:
-        print("  â†’ API accessible directly. Direct API path will be used.\n")
+        print("  → API accessible directly. Direct API path will be used.\n")
         return True
 
 

@@ -1,5 +1,5 @@
 """
-Menu scraper for MN Legit Cannabis – South Metro (Sweed POS platform).
+Menu scraper for Dinky Dope – Dinkytown (Sweed POS platform).
 
 Strategy (in order):
   1. Direct API  – POST to /_api/Products/GetProductList per category (fast; WAF often blocks)
@@ -113,7 +113,7 @@ def _lst(v) -> list:
 
 
 # ── Sweed POS API normalizer ──────────────────────────────────────────────────
-# Endpoint: https://shop.mnlegitcannabis.com/_api/Products/GetProductList
+# Endpoint: https://shop.dinkydope.com/_api/Products/GetProductList
 # Confirmed category IDs from browser Network tab
 
 SWEED_API_URL = f"https://{STORE_DOMAIN}/_api/Products/GetProductList"

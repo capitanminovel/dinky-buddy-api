@@ -1,10 +1,11 @@
 """Renders products.json into a fully static HTML file — no JS fetch needed."""
 import json
+import sys
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
-from docx import Document
-from docx.shared import Pt
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 CST          = timezone(timedelta(hours=-6))
 DATA         = Path(__file__).parent / "docs" / "products.json"
@@ -120,12 +121,6 @@ def build():
         with open(STRAINS_DATA, encoding='utf-8') as f:
             strains = json.load(f)
 
-    schedule = {"shifts": [], "last_updated": None}
-    sched_path = Path(__file__).parent / "docs" / "schedule.json"
-    if sched_path.exists():
-        with open(sched_path, encoding='utf-8') as f:
-            schedule = json.load(f)
-
     now     = datetime.now(CST)
     ts      = now.strftime("%a, %b %d %Y — %I:%M %p CST")
     TARGET  = ("flower", "pre-roll", "vapes", "edibles")
@@ -209,11 +204,9 @@ def build():
       <div class="grid">{cards}</div>
     </section>"""
 
-    # Embed all product data + strain enrichment + schedule as JS
+    # Embed all product data + strain enrichment as JS
     products_js  = json.dumps({k: v for k, v in db["products"].items()}, ensure_ascii=False)
     strains_js   = json.dumps(strains, ensure_ascii=False)
-    schedule_js  = json.dumps(schedule, ensure_ascii=False)
-    tab_btns    += '\n<!-- <button class="tab sched-tab" data-cat="schedule" onclick="openScheduleTab(this)">📅 Schedule</button> -->'
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -261,12 +254,10 @@ def build():
     body.dark .card.match-good{{border-left:5px solid #fbbf24;box-shadow:none}}
     body.dark .card.match-weak{{border-left:5px solid #475569;box-shadow:none}}
     body.dark .top-bar{{background:#000000}}
-    body.dark .modal-box,.dark .profile-box{{background:#111111}}
+    body.dark .modal-box{{background:#111111}}
     body.dark .sg-card{{background:#1a1a1a;border-color:#1e1e1e}}
     body.dark .sg-name,.dark .sg-row strong{{color:#c8f5d4}}
     body.dark .sg-row{{color:#b2c9b8}}
-    body.dark .profile-box{{background:#111111}}
-    body.dark .profile-header{{background:#111111;border-color:#1e1e1e}}
     body.dark [data-cat="flower"] .section-title{{border-left:3px solid #F5C228;padding-left:12px}}
     body.dark [data-cat="pre-roll"] .section-title{{border-left:3px solid #fb923c;padding-left:12px}}
     body.dark [data-cat="vapes"] .section-title{{border-left:3px solid #38bdf8;padding-left:12px}}
@@ -458,35 +449,10 @@ def build():
     .sg-pill.thc{{background:#16a34a;color:#fff}}.sg-pill.cbd{{background:#2563eb;color:#fff}}
     .sg-price{{text-align:center;font-size:13px;font-weight:700;color:var(--sg-dark);margin-bottom:6px}}
     .modal-actions{{display:flex;gap:10px;margin-top:16px;justify-content:center;flex-wrap:wrap}}
-    .btn-add-profile{{background:var(--sg-green);color:var(--sg-pink);border:none;border-radius:24px;padding:10px 22px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:background .15s}}
-    .btn-add-profile:hover{{background:var(--sg-dark)}}
-    .btn-add-profile.added{{background:#6b7280;color:#fff}}
     .btn-close-modal{{background:transparent;color:var(--sg-green);border:2px solid var(--sg-green);border-radius:24px;padding:10px 22px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}}
 
-    /* ── Profile floating button ── */
-    .profile-fab{{position:fixed;bottom:28px;right:24px;background:var(--sg-green);color:var(--sg-pink);border:none;border-radius:30px;padding:12px 20px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);z-index:500;display:none;align-items:center;gap:8px;transition:background .15s,transform .1s}}
-    .profile-fab:hover{{background:var(--sg-dark);transform:scale(1.04)}}
-    .profile-fab-count{{background:var(--sg-pink);color:var(--sg-dark);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}}
-
-    /* ── Profile drawer ── */
-    .profile-drawer{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1100;display:none;align-items:flex-end;justify-content:center}}
-    .profile-drawer.open{{display:flex}}
-    .profile-box{{background:#e8e0d0;width:100%;max-width:680px;max-height:85vh;border-radius:18px 18px 0 0;overflow-y:auto;padding:0 0 30px}}
-    .profile-header{{display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;background:#e8e0d0;position:sticky;top:0;border-bottom:2px solid var(--sg-border)}}
-    .profile-header-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;color:var(--sg-dark);text-transform:uppercase;letter-spacing:.05em}}
-    .profile-header-actions{{display:flex;gap:8px;flex-wrap:wrap}}
-    .btn-export{{background:var(--sg-green);color:var(--sg-pink);border:none;border-radius:20px;padding:8px 16px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}}
-    .btn-export:hover{{background:var(--sg-dark)}}
     .export-bar{{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:8px 16px;background:var(--white);border-bottom:1px solid var(--border)}}
-    .export-bar-label{{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}}
-    .btn-export-all{{background:#1A1A1A;color:#fff;border:none;border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
-    .btn-export-all:hover{{background:#333333}}
-    .btn-export-avail{{background:var(--sg-pink);color:#111;border:none;border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
-    .btn-export-avail:hover{{background:#DDB800}}
     body.dark .export-bar{{background:var(--white);border-color:var(--border)}}
-    body.dark .btn-export-all{{background:#F5C228;color:#111100}}
-    body.dark .btn-export-all:hover{{background:#FDD000}}
-    body.dark .btn-export-avail{{background:#F5C228;color:#111100}}
     .btn-staff-guide{{background:transparent;color:var(--muted);border:1.5px solid var(--border);border-radius:20px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;white-space:nowrap}}
     .btn-staff-guide:hover{{border-color:var(--brand);color:var(--brand)}}
 
@@ -516,78 +482,10 @@ def build():
     body.dark .sg-guide-head{{background:var(--bg)}}
     body.dark .sg-guide-card{{background:#1a2d20;border-color:var(--border)}}
     body.dark .sg-guide-note{{background:#1a1500;border-color:#713f12;color:#fde68a}}
-    .export-popup-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;display:flex;align-items:center;justify-content:center}}
-    .export-popup-overlay.hidden{{display:none}}
-    .export-popup-box{{background:#e8e0d0;border:3px solid #1A1A1A;border-radius:20px;padding:28px 32px;text-align:center;max-width:320px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:epPop .35s cubic-bezier(.175,.885,.32,1.275)}}
-    @keyframes epPop{{from{{transform:scale(.7);opacity:0}}to{{transform:scale(1);opacity:1}}}}
-    .export-popup-gif{{width:190px;height:190px;object-fit:cover;border-radius:14px;border:3px solid #1A1A1A;margin-bottom:14px}}
-    .export-popup-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#111111;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}}
-    .export-popup-sub{{font-size:13px;color:#444444;font-weight:600;margin-bottom:18px}}
-    .export-popup-btn{{background:#1A1A1A;color:#F5C228;border:none;border-radius:20px;padding:10px 28px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform .1s}}
-    .export-popup-btn:hover{{background:#333333}}
-    .export-popup-btn.ready{{animation:epPulse 0.9s ease-in-out infinite;background:#1A1A1A}}
-    @keyframes epPulse{{0%,100%{{transform:scale(1)}}50%{{transform:scale(1.06)}}}}
-    .btn-clear{{background:transparent;color:#888;border:1px solid #ccc;border-radius:20px;padding:8px 14px;font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;cursor:pointer}}
-    .btn-close-drawer{{background:transparent;color:var(--sg-green);border:2px solid var(--sg-green);border-radius:20px;padding:8px 14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;text-transform:uppercase;cursor:pointer}}
-    .profile-cards{{padding:16px 18px 0}}
-    .profile-empty{{text-align:center;padding:40px;color:#888;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px}}
-    .profile-item-remove{{position:absolute;top:10px;right:12px;background:transparent;border:none;color:#aaa;font-size:18px;cursor:pointer;font-weight:700;line-height:1}}
-    .profile-item-remove:hover{{color:#e53e3e}}
     @media(max-width:640px){{
       .modal-box{{max-height:95vh;border-radius:14px}}
-      .profile-box{{max-height:92vh}}
       .modal-inner{{padding:12px 14px 18px}}
     }}
-    /* ── Schedule ── */
-    .sched-tab{{margin-left:auto}}
-    #scheduleSection{{display:none;padding:24px}}
-    #scheduleSection.active{{display:block}}
-    .sched-img-section{{margin-bottom:24px}}
-    .sched-img-toggle{{width:100%;background:linear-gradient(135deg,#1A1A1A,#333333);border:none;border-radius:14px;padding:18px 22px;font-size:1rem;font-weight:700;color:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;box-shadow:0 4px 14px rgba(0,0,0,.25)}}
-    .sched-img-toggle:hover{{background:linear-gradient(135deg,#333333,#111111);box-shadow:0 6px 20px rgba(0,0,0,.35);transform:translateY(-1px)}}
-    .sched-img-toggle-left{{display:flex;align-items:center;gap:12px}}
-    .sched-img-toggle-icon{{font-size:1.6rem;flex-shrink:0}}
-    .sched-img-toggle-text{{display:flex;flex-direction:column;gap:2px}}
-    .sched-img-toggle-title{{font-size:1rem;font-weight:800;letter-spacing:.01em}}
-    .sched-img-toggle-sub{{font-size:.78rem;font-weight:500;opacity:.85}}
-    .sched-img-toggle-arrow{{font-size:1.2rem;opacity:.8;transition:transform .2s;flex-shrink:0}}
-    .sched-img-toggle.open .sched-img-toggle-arrow{{transform:rotate(180deg)}}
-    .sched-img-wrap{{margin-top:16px}}
-    .sched-img-label{{font-weight:700;font-size:.85rem;color:var(--muted);margin:16px 0 8px}}
-    .sched-img{{width:100%;border-radius:10px;border:1px solid var(--border);display:block}}
-    .pin-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:300;display:flex;align-items:center;justify-content:center}}
-    .pin-overlay.hidden{{display:none}}
-    .pin-box{{background:var(--white);border-radius:16px;padding:36px 40px;text-align:center;min-width:280px;box-shadow:0 20px 60px rgba(0,0,0,.25)}}
-    .pin-box h2{{font-family:'Nunito',sans-serif;font-size:1.25rem;color:var(--text);margin-bottom:6px}}
-    .pin-box p{{font-size:.8rem;color:var(--muted);margin-bottom:20px}}
-    .pin-input{{width:120px;text-align:center;font-size:1.8rem;letter-spacing:.4em;font-weight:700;padding:8px 12px;border:2px solid var(--border);border-radius:10px;font-family:'Nunito',sans-serif;color:var(--text);outline:none}}
-    .pin-input:focus{{border-color:var(--brand)}}
-    .pin-error{{color:#dc2626;font-size:.78rem;margin-top:10px;min-height:18px}}
-    .sched-header{{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}}
-    .sched-title{{font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:800;color:var(--text)}}
-    .sched-nav{{display:flex;align-items:center;gap:8px;margin-left:auto}}
-    .sched-nav-btn{{padding:6px 14px;border:1px solid var(--border);border-radius:20px;background:var(--white);color:var(--muted);cursor:pointer;font-size:.78rem;font-weight:600;transition:all .15s}}
-    .sched-nav-btn:hover{{border-color:var(--brand);color:var(--brand)}}
-    .sched-nav-btn.disabled{{opacity:.4;cursor:default;pointer-events:none}}
-    .sched-week-label{{font-size:.82rem;color:var(--muted);font-weight:600;min-width:90px;text-align:center}}
-    .sched-filter-row{{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}}
-    .sched-filter-label{{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}}
-    .sched-filter-select{{flex:1;min-width:160px;max-width:280px;padding:9px 14px;border:1.5px solid var(--border);border-radius:10px;background:var(--white);color:var(--text);font-family:inherit;font-size:.88rem;font-weight:600;cursor:pointer;outline:none;transition:border-color .15s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}}
-    .sched-filter-select:focus{{border-color:var(--brand)}}
-    body.dark .sched-filter-select{{background-color:var(--white);border-color:var(--border)}}
-    .sched-day{{margin-bottom:18px;background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden}}
-    .sched-day.today .sched-day-head{{background:#1A1A1A;color:#F5C228}}
-    .sched-day-head{{padding:9px 16px;font-size:.82rem;font-weight:700;background:var(--bg);color:var(--text);display:flex;align-items:center;gap:8px}}
-    .sched-today-badge{{background:#fff;color:var(--brand);font-size:.65rem;font-weight:800;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.05em}}
-    .sched-shifts{{padding:4px 0}}
-    .sched-shift{{display:flex;align-items:center;gap:12px;padding:9px 16px;border-bottom:1px solid var(--bg);font-size:.82rem}}
-    .sched-shift:last-child{{border-bottom:none}}
-    .sched-shift-name{{font-weight:600;color:var(--text);min-width:130px}}
-    .sched-shift-time{{color:var(--muted);white-space:nowrap}}
-    .sched-empty{{text-align:center;padding:48px 24px;color:var(--muted);font-size:.88rem}}
-    .sched-empty-icon{{font-size:2rem;margin-bottom:12px;opacity:.4}}
-    .sched-updated{{font-size:.7rem;color:var(--muted);text-align:right;margin-top:12px}}
-    .sched-note{{margin-top:16px;padding:10px 14px;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;font-size:.78rem;color:#92400e;line-height:1.5}}
   </style>
 </head>
 <body>
@@ -605,20 +503,7 @@ def build():
   </div>
 </header>
 <div class="export-bar">
-  <!-- <span class="export-bar-label">⬇ Export Strain Profiles:</span>
-  <button class="btn-export-avail" onclick="showExportPopup('dinky-available-guide.docx')">✅ Available Now ({len(all_p)} products)</button>
-  <button class="btn-export-all"   onclick="showExportPopup('dinky-master-guide.docx')">📦 Master Cache (all strains)</button> -->
   <button class="btn-staff-guide"  onclick="openStaffGuide()" style="margin-left:auto">📖 Staff Guide</button>
-</div>
-
-<!-- Export popup -->
-<div class="export-popup-overlay hidden" id="exportPopup">
-  <div class="export-popup-box">
-    <img class="export-popup-gif" id="exportPopupGif" src="https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif" alt="">
-    <div class="export-popup-title">Your guide is ready 🍃</div>
-    <div class="export-popup-sub" id="exportPopupSub">Downloading in <span id="exportCountdown">4</span>s…</div>
-    <button class="export-popup-btn" id="exportGoBtn">Let's Go ⬇</button>
-  </div>
 </div>
 <!-- <div class="legend">
   <div class="legend-item"><span class="strain-badge strain-indica">Indica</span></div>
@@ -714,34 +599,11 @@ def build():
     <div class="modal-inner">
       <div id="modalCard"></div>
       <div class="modal-actions">
-        <button class="btn-add-profile" id="btnAddProfile" onclick="toggleProfile()">＋ Add to Profile</button>
         <button class="btn-close-modal" onclick="closeModal()">Close</button>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Profile drawer -->
-<div class="profile-drawer" id="profileDrawer">
-  <div class="profile-box">
-    <div class="profile-header">
-      <div class="profile-header-title">📋 Strain Profile</div>
-      <div class="profile-header-actions">
-        <button class="btn-export" onclick="exportGuide()">⬇ Download Strain Guide</button>
-        <button class="btn-clear" onclick="clearProfile()">Clear All</button>
-        <button class="btn-close-drawer" onclick="closeDrawer()">Close</button>
-      </div>
-    </div>
-    <div class="profile-cards" id="profileCards">
-      <div class="profile-empty" id="profileEmpty">No strains added yet.<br>Tap any product card, then "Add to Profile."</div>
-    </div>
-  </div>
-</div>
-
-<!-- Floating profile button -->
-<button class="profile-fab" id="profileFab" onclick="openDrawer()">
-  📋 My Profile <span class="profile-fab-count" id="fabCount">0</span>
-</button>
 
 <script>
 const PRODUCTS = {products_js};
@@ -808,7 +670,6 @@ const MOOD_MAP = {{
 }};
 
 let currentKey   = null;
-let profileKeys  = [];
 let activeMood   = null;
 let activeCat    = 'all';
 let activeSearch = '';
@@ -874,14 +735,13 @@ function fmtList(arr) {{
   return arr.join(', ');
 }}
 
-function buildSgCard(key, forExport) {{
+function buildSgCard(key) {{
   const p = PRODUCTS[key] || {{}};
   const s = STRAINS[key]  || {{}};
   const thcPill = p.thc ? `<span class="sg-pill thc">THC ${{p.thc}}</span>` : '';
   const cbdPill = p.cbd ? `<span class="sg-pill cbd">CBD ${{p.cbd}}</span>` : '';
   const pills   = (thcPill || cbdPill) ? `<div class="sg-thc-cbd">${{thcPill}}${{cbdPill}}</div>` : '';
   const price   = p.price ? `<div class="sg-price">${{p.price}}${{p.weight ? ' · ' + p.weight : ''}}</div>` : '';
-  const removeBtn = forExport ? '' : `<button class="profile-item-remove" onclick="removeFromProfile('${{key}}')" title="Remove">✕</button>`;
 
   const tx      = p.terpenes || [];
   const derived = derivedEffects(tx);
@@ -899,7 +759,6 @@ function buildSgCard(key, forExport) {{
 
   return `
   <div class="sg-card" style="position:relative">
-    ${{removeBtn}}
     <div class="sg-name">${{p.name || 'Unknown'}}</div>
     <div class="sg-type">${{p.strain_type ? '— ' + p.strain_type : ''}}</div>
     <span class="sg-supplier">${{p.brand || 'Unknown'}}</span>
@@ -912,11 +771,7 @@ function buildSgCard(key, forExport) {{
 function openModal(key) {{
   currentKey = key;
   const p = PRODUCTS[key] || {{}};
-  document.getElementById('modalCard').innerHTML = buildSgCard(key, false);
-  const btn = document.getElementById('btnAddProfile');
-  const inProfile = profileKeys.includes(key);
-  btn.textContent = inProfile ? '✓ In Profile' : '＋ Add to Profile';
-  btn.classList.toggle('added', inProfile);
+  document.getElementById('modalCard').innerHTML = buildSgCard(key);
   document.getElementById('strainModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }}
@@ -928,280 +783,6 @@ function closeModal() {{
 
 function closeModalOutside(e) {{
   if (e.target === document.getElementById('strainModal')) closeModal();
-}}
-
-function toggleProfile() {{
-  if (!currentKey) return;
-  const idx = profileKeys.indexOf(currentKey);
-  if (idx === -1) {{
-    profileKeys.push(currentKey);
-  }} else {{
-    profileKeys.splice(idx, 1);
-  }}
-  const btn = document.getElementById('btnAddProfile');
-  const inProfile = profileKeys.includes(currentKey);
-  btn.textContent = inProfile ? '✓ In Profile' : '＋ Add to Profile';
-  btn.classList.toggle('added', inProfile);
-  updateFab();
-}}
-
-function removeFromProfile(key) {{
-  profileKeys = profileKeys.filter(k => k !== key);
-  updateFab();
-  renderProfileCards();
-}}
-
-function updateFab() {{
-  const fab = document.getElementById('profileFab');
-  document.getElementById('fabCount').textContent = profileKeys.length;
-  fab.style.display = profileKeys.length > 0 ? 'flex' : 'none';
-}}
-
-function renderProfileCards() {{
-  const el = document.getElementById('profileCards');
-  const empty = document.getElementById('profileEmpty');
-  if (profileKeys.length === 0) {{
-    empty.style.display = 'block';
-    el.innerHTML = '';
-    el.appendChild(empty);
-    return;
-  }}
-  empty.style.display = 'none';
-  el.innerHTML = profileKeys.map(k => buildSgCard(k, false)).join('');
-}}
-
-function openDrawer() {{
-  renderProfileCards();
-  document.getElementById('profileDrawer').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}}
-
-function closeDrawer() {{
-  document.getElementById('profileDrawer').classList.remove('open');
-  document.body.style.overflow = '';
-}}
-
-function clearProfile() {{
-  profileKeys = [];
-  updateFab();
-  renderProfileCards();
-}}
-
-const EXPORT_POPUP_CSS = `
-  .welcome-overlay{{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;display:flex;align-items:center;justify-content:center;animation:fadeIn .3s ease}}
-  @keyframes fadeIn{{from{{opacity:0}}to{{opacity:1}}}}
-  .welcome-box{{background:#e8e0d0;border:3px solid #1A1A1A;border-radius:20px;padding:28px 32px;text-align:center;max-width:340px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.35);animation:popIn .35s cubic-bezier(.175,.885,.32,1.275)}}
-  @keyframes popIn{{from{{transform:scale(.7);opacity:0}}to{{transform:scale(1);opacity:1}}}}
-  .welcome-gif{{width:200px;height:200px;object-fit:cover;border-radius:14px;margin-bottom:14px;border:3px solid #1A1A1A}}
-  .welcome-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:#111111;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}}
-  .welcome-sub{{font-size:13px;color:#444444;font-weight:600;margin-bottom:18px}}
-  .welcome-close{{background:#1A1A1A;color:#F5C228;border:none;border-radius:20px;padding:9px 24px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}}
-  .welcome-close:hover{{background:#333333}}
-`;
-const EXPORT_POPUP_HTML = `
-<div class="welcome-overlay" id="welcomeOverlay" onclick="if(event.target===this)dismissWelcome()">
-  <div class="welcome-box">
-    <img class="welcome-gif" src="https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif" alt="Welcome">
-    <div class="welcome-title">Welcome to Dinky Dope ✨</div>
-    <div class="welcome-sub">Your strain guide is ready. Enjoy!</div>
-    <button class="welcome-close" onclick="dismissWelcome()">Let's Go</button>
-  </div>
-</div>
-<script>
-  function dismissWelcome(){{document.getElementById('welcomeOverlay').remove();}}
-  setTimeout(dismissWelcome, 5000);
-<\/script>
-`;
-
-function exportGuide() {{
-  if (profileKeys.length === 0) return;
-  const cards = profileKeys.map(k => buildSgCard(k, true)).join('');
-  const today = new Date().toLocaleDateString('en-US', {{month:'long', day:'numeric', year:'numeric'}});
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dinky Dope – Strain Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root{{--green:#1A1A1A;--pink:#F5C228;--cream:#f5f0e8;--dark-green:#111111;--border-green:#1A1A1A;--text:#1a1a1a}}
-  *{{box-sizing:border-box;margin:0;padding:0}}
-  body{{background:#e8e0d0;font-family:'Nunito Sans',sans-serif;padding:24px 16px;color:var(--text)}}
-  .page{{max-width:720px;margin:0 auto}}
-  .header{{display:flex;align-items:center;gap:16px;margin-bottom:20px}}
-  .logo-badge{{background:var(--green);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:8px}}
-  .logo-badge .leaf{{font-size:20px}}
-  .logo-badge .name{{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:var(--pink);line-height:1.1;letter-spacing:.02em;text-transform:uppercase}}
-  .header-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:26px;color:var(--dark-green);letter-spacing:.04em;text-transform:uppercase}}
-  .header-sub{{font-size:12px;color:var(--green);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}}
-  .info-box{{background:white;border:2px solid var(--border-green);border-radius:12px;padding:14px 18px;margin-bottom:22px;font-size:12.5px;line-height:1.6;color:#333}}
-  .info-box strong{{color:var(--dark-green);font-family:'Nunito',sans-serif}}
-  .info-box .info-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:var(--dark-green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}}
-  .info-grid{{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px;margin-top:6px}}
-  .info-grid div::before{{content:'→ ';color:#888}}
-  .info-note{{margin-top:10px;padding-top:8px;border-top:1px solid #e0d8cc;font-size:11.5px;color:#777}}
-  .sg-card{{background:white;border:3px solid var(--border-green);border-radius:16px;padding:18px 22px;margin-bottom:18px}}
-  .sg-name{{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;text-align:center;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:2px}}
-  .sg-type{{text-align:center;font-size:12.5px;font-weight:700;color:#555;margin-bottom:4px}}
-  .sg-supplier{{display:block;background:var(--green);color:var(--pink);font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;border-radius:20px;padding:3px 10px;width:fit-content;margin:0 auto 10px}}
-  .sg-thc-cbd{{display:flex;gap:8px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}}
-  .sg-pill{{font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;font-family:'Nunito',sans-serif}}
-  .sg-pill.thc{{background:#16a34a;color:#fff}}.sg-pill.cbd{{background:#2563eb;color:#fff}}
-  .sg-price{{text-align:center;font-size:13px;font-weight:700;color:var(--dark-green);margin-bottom:6px}}
-  .sg-divider{{border:none;border-top:2px solid var(--border-green);margin:8px 0 12px}}
-  .sg-row{{font-size:12.5px;line-height:1.55;margin-bottom:4px;color:#222}}
-  .sg-row strong{{font-weight:700;color:var(--dark-green);font-family:'Nunito',sans-serif;font-size:12.5px}}
-  .profile-item-remove{{display:none}}
-  .sg-row span{{font-size:10px;color:#888;font-weight:400}}
-  @media print{{body{{background:white;padding:0}}.sg-card{{break-inside:avoid}}.info-box{{break-inside:avoid}}}}
-  ${{EXPORT_POPUP_CSS}}
-</style>
-</head>
-<body>
-${{EXPORT_POPUP_HTML}}
-<div class="page">
-  <div class="header">
-    <div class="logo-badge"><span class="leaf">✨</span><div class="name">DINKY<br>DOPE</div></div>
-    <div><div class="header-title">Strain Guide</div><div class="header-sub">Staff Reference · ${{today}}</div></div>
-  </div>
-  <div class="info-box">
-    <div class="info-title">✨ Dinky Dope — Staff Guide</div>
-
-    <div style="margin-bottom:12px;">
-      <strong>Access:</strong> capitanminovel.github.io/dinky-buddy-api<br>
-      <strong>Schedule PIN:</strong> 0420
-    </div>
-
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">🔄 Menu Updates</div>
-    <div style="margin-bottom:12px;">
-      The menu is automatically checked and updated <strong>4 times daily</strong>:<br>
-      <strong>9:00 AM · 1:00 PM · 4:30 PM · 10:00 PM CST</strong><br>
-      New products and sold-out items reflect within the hour of each update.
-    </div>
-
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">✨ New Arrivals</div>
-    <div style="margin-bottom:12px;">
-      Products added to the menu within the last <strong>3 days</strong> are highlighted with a green "New Today" or "New (Xd ago)" badge at the top of the page.
-    </div>
-
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">🚫 Sold Out Tracker</div>
-    <div style="margin-bottom:12px;">
-      Items that left the menu within the last <strong>2 days</strong> appear in the amber "Sold Out" section so you know what recently went out of stock.
-    </div>
-
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">🔍 Search &amp; Filter</div>
-    <div style="margin-bottom:12px;">
-      Use the search bar to find products by name, brand, terpene, or effect. Filter by category (Flower, Pre-Roll, Vapes, Edibles) using the tabs. Use the <strong>Mood Filter</strong> to recommend products by effect — Relax, Focus, Sleep, Social, and more.
-    </div>
-
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">📋 Strain Guide &amp; Profile</div>
-    <div style="margin-bottom:12px;">
-      Tap any product card to view its full strain profile — lineage, terpenes, therapeutic uses, aroma, and mood ratings. Press <strong>＋ Add to Profile</strong> to save strains to your personal list, then use <strong>⬇ Export Strain Profiles</strong> to download a printable guide.
-    </div>
-
-    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:6px;">📅 Staff Schedule</div>
-    <div style="margin-bottom:12px;">
-      Enter PIN <strong>0420</strong> to view the staff schedule. Navigate weeks using the Previous/Next buttons. Use the staff filter chips to view individual schedules. Tap <strong>📷 View Original Schedule Images</strong> to see the source photos.
-    </div>
-
-    <div class="info-note">⚠ The schedule reflects the original as sent. If changes were made after it was sent, refer to the <strong>physical schedule posted at work</strong>.</div>
-  </div>
-  ${{cards}}
-</div>
-</body>
-</html>`;
-
-  const blob = new Blob([html], {{type: 'text/html;charset=utf-8'}});
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = 'dinky-strain-guide.html';
-  a.click();
-  URL.revokeObjectURL(url);
-}}
-
-function exportAll(mode) {{
-  // mode: 'avail' = only products in PRODUCTS (in-stock scraped set)
-  //       'master' = all keys in STRAINS cache
-  const today = new Date().toLocaleDateString('en-US', {{month:'long', day:'numeric', year:'numeric'}});
-
-  let keys;
-  if (mode === 'avail') {{
-    keys = Object.keys(PRODUCTS);
-  }} else {{
-    // master: all enriched keys, fall back to PRODUCTS data for any missing
-    keys = [...new Set([...Object.keys(STRAINS), ...Object.keys(PRODUCTS)])];
-  }}
-
-  // Sort: flower → pre-roll → vapes → other, then alpha within each
-  const catOrder = ['flower','pre-roll','vapes','edibles'];
-  keys.sort((a, b) => {{
-    const pa = PRODUCTS[a] || {{}};
-    const pb = PRODUCTS[b] || {{}};
-    const ca = (pa.category || '').toLowerCase();
-    const cb = (pb.category || '').toLowerCase();
-    const ia = catOrder.indexOf(ca); const ib = catOrder.indexOf(cb);
-    const oa = ia === -1 ? 99 : ia;  const ob = ib === -1 ? 99 : ib;
-    if (oa !== ob) return oa - ob;
-    return (pa.name || a).localeCompare(pb.name || b);
-  }});
-
-  const cards = keys.map(k => buildSgCard(k, true)).join('');
-  const title = mode === 'avail' ? 'Available Now' : 'Master Strain Cache';
-  const fname = mode === 'avail' ? 'dinky-available-guide.html' : 'dinky-master-guide.html';
-
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Dinky Dope – ${{title}}</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root{{--green:#1A1A1A;--pink:#F5C228;--cream:#f5f0e8;--dark-green:#111111;--border-green:#1A1A1A;--text:#1a1a1a}}
-  *{{box-sizing:border-box;margin:0;padding:0}}
-  body{{background:#e8e0d0;font-family:'Nunito Sans',sans-serif;padding:24px 16px;color:var(--text)}}
-  .page{{max-width:720px;margin:0 auto}}
-  .header{{display:flex;align-items:center;gap:16px;margin-bottom:28px}}
-  .logo-badge{{background:var(--green);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:8px}}
-  .logo-badge .leaf{{font-size:20px}}
-  .logo-badge .name{{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:var(--pink);line-height:1.1;letter-spacing:.02em;text-transform:uppercase}}
-  .header-title{{font-family:'Nunito',sans-serif;font-weight:900;font-size:26px;color:var(--dark-green);letter-spacing:.04em;text-transform:uppercase}}
-  .header-sub{{font-size:12px;color:var(--green);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}}
-  .section-heading{{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:var(--dark-green);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--border-green);padding-bottom:6px;margin:24px 0 14px}}
-  .sg-card{{background:white;border:3px solid var(--border-green);border-radius:16px;padding:18px 22px;margin-bottom:18px}}
-  .sg-name{{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;text-align:center;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-green);margin-bottom:2px}}
-  .sg-type{{text-align:center;font-size:12.5px;font-weight:700;color:#555;margin-bottom:4px}}
-  .sg-supplier{{display:block;background:var(--green);color:var(--pink);font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;border-radius:20px;padding:3px 10px;width:fit-content;margin:0 auto 10px}}
-  .sg-thc-cbd{{display:flex;gap:8px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}}
-  .sg-pill{{font-size:11px;font-weight:700;padding:2px 10px;border-radius:20px;font-family:'Nunito',sans-serif}}
-  .sg-pill.thc{{background:#16a34a;color:#fff}}.sg-pill.cbd{{background:#2563eb;color:#fff}}
-  .sg-price{{text-align:center;font-size:13px;font-weight:700;color:var(--dark-green);margin-bottom:6px}}
-  .sg-divider{{border:none;border-top:2px solid var(--border-green);margin:8px 0 12px}}
-  .sg-row{{font-size:12.5px;line-height:1.55;margin-bottom:4px;color:#222}}
-  .sg-row strong{{font-weight:700;color:var(--dark-green);font-family:'Nunito',sans-serif;font-size:12.5px}}
-  .profile-item-remove{{display:none}}
-  @media print{{body{{background:white;padding:0}}.sg-card{{break-inside:avoid}}}}
-  ${{EXPORT_POPUP_CSS}}
-</style>
-</head>
-<body>
-${{EXPORT_POPUP_HTML}}
-<div class="page">
-  <div class="header">
-    <div class="logo-badge"><span class="leaf">✨</span><div class="name">DINKY<br>DOPE</div></div>
-    <div><div class="header-title">${{title}}</div><div class="header-sub">Staff Reference · ${{today}}</div></div>
-  </div>
-  ${{cards}}
-</div>
-</body>
-</html>`;
-
-  const blob = new Blob([html], {{type: 'text/html;charset=utf-8'}});
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href = url; a.download = fname; a.click();
-  URL.revokeObjectURL(url);
 }}
 
 // ── Category + mood + text search combined filter ──
@@ -1349,7 +930,6 @@ function clearSearch() {{
 }}
 
 function filterCat(btn) {{
-  hideSchedule();
   document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
   activeCat = btn.dataset.cat;
@@ -1384,59 +964,7 @@ function filterType(btn) {{
   applyFilters();
 }}
 
-// ── Export popup + docx download ──
-let _exportTimer = null;
-let _exportFile  = null;
-
-function showExportPopup(filename) {{
-  _exportFile = filename;
-  const overlay   = document.getElementById('exportPopup');
-  const btn       = document.getElementById('exportGoBtn');
-  const countdown = document.getElementById('exportCountdown');
-  const sub       = document.getElementById('exportPopupSub');
-
-  // Reset state
-  btn.textContent = "Let's Go ⬇";
-  btn.classList.remove('ready');
-  sub.innerHTML   = 'Downloading in <span id="exportCountdown">4</span>s…';
-  document.getElementById('exportPopupGif').src = 'https://media.giphy.com/media/VK2JbAI71xTxlSVNNu/giphy.gif';
-  overlay.classList.remove('hidden');
-
-  let secs = 4;
-  document.getElementById('exportCountdown').textContent = secs;
-
-  clearInterval(_exportTimer);
-  _exportTimer = setInterval(() => {{
-    secs--;
-    const el = document.getElementById('exportCountdown');
-    if (el) el.textContent = secs;
-    if (secs <= 0) {{
-      clearInterval(_exportTimer);
-      // Can't auto-download on iOS — switch to "tap" state instead
-      sub.textContent = 'Ready! Tap the button to save.';
-      btn.textContent = '⬇ Download Now';
-      btn.classList.add('ready');
-    }}
-  }}, 1000);
-
-  // window.open as a direct user-gesture call — works on iOS Safari
-  btn.onclick = () => {{
-    clearInterval(_exportTimer);
-    // Swap to Pikachu, then download after 1s
-    document.getElementById('exportPopupGif').src = 'https://media.giphy.com/media/ux2EQfCsCm3hJ0dZGv/giphy.gif';
-    sub.textContent = '🎉 Downloading…';
-    btn.disabled = true;
-    const file = _exportFile;
-    _exportFile = null;
-    setTimeout(() => {{
-      document.getElementById('exportPopup').classList.add('hidden');
-      btn.disabled = false;
-      if (file) window.open(file, '_blank');
-    }}, 3000);
-  }};
-}}
-
-document.addEventListener('keydown', e => {{ if (e.key === 'Escape') {{ closeModal(); closeDrawer(); closeMoodsInfo(); closeStaffGuide(); }} }});
+document.addEventListener('keydown', e => {{ if (e.key === 'Escape') {{ closeModal(); closeMoodsInfo(); closeStaffGuide(); }} }});
 
 // ── Moods info modal ──
 const MOOD_INFO = [
@@ -1516,7 +1044,7 @@ function openStaffGuide() {{
       </div>
       <div class="sg-guide-card">
         <div class="sg-guide-card-head"><span class="sg-guide-card-icon">🪟</span><span class="sg-guide-card-name">Strain Guide (Tap a Card)</span></div>
-        <div class="sg-guide-card-body">Tap any product card to open its full strain profile — lineage, therapeutic uses, aroma, terpenes, and general notes. Hit <strong>＋ Add to Profile</strong> to collect strains for a custom export.</div>
+        <div class="sg-guide-card-body">Tap any product card to open its full strain profile — lineage, therapeutic uses, aroma, terpenes, and general notes.</div>
       </div>
     </div>
 
@@ -1562,24 +1090,6 @@ function openStaffGuide() {{
       </div>
     </div>
 
-    <div class="sg-guide-section">
-      <div class="sg-guide-section-title">⬇️ Downloading Strain Guides</div>
-      <div class="sg-guide-card">
-        <div class="sg-guide-card-body">
-          <table class="sg-guide-table">
-            <tr><th>Button</th><th>Contents</th></tr>
-            <tr><td>✅ Available Now</td><td>Every product currently in stock, sorted Flower → Pre-Roll → Vapes</td></tr>
-            <tr><td>📦 Master Cache</td><td>Every strain ever enriched (including past products), same sort order</td></tr>
-          </table><br>
-          Click either button → popup appears → press <strong>Let's Go</strong> → <code>.docx</code> file downloads. Open in Microsoft Word or Google Docs.<br><br>
-          Documents rebuild automatically every day. A new strain added to Sweed today will appear in tomorrow's download.
-        </div>
-      </div>
-      <div class="sg-guide-card">
-        <div class="sg-guide-card-head"><span class="sg-guide-card-icon">📋</span><span class="sg-guide-card-name">Build a Custom Profile</span></div>
-        <div class="sg-guide-card-body">Tap any product card → press <strong>＋ Add to Profile</strong> → open the <strong>📋 My Profile</strong> button (bottom-right corner) → press <strong>⬇ Download Strain Guide</strong> to save an HTML file you can open in Word. Good for building a handpicked reference sheet for a specific customer or use case.</div>
-      </div>
-    </div>
     <div style="height:20px"></div>
   `;
   document.getElementById('staffGuideModal').classList.remove('hidden');
@@ -1652,313 +1162,11 @@ document.addEventListener('DOMContentLoaded', function() {{
 }});
 
 </script>
-
-<!-- ── PIN overlay ── -->
-<div class="pin-overlay hidden" id="pinOverlay">
-  <div class="pin-box" id="pinBox">
-    <h2>Staff Access</h2>
-    <p>Enter your code to view the schedule</p>
-    <input class="pin-input" id="pinInput" type="password" maxlength="4"
-           inputmode="numeric" placeholder="••••" autocomplete="off"
-           oninput="checkPin(this.value)">
-    <div class="pin-error" id="pinError"></div>
-  </div>
-  <div class="pin-box hidden" id="pinCaution">
-    <h2>⚠ Use With Caution</h2>
-    <p style="margin:12px 0 18px;font-size:.9rem;line-height:1.6;color:#555;">This reflects the schedule as originally sent.<br><br>If changes were made after it was sent, refer to the <strong>physical schedule posted at work</strong>.</p>
-    <button onclick="dismissCaution()" style="background:#1A1A1A;color:#F5C228;border:none;border-radius:20px;padding:10px 28px;font-size:.9rem;font-weight:700;cursor:pointer;width:100%;">Got it — View Schedule</button>
-  </div>
-</div>
-
-<!-- ── Schedule section (injected into main by JS) ── -->
-<template id="scheduleTemplate">
-  <section id="scheduleSection">
-    <div style="background:#fef3c7;border:2px solid #f59e0b;border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-size:.85rem;color:#92400e;font-weight:600;">
-      🚧 <span><strong>Schedule — Work in Progress.</strong> Always verify shifts against the source images below or the physical schedule posted at work.</span>
-    </div>
-    <div class="sched-img-section">
-      <p class="sched-img-label">May 2026</p>
-      <img src="schedule-may.jpg" alt="May schedule" class="sched-img">
-      <p class="sched-img-label" style="margin-top:20px">June 2026</p>
-      <img src="schedule-june.jpg" alt="June schedule" class="sched-img">
-    </div>
-  </section>
-</template>
-
-<script>
-const SCHEDULE = {schedule_js};
-const SCHED_PIN = '0420';
-let schedOffset   = 0;   // days from today (multiples of 7)
-let schedPerson   = 'all';
-let schedUnlocked = false;
-
-function openScheduleTab(btn) {{
-  if (schedUnlocked || sessionStorage.getItem('sched-ok') === '1') {{
-    schedUnlocked = true;
-    showSchedule(btn);
-    return;
-  }}
-  document.getElementById('pinOverlay').classList.remove('hidden');
-  document.getElementById('pinInput').value = '';
-  document.getElementById('pinError').textContent = '';
-  setTimeout(() => document.getElementById('pinInput').focus(), 80);
-  // store btn ref to activate after unlock
-  window._schedBtn = btn;
-}}
-
-function checkPin(val) {{
-  if (val.length < 4) return;
-  if (val === SCHED_PIN) {{
-    sessionStorage.setItem('sched-ok', '1');
-    schedUnlocked = true;
-    document.getElementById('pinBox').classList.add('hidden');
-    document.getElementById('pinCaution').classList.remove('hidden');
-  }} else {{
-    document.getElementById('pinError').textContent = 'Incorrect code';
-    document.getElementById('pinInput').value = '';
-  }}
-}}
-
-function dismissCaution() {{
-  document.getElementById('pinOverlay').classList.add('hidden');
-  document.getElementById('pinBox').classList.remove('hidden');
-  document.getElementById('pinCaution').classList.add('hidden');
-  document.getElementById('pinInput').value = '';
-  showSchedule(window._schedBtn);
-}}
-
-function showSchedule(btn) {{
-  // Activate tab
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
-  if (btn) btn.classList.add('on');
-  // Hide product content, show schedule
-  document.querySelectorAll('.section,.new-arrivals-section,.sold-section,.section-divider,.mood-bar,.legend').forEach(el => {{
-    el.style.display = 'none';
-  }});
-  let sec = document.getElementById('scheduleSection');
-  if (!sec) {{
-    const tpl = document.getElementById('scheduleTemplate');
-    const clone = tpl.content.cloneNode(true);
-    document.querySelector('main').appendChild(clone);
-    sec = document.getElementById('scheduleSection');
-  }}
-  sec.classList.add('active');
-  renderSchedule();
-}}
-
-function hideSchedule() {{
-  const sec = document.getElementById('scheduleSection');
-  if (sec) sec.classList.remove('active');
-  document.querySelectorAll('.section,.new-arrivals-section,.sold-section,.section-divider,.mood-bar,.legend').forEach(el => {{
-    el.style.display = '';
-  }});
-}}
-
-function toggleSchedImages(btn) {{
-  const wrap = document.getElementById('schedImages');
-  const hidden = wrap.classList.toggle('hidden');
-  btn.classList.toggle('open', !hidden);
-  btn.querySelector('.sched-img-toggle-sub').textContent = hidden
-    ? 'Tap to see the source calendar photos — always verify shifts here'
-    : 'Tap to hide images';
-}}
-
-function schedNav(days) {{
-  const newOffset = schedOffset + days;
-  // Don't go more than 35 days back or 7 days forward
-  if (newOffset < -35 || newOffset > 7) return;
-  schedOffset = newOffset;
-  renderSchedule();
-}}
-
-function setSchedPerson(name) {{
-  schedPerson = name;
-  renderSchedule();
-}}
-
-function renderSchedule() {{
-  const shifts = SCHEDULE.shifts || [];
-  const today  = new Date();
-  today.setHours(0,0,0,0);
-
-  // Week window: schedOffset days from today
-  const windowStart = new Date(today);
-  windowStart.setDate(windowStart.getDate() + schedOffset);
-  const windowEnd = new Date(windowStart);
-  windowEnd.setDate(windowEnd.getDate() + 6);
-
-  // Nav label
-  const fmt = d => d.toLocaleDateString('en-US', {{month:'short', day:'numeric'}});
-  document.getElementById('schedWeekLabel').textContent = fmt(windowStart) + ' – ' + fmt(windowEnd);
-
-  // Nav buttons
-  document.getElementById('schedPrevBtn').classList.toggle('disabled', schedOffset <= -35);
-  document.getElementById('schedNextBtn').classList.toggle('disabled', schedOffset >= 7);
-
-  // Build person dropdown (populate once)
-  const people = ['all', ...Array.from(new Set(shifts.map(s => s.name))).sort()];
-  const sel = document.getElementById('schedPersonSelect');
-  if (sel.options.length <= 1) {{
-    people.slice(1).forEach(p => {{
-      const opt = document.createElement('option');
-      opt.value = p;
-      opt.textContent = p;
-      sel.appendChild(opt);
-    }});
-  }}
-  sel.value = schedPerson;
-
-  // Render 7 days
-  const daysEl = document.getElementById('schedDays');
-  daysEl.innerHTML = '';
-  for (let i = 0; i < 7; i++) {{
-    const day = new Date(windowStart);
-    day.setDate(day.getDate() + i);
-    const dayStr = day.toISOString().slice(0,10);
-    const isToday = day.getTime() === today.getTime();
-
-    const dayShifts = shifts.filter(s => {{
-      if (s.date !== dayStr) return false;
-      return schedPerson === 'all' || s.name === schedPerson;
-    }});
-
-    const dayEl = document.createElement('div');
-    dayEl.className = 'sched-day' + (isToday ? ' today' : '');
-
-    const headEl = document.createElement('div');
-    headEl.className = 'sched-day-head';
-    headEl.innerHTML = day.toLocaleDateString('en-US', {{weekday:'long', month:'short', day:'numeric'}})
-      + (isToday ? ' <span class="sched-today-badge">Today</span>' : '');
-    dayEl.appendChild(headEl);
-
-    if (dayShifts.length === 0) {{
-      const emp = document.createElement('div');
-      emp.className = 'sched-shift';
-      emp.style.color = 'var(--muted)';
-      emp.style.fontStyle = 'italic';
-      emp.style.fontSize = '.78rem';
-      emp.textContent = 'No shifts scheduled';
-      dayEl.appendChild(emp);
-    }} else {{
-      const t2m = t => {{ const m=t.match(/(\d+):(\d+)\s*(AM|PM)/i); if(!m)return 0; let h=+m[1],pm=m[3].toUpperCase()==='PM'; if(pm&&h!==12)h+=12; if(!pm&&h===12)h=0; return h*60+(+m[2]); }};
-      dayShifts.sort((a,b) => t2m(a.start||'') - t2m(b.start||''));
-      dayShifts.forEach(s => {{
-        const row = document.createElement('div');
-        row.className = 'sched-shift';
-        row.innerHTML = `<span class="sched-shift-name">${{s.name}}</span>`
-          + `<span class="sched-shift-time">${{s.start}} – ${{s.end}}</span>`;
-        dayEl.appendChild(row);
-      }});
-    }}
-    daysEl.appendChild(dayEl);
-  }}
-
-  // Last updated
-  const upd = document.getElementById('schedUpdated');
-  if (SCHEDULE.last_updated) {{
-    upd.textContent = 'Schedule last updated: ' + new Date(SCHEDULE.last_updated).toLocaleString('en-US', {{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'}});
-  }}
-}}
-</script>
 </body>
 </html>"""
 
     OUT.write_text(html, encoding="utf-8")
     print(f"Built → {OUT}  ({len(all_p)} products)")
-
-    # Also regenerate both docx exports
-    build_docx(all_p, db["products"], strains)
-
-
-DOCX_CAT_ORDER = ["flower", "pre-roll", "vapes"]
-DOCX_CAT_LABELS = {"flower": "FLOWER", "pre-roll": "PRE-ROLL", "vapes": "VAPES"}
-
-
-def _docx_section_header(doc, title):
-    doc.add_paragraph()
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = p.add_run(f"{'─' * 20}   {title}   {'─' * 20}")
-    run.bold = True
-    run.font.size = Pt(13)
-    doc.add_paragraph()
-
-
-def _docx_strain(doc, name, product, enriched):
-    strain_type = product.get("strain_type", "")
-    p = doc.add_paragraph()
-    r1 = p.add_run(name)
-    r1.bold = True
-    r1.font.size = Pt(16)
-    p.add_run("\t").bold = True
-    r3 = p.add_run(f"-   {strain_type}")
-    r3.bold = False
-    r3.font.size = Pt(14)
-
-    fields = [
-        ("Lineage",     enriched.get("lineage", "")),
-        ("Effects",     ", ".join(product.get("effects") or [])),
-        ("Flavors",     ", ".join(product.get("flavors") or [])),
-        ("Terpenes",    ", ".join(product.get("terpenes") or [])),
-        ("Therapeutic", enriched.get("therapeutic", "")),
-        ("Negative",    enriched.get("negative", "")),
-        ("Aroma",       enriched.get("aroma", "")),
-        ("Misc.",       enriched.get("misc", "")),
-    ]
-    for label, value in fields:
-        if not value:
-            continue
-        p = doc.add_paragraph()
-        rb = p.add_run(f"{label}: ")
-        rb.bold = True
-        p.add_run(value).bold = False
-    doc.add_paragraph()
-
-
-def build_docx(all_p, products_db, strains):
-    docs_dir = Path(__file__).parent / "docs"
-
-    def _write(path, items, title):
-        doc = Document()
-        doc.core_properties.title = title
-        # Title paragraph
-        heading = doc.add_paragraph()
-        heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        hr = heading.add_run(title.upper())
-        hr.bold = True
-        hr.font.size = Pt(18)
-        sub = doc.add_paragraph()
-        sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        sub.add_run(f"Dinky Dope · Dinkytown · {datetime.now(CST).strftime('%B %d, %Y')}")
-
-        by_cat = {c: [] for c in DOCX_CAT_ORDER}
-        for key, p in items:
-            cat = (p.get("category") or "").lower()
-            if cat in by_cat:
-                by_cat[cat].append((key, p))
-
-        for cat in DOCX_CAT_ORDER:
-            entries = by_cat[cat]
-            if not entries:
-                continue
-            _docx_section_header(doc, DOCX_CAT_LABELS[cat])
-            for key, p in sorted(entries, key=lambda x: x[1].get("name", "")):
-                enriched = strains.get(key, {})
-                _docx_strain(doc, p.get("name", key), p, enriched)
-
-        doc.save(path)
-        print(f"Built docx → {path}  ({sum(len(v) for v in by_cat.values())} strains)")
-
-    # Available Now — only in-stock scraped products
-    _write(docs_dir / "dinky-available-guide.docx", all_p, "Available Now")
-
-    # Master Cache — all enriched keys, supplemented by products_db
-    master_keys = list({**{k: products_db[k] for k in products_db}, **{}}.keys())
-    master_items = []
-    for k in strains:
-        p = products_db.get(k, {"name": k, "category": "flower"})
-        master_items.append((k, p))
-    _write(docs_dir / "dinky-master-guide.docx", master_items, "Master Strain Cache")
 
 
 build()

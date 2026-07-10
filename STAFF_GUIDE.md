@@ -1,12 +1,12 @@
-# Legit Cannabis South Metro — Staff Menu Guide
+# Dinky Dope — Staff Menu Guide
 
-**Live page:** [capitanminovel.github.io/legit-buddy-api](https://capitanminovel.github.io/legit-buddy-api)
+**Live page:** [capitanminovel.github.io/dinky-buddy-api](https://capitanminovel.github.io/dinky-buddy-api)
 
 ---
 
 ## What Is This?
 
-This is the internal menu and strain reference tool for MN Legit Cannabis South Metro. It updates itself every day at 4:30 PM CST — you don't need to touch anything for it to stay current. When new products hit Sweed, they'll appear here automatically, usually within 24 hours.
+This is the internal menu and strain reference tool for Dinky Dope (Dinkytown). It updates itself automatically several times a day — you don't need to touch anything for it to stay current. When new products hit Sweed, they'll appear here automatically within the next update cycle.
 
 ---
 
@@ -14,7 +14,7 @@ This is the internal menu and strain reference tool for MN Legit Cannabis South 
 
 ### Finding Products
 
-At the top of the page you'll see category tabs — **Flower, Pre-Roll, Vapes, Edibles**. Tap any tab to filter down to just that category. Any products added in the last 3 days appear in a highlighted **New** section at the top.
+At the top of the page you'll see category tabs — **Flower, Pre-Roll, Vapes, Edibles**. Tap any tab to filter down to just that category. Any products added in the last 3 days appear in a highlighted **New** section at the top. Products that sold out in the last 2 days appear in a **Sold Out** section so staff know what recently ran out.
 
 Tap any product card to open its full strain profile — lineage, therapeutic uses, aroma, terpenes, and general notes.
 
@@ -33,7 +33,7 @@ The search bar works across everything — product names, terpene names, and the
 The mood chips let customers (and staff) say what they're *looking for* rather than naming a specific strain. Tap a chip and every card on the page gets a **score from 1–10** showing how well it matches that vibe. Cards automatically sort best to worst.
 
 The colored border tells you at a glance:
-- 🟢 **Green border** — strong match (7 or higher)
+- 🟡 **Gold border** — strong match (7 or higher)
 - 🟡 **Amber border** — decent match (4–6)
 - ⚫ **Gray border** — present but weak match (1–3)
 
@@ -47,11 +47,11 @@ There are three sources that feed this tool, and it's important to know which on
 
 ### 1. Sweed POS System — Product Data & Terpenes
 
-Everything product-related — name, brand, price, THC/CBD, weight, category, terpenes, and strain type — comes directly from **your Sweed POS system**. The tool pulls a fresh copy every day.
+Everything product-related — name, brand, price, THC/CBD, weight, category, terpenes, and strain type — comes directly from **your Sweed POS system**. The tool pulls a fresh copy several times a day.
 
 **Terpenes in particular come from COA data that each brand submits to the store.** When a brand delivers product, they provide a Certificate of Analysis (lab test results) which the store enters into Sweed. Those are the terpenes you see on the cards — actual lab-tested values, not guesses.
 
-> ⚠️ **Important:** If a product's terpene list looks incomplete or wrong, the fix is in Sweed — update the COA data there and it'll reflect here on the next daily update. The tool only knows what Sweed knows.
+> ⚠️ **Important:** If a product's terpene list looks incomplete or wrong, the fix is in Sweed — update the COA data there and it'll reflect here on the next update. The tool only knows what Sweed knows.
 
 Dispensary effect labels (the "Relaxing", "Energetic" type tags sometimes set in Sweed) are intentionally **not used** anywhere in this tool — those are marketing copy and aren't consistent enough to trust. Everything mood-related is derived from terpenes only.
 
@@ -99,34 +99,6 @@ The AI also provides its own 1–10 rating for each strain/mood combination, usi
 
 ---
 
-## How the Strain Guide Documents Work
-
-There are two pre-built Word documents you can download directly from the menu page:
-
-**✅ Available Now** — contains only the strains currently in stock.
-**📦 Master Cache** — contains every strain the tool has ever seen and enriched, including ones that may be out of stock.
-
-Both are sorted by category: **Flower → Pre-Roll → Vapes.**
-
-### Where the Document Content Comes From
-
-Each entry in the document is built from **both sources combined**:
-
-- **Product details** (name, brand, strain type, THC/CBD, terpenes, flavors) → from Sweed COA data
-- **Enriched profile** (lineage, therapeutic, aroma, misc) → from Claude AI's research
-
-So the document reflects everything we know about each strain — the hard lab facts from Sweed and the contextual knowledge from AI research.
-
-### Downloading
-
-Click either export button on the page → a popup appears with a countdown → press **Let's Go** → the `.docx` file downloads. Open it in Microsoft Word or Google Docs.
-
-### Updating the Document with New Strains
-
-The documents rebuild automatically every day as part of the daily update. If a new strain was added to Sweed yesterday, it'll be in the next day's download automatically — no manual steps needed.
-
----
-
 ## A Note on Accuracy
 
 This tool is as accurate as the data it has access to:
@@ -142,6 +114,7 @@ This tool is as accurate as the data it has access to:
 | Mood | Key Terpenes | Good For |
 |---|---|---|
 | 😴 Wind Down | Myrcene, Linalool | Sleep, end of day, heavy relaxation |
+| 🌙 Deep Sleep | Myrcene (dominant), Linalool | True knock-out sedation |
 | 🧘 Anxiety Relief | Linalool, Caryophyllene, Limonene | Stress, anxiety, PTSD, overthinking |
 | ⬆ Lift Up | Limonene, Terpinolene, Ocimene | Energy, mood boost, afternoon use |
 | 🎨 Get Creative | Pinene, Terpinolene | Focus, art, writing, creative projects |
