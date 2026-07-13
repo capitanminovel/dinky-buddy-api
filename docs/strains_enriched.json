@@ -1156,5 +1156,59 @@
       "just_happy": 6,
       "aphrodisiac": 5
     }
+  },
+  "02756e511d68": {
+    "lineage": "Cotton Candy x Gravenstein OG (Northpark)",
+    "therapeutic": "Stress relief, mild anxiety, mood elevation, fatigue, mild depression, creative blocks",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible drowsiness with prolonged use",
+    "aroma": "A lush bouquet of ripe berries and sugary candy sweetness opens up front, underpinned by a zesty lemon citrus lift and a subtle earthy, spiced undertone from the OG heritage. The overall nose is bright and inviting, leaning fruity and floral with just enough dank depth to signal its indica-leaning roots.",
+    "misc": "Fog Dog is a Northpark house blend crossing the candy-sweet Cotton Candy (itself a Lavender x Power Plant descendant known for sugary terpene profiles) with Gravenstein OG, a West Coast OG Kush phenotype that anchors the hybrid with grounding body effects and resinous structure. At 17.2% THC this is a moderate-potency offering well-suited for afternoon or early evening use, where its creative and euphoric onset can be enjoyed before the relaxing body sink sets in. Consumers new to cannabis or with lower tolerance should start with one or two puffs and pace themselves, as the indica undercurrent may intensify with higher consumption.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "f8e8331b58a0": {
+    "lineage": "Fro'Do x Alaskan Yeti, then backcrossed with LilMissHS (Northpark Genetics); Fro'Do is believed to descend from Frodo Baggins and related OG/Kush lines, Alaskan Yeti carries frosty northern landrace influence, and LilMissHS contributes hybrid vigor and terpene complexity",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, mental fatigue, mild pain relief, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses in sensitive users, possible mild headache; not ideal for those prone to sativa-induced anxiety",
+    "aroma": "A grounding wave of damp earth and pine needle opens the nose, quickly blooming into a bright tropical-fruity sweetness with herbal and faintly spiced undertones that linger like crushed herbs in a forest clearing. The myrcene backbone keeps it rooted and full-bodied while limonene lifts the overall profile with a citrus-tinged brightness.",
+    "misc": "Developed under the Northpark brand, Frodo Squeeze sits in a moderate THC range (typically 16–20%) making it approachable for intermediate consumers; buds are expected to display dense, resinous structure consistent with its Alaskan Yeti frost-heavy genetics, likely showing pale green hues with amber trichomes. Best suited for daytime or early afternoon use given its sativa-leaning hybrid effects that promote focus and euphoria without heavy sedation; the pre-roll format makes it a convenient, consistent option for consumers seeking an uplifting functional experience.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 3,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 4,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "cc0c14b48877": {
+    "lineage": "Likely derived from Gummi Bears (also known as Gummy Bears) — a cross of Blueberry Diesel x Trainwreck, or a phenotype of the broader Gummi Bears family which may incorporate fruity indica-leaning genetics; exact breeder for this specific 'PR Gummi Bears' expression by Northpark is unconfirmed",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, creative blocks, mild fatigue, social anxiety",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, occasional dizziness in sensitive users; low THC at 14.1% makes overconsumption less likely but caution advised for novice consumers",
+    "aroma": "A vibrant, candy-forward bouquet of ripe blueberries and tropical citrus zest greets the nose, layered with a sugary sweetness reminiscent of fruit punch and a faint piney earthiness that grounds the profile. The myrcene-dominant base adds a subtle musky warmth that keeps the overall aroma lush and approachable.",
+    "misc": "Gummi Bears is a moderately popular hybrid known for its approachable, dessert-inspired terpene profile and balanced effects; the 14.1% THC makes this pre-roll ideal for daytime or early evening use, particularly for consumers seeking creativity and uplift without heavy sedation. Buds typically present dense, medium-sized nugs with vibrant green hues, orange pistils, and a frosty trichome coating reflecting its fruity lineage. This is an excellent entry-level to mid-range option for social settings or creative activities, and the balanced hybrid effects make it versatile for a wide range of tolerance levels.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 6,
+      "get_social": 4,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 3
+    }
   }
 }
