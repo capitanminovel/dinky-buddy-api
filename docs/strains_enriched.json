@@ -1577,5 +1577,41 @@
       "just_happy": 6,
       "aphrodisiac": 5
     }
+  },
+  "f09a8b826ba6": {
+    "lineage": "Misty x Unknown Sativa (Nirvana Seeds)",
+    "therapeutic": "Stress relief, anxiety, mild depression, fatigue, mood elevation, mild pain management",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, occasional dizziness in low-tolerance users",
+    "aroma": "Medusa opens with a lush wave of sweet berries and floral notes, reminiscent of fresh-picked fruit with a subtle earthy musk underneath. A faint herbal, tea-like quality lingers on the exhale, courtesy of its ocimene and farnesene terpene profile.",
+    "misc": "Medusa, sometimes called 'The Nirvana Strain,' is associated with Nirvana Seeds, a legendary Dutch seed bank known for producing accessible yet potent genetics since the late 1980s. With a THC content of 17.9%, it sits in a moderate-to-medium potency range, making it approachable for intermediate consumers while still delivering meaningful effects. Buds are typically dense and frosty with a mix of green and purple hues, amber pistils, and a generous trichome coating; best suited for afternoon or early evening use when its balanced hybrid effects can ease stress without fully sedating.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 4,
+      "get_creative": 2,
+      "get_social": 3,
+      "pain_body": 6,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "982a8b5c669e": {
+    "lineage": "Amnesia Haze x Lemon (likely Lemon Skunk or Lemon OG lineage) x Sin Tra Bajo Auto (autoflowering ruderalis-hybrid baseline); exact breeder of the Hyperion cross is Dizgo or a collaborating cultivar partner — Sin Tra Bajo Auto is a known Spanish autoflowering variety, suggesting possible Positronics or similar Iberian breeding influence",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, fatigue, mild pain management, creative blocks, low-grade depression",
+    "negative": "Dry mouth, dry eyes, possible mild paranoia at higher sensitivity levels, slight dizziness for low-tolerance users; the peppery caryophyllene may occasionally cause throat irritation in pre-roll format",
+    "aroma": "Hyperion opens with a bright burst of fresh pine and zesty lemon citrus, quickly giving way to a grounding bed of damp earth and dry herbs, with a distinctly spicy, black-pepper finish that lingers on the exhale — complex yet approachable.",
+    "misc": "Hyperion is a hybrid pre-roll offering from Dizgo featuring an autoflowering lineage that keeps THC moderate at ~13.9%, making it well-suited for daytime or early-evening use without overwhelming newer consumers. The terpene profile — led by myrcene for body ease and terpinolene for mental lift, rounded out by caryophyllene and humulene for anti-inflammatory depth — delivers a well-balanced, functional high ideal for creative tasks, social settings, or light outdoor activity. Consumers seeking heavy sedation should look elsewhere; Hyperion shines as a sessionable, clear-headed hybrid for those who want to stay engaged and uplifted.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 4,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 6,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
   }
 }
