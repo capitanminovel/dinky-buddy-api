@@ -1991,5 +1991,23 @@
       "just_happy": 6,
       "aphrodisiac": 4
     }
+  },
+  "ac0b97826aaa": {
+    "lineage": "Purple Kush x Lemon Skunk (Campfire Cannabis); Purple Kush itself descends from Hindu Kush x Purple Afghani, while Lemon Skunk traces back to two select Skunk phenotypes known for exceptional citrus expression",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, creative block, mild pain management, fatigue, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, slight dizziness in sensitive users; indica-leaning effects may cause mild sedation in larger quantities despite its hybrid classification",
+    "aroma": "A bright and inviting burst of fresh-squeezed lemon and sun-ripened berries greets the nose first, underscored by a sweet, candy-like grape undertone inherited from its Purple Kush lineage. Subtle earthy and piney base notes from the pinene and myrcene round out the bouquet, lending a grounded, almost herbal complexity beneath the fruity top layer.",
+    "misc": "At 18.2% THC, Pink Lemonade sits in a moderate-to-solid range that makes it approachable for intermediate consumers while still satisfying experienced users seeking balanced effects. Buds are typically dense and medium-sized with deep purple and green hues, coated in frosty trichomes and amber pistils — a visual nod to both parent strains. Best consumed in the late afternoon or early evening when creativity and calm are both desired, making it a strong choice for social settings, artistic pursuits, or unwinding after a demanding day.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 6,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 6,
+      "get_social": 2,
+      "pain_body": 4,
+      "just_happy": 4,
+      "aphrodisiac": 2
+    }
   }
 }
