@@ -2171,5 +2171,41 @@
       "just_happy": 7,
       "aphrodisiac": 7
     }
+  },
+  "sw293502": {
+    "lineage": "The Soap x Project 4516 (Campfire Cannabis / In House Genetics collaboration; The Soap = Animal Cookies x Girl Scout Cookies x Chem 4; Project 4516 lineage involves Chem 4 OG and related OG/Chem crosses)",
+    "therapeutic": "Stress relief, anxiety reduction, mild depression, muscle tension, insomnia onset, mood elevation",
+    "negative": "Dry mouth, dry eyes, mild dizziness at higher doses, potential sedation with heavy consumption, may cause couch-lock in sensitive users",
+    "aroma": "Bubble Bath greets the nose with a complex bouquet of soapy floral sweetness layered over sharp diesel funk and fresh pine, evoking a luxurious, clean lather with an earthy, woody undertone. The linalool-forward terpene profile adds a gentle lavender-like floral note that softens the fuel-driven pungency into something surprisingly inviting and spa-like.",
+    "misc": "Bubble Bath is a indica-leaning hybrid bred under the Campfire Cannabis brand, drawing on the potent Cookies and Chem genetic heritage of its parent strains, typically expressing THC levels in the 22–28% range when cultivated well. Buds tend to present dense, chunky olive-green nugs with deep purple undertones, a thick frosting of trichomes, and burnt orange pistils reflecting its rich Cookies lineage. Best suited for evening or late-afternoon use, this strain is ideal for unwinding after a stressful day, with the balanced hybrid effects making it approachable for intermediate consumers looking for relaxation without full sedation.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 4,
+      "get_creative": 2,
+      "get_social": 4,
+      "pain_body": 5,
+      "just_happy": 7,
+      "aphrodisiac": 6
+    }
+  },
+  "sw496966": {
+    "lineage": "Animal Mints x Kush Mints (Seed Junky Genetics lineage; Animal Mints = Animal Cookies x SinMint Cookies; Kush Mints = Animal Mints x Bubba Kush)",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, mood elevation, fatigue, creative blocks, low libido",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, potential dizziness for low-tolerance users, may cause restlessness in sensitive sativa consumers",
+    "aroma": "An intriguing and complex bouquet that opens with sharp, clean mint and bright citrus zest layered over a creamy, almost soapy floral base reminiscent of rose water and Earl Grey tea. Subtle earthy pine and a faint cheesy funk round out the exhale, giving it a distinctly sophisticated and herbal depth.",
+    "misc": "Soap is a phenotype rooted in Seed Junky Genetics' Kush Mints and Animal Mints lineage, well-regarded in craft cannabis circles for its uniquely clean, floral-mint terpene profile dominated by linalool and limonene. Typical flower expressions test between 22–28% THC, and as a cured resin vape from Stargaze, the full-spectrum extraction preserves the nuanced terpene complexity that gives this strain its signature 'soapy' character. Best suited for daytime to early evening use when creativity, social energy, and mood elevation are desired without heavy sedation.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 3,
+      "anxiety_relief": 8,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 4,
+      "just_happy": 7,
+      "aphrodisiac": 6
+    }
   }
 }
