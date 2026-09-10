@@ -288,23 +288,6 @@
       "aphrodisiac": 5
     }
   },
-  "0a8fd091a6ec": {
-    "lineage": "Jack Herer x Time Wreck — Jack Herer (Sensi Seeds) is itself a cross of Haze x (Northern Lights #5 x Shiva Skunk); Time Wreck is a sativa-dominant hybrid derived from Trainwreck x Vortex (TGA Subcool Seeds), giving this cross a deeply layered sativa-forward pedigree",
-    "therapeutic": "Stress relief, depression, fatigue, mild anxiety, creative blocks, mood elevation, mild pain management",
-    "negative": "Dry mouth, dry eyes, mild paranoia at high doses, potential for racing thoughts in THC-sensitive users, increased heart rate — use with caution if prone to anxiety",
-    "aroma": "A bright and pungent bouquet opens with zesty citrus and sweet berry top notes inherited from its Trainwreck and Haze ancestry, followed by an earthy, woody pine base with subtle spice and a faint floral sweetness that lingers on the exhale.",
-    "misc": "This keif-coated pre-roll from Lakeside Canna pushes THC into elevated territory well above the base flower's typical range, making it best suited for experienced consumers; the kief coating intensifies onset speed and potency, so newcomers should exercise caution and start slow. The combination of Jack Herer's legendary cerebral clarity and Time Wreck's energetic, creative Trainwreck genetics makes this an ideal daytime or early-evening smoke for artists, social settings, or active use. The sativa-forward effect profile at 24.9% THC delivers a sharp, functional head high rather than sedation, though the myrcene presence may soften the edge into a well-rounded hybrid experience.",
-    "mood_ratings": {
-      "wind_down": 7,
-      "anxiety_relief": 4,
-      "lift_up": 7,
-      "get_creative": 3,
-      "get_social": 6,
-      "pain_body": 5,
-      "just_happy": 6,
-      "aphrodisiac": 4
-    }
-  },
   "5d08dec97886": {
     "lineage": "Dante's Inferno (Oreoz x Devil Driver) infused with Cherry Nirvana terpenes | Oreoz: Cookies and Cream x Secret Weapon; Devil Driver: unknown proprietary lineage, likely Cookie/OG-derived | Cherry Nirvana: Cherry Pie x Nirvana (Cherry Pie being Granddaddy Purple x Durban Poison)",
     "therapeutic": "Stress relief, depression, mood elevation, mild pain management, fatigue, social anxiety",
@@ -322,23 +305,6 @@
       "aphrodisiac": 4
     }
   },
-  "ff21ae28e322": {
-    "lineage": "Not strain-specific — THC distillate infused gummies",
-    "therapeutic": "Chronic pain, insomnia, stress, anxiety — long-lasting body-focused relief (4–8 hours)",
-    "negative": "Delayed onset 30–90 min. Do NOT re-dose too early. Dry mouth, possible paranoia if over-consumed. Start low.",
-    "aroma": "N/A — raspberry candy flavor",
-    "misc": "Grasslandz brand. 100mg total THC per package — 10mg per piece (10 pieces). Lab-tested distillate. Edibles provide longer-lasting, body-focused effects vs inhalation. Onset 30–90 min, peak 2–4 hrs, total duration 4–8 hrs. Ideal for sleep and extended pain relief. New consumers: start with 5mg (half piece).",
-    "mood_ratings": {
-      "wind_down": 3,
-      "anxiety_relief": 3,
-      "lift_up": 3,
-      "get_creative": 3,
-      "get_social": 3,
-      "pain_body": 3,
-      "just_happy": 3,
-      "aphrodisiac": 3
-    }
-  },
   "c1221a8e9eca": {
     "lineage": "N/A — distillate edible",
     "therapeutic": "",
@@ -347,23 +313,6 @@
     "misc": "",
     "mood_ratings": {},
     "strain_type": "hybrid"
-  },
-  "dc549314fb17": {
-    "lineage": "Edible product — exact strain genetics not specified; 'Sour Blueberry' likely draws inspiration from Sour Diesel x Blueberry (DJ Short's Blueberry) hybrid flavor profiles used in formulation",
-    "therapeutic": "Stress relief, mild to moderate pain management, anxiety reduction, appetite stimulation, mood elevation, insomnia support at higher doses",
-    "negative": "Overconsumption risk due to high potency concentrate (94.2% THC distillate); possible dry mouth, paranoia, dizziness, anxiety, or couch-lock — especially for new or low-tolerance users; delayed onset (30–120 min) increases accidental overconsumption risk",
-    "aroma": "As an edible, expect a candy-forward scent blending sweet ripe blueberry with a tangy sour citrus bite. The flavor profile is likely dominated by artificial or natural fruit flavoring designed to mimic a blueberry sour candy experience.",
-    "misc": "Each piece contains 10mg THC — a standard single serving recommended for most adults; beginners should start with 2.5–5mg (half or quarter piece). The 94.2% THC figure refers to the distillate concentrate used in formulation, not the per-piece dose. Wait at least 90 minutes before re-dosing to accurately assess effects. Grasslandz is a cannabis brand focused on accessible, consistent dosing in edible form.",
-    "mood_ratings": {
-      "wind_down": 5,
-      "anxiety_relief": 4,
-      "lift_up": 3,
-      "get_creative": 3,
-      "get_social": 3,
-      "pain_body": 4,
-      "just_happy": 4,
-      "aphrodisiac": 3
-    }
   },
   "a4762c1c9162": {
     "lineage": "Infused edible product — no specific strain lineage applicable. This is a manufactured cannabis edible by Nebula, dosed at 10mg THC per serving with 10 servings per bar (100mg total).",
@@ -2242,6 +2191,147 @@
       "pain_body": 5,
       "just_happy": 6,
       "aphrodisiac": 5
+    }
+  },
+  "sw362584": {
+    "lineage": "Jack Herer x Time Wreck — Jack Herer (Sensi Seeds) is itself a cross of Haze x (Northern Lights #5 x Shiva Skunk); Time Wreck is a sativa-dominant hybrid derived from Trainwreck x Vortex (TGA Subcool Seeds), giving this cross a deeply layered sativa-forward pedigree",
+    "therapeutic": "Stress relief, depression, fatigue, mild anxiety, creative blocks, mood elevation, mild pain management",
+    "negative": "Dry mouth, dry eyes, mild paranoia at high doses, potential for racing thoughts in THC-sensitive users, increased heart rate — use with caution if prone to anxiety",
+    "aroma": "A bright and pungent bouquet opens with zesty citrus and sweet berry top notes inherited from its Trainwreck and Haze ancestry, followed by an earthy, woody pine base with subtle spice and a faint floral sweetness that lingers on the exhale.",
+    "misc": "This keif-coated pre-roll from Lakeside Canna pushes THC into elevated territory well above the base flower's typical range, making it best suited for experienced consumers; the kief coating intensifies onset speed and potency, so newcomers should exercise caution and start slow. The combination of Jack Herer's legendary cerebral clarity and Time Wreck's energetic, creative Trainwreck genetics makes this an ideal daytime or early-evening smoke for artists, social settings, or active use. The sativa-forward effect profile at 24.9% THC delivers a sharp, functional head high rather than sedation, though the myrcene presence may soften the edge into a well-rounded hybrid experience.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "anxiety_relief": 4,
+      "lift_up": 7,
+      "get_creative": 3,
+      "get_social": 6,
+      "pain_body": 5,
+      "just_happy": 6,
+      "aphrodisiac": 4
+    }
+  },
+  "sw333896": {
+    "lineage": "Not strain-specific — THC distillate infused gummies",
+    "therapeutic": "Chronic pain, insomnia, stress, anxiety — long-lasting body-focused relief (4–8 hours)",
+    "negative": "Delayed onset 30–90 min. Do NOT re-dose too early. Dry mouth, possible paranoia if over-consumed. Start low.",
+    "aroma": "N/A — raspberry candy flavor",
+    "misc": "Grasslandz brand. 100mg total THC per package — 10mg per piece (10 pieces). Lab-tested distillate. Edibles provide longer-lasting, body-focused effects vs inhalation. Onset 30–90 min, peak 2–4 hrs, total duration 4–8 hrs. Ideal for sleep and extended pain relief. New consumers: start with 5mg (half piece).",
+    "mood_ratings": {
+      "wind_down": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
+  },
+  "sw362523": {
+    "lineage": "Edible product — exact strain genetics not specified; 'Sour Blueberry' likely draws inspiration from Sour Diesel x Blueberry (DJ Short's Blueberry) hybrid flavor profiles used in formulation",
+    "therapeutic": "Stress relief, mild to moderate pain management, anxiety reduction, appetite stimulation, mood elevation, insomnia support at higher doses",
+    "negative": "Overconsumption risk due to high potency concentrate (94.2% THC distillate); possible dry mouth, paranoia, dizziness, anxiety, or couch-lock — especially for new or low-tolerance users; delayed onset (30–120 min) increases accidental overconsumption risk",
+    "aroma": "As an edible, expect a candy-forward scent blending sweet ripe blueberry with a tangy sour citrus bite. The flavor profile is likely dominated by artificial or natural fruit flavoring designed to mimic a blueberry sour candy experience.",
+    "misc": "Each piece contains 10mg THC — a standard single serving recommended for most adults; beginners should start with 2.5–5mg (half or quarter piece). The 94.2% THC figure refers to the distillate concentrate used in formulation, not the per-piece dose. Wait at least 90 minutes before re-dosing to accurately assess effects. Grasslandz is a cannabis brand focused on accessible, consistent dosing in edible form.",
+    "mood_ratings": {
+      "wind_down": 5,
+      "anxiety_relief": 4,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "sw520258": {
+    "lineage": "Pink Guava #16 x Rainbow Sherbet (Rainbow Sherbet itself is Champagne x Blackberry; Zoap popularized by Doja Pak / Paper Planes)",
+    "therapeutic": "Stress relief, anxiety management, mild depression, mood elevation, creative blocks, fatigue, mild pain",
+    "negative": "Dry mouth, dry eyes, occasional paranoia or anxiety at high doses, dizziness in low-tolerance users",
+    "aroma": "Zoap opens with a vivid burst of tropical guava and ripe cherry, layered over a creamy, candy-sweet sherbet base with a bright citrus zest on the exhale. Subtle earthy and floral undertones round out the profile, giving it a complex, dessert-like quality that lingers.",
+    "misc": "Zoap was made famous by the Bay Area collective Doja Pak and Paper Planes, quickly becoming a cult favorite on the West Coast for its stunning bag appeal — dense, frosty buds with deep purple hues, vivid green, and a thick coating of trichomes that hint at its potency. Typical THC levels range from 22–28%, making it a moderately potent to strong hybrid suitable for experienced consumers. Best enjoyed in the afternoon or early evening when creativity and social engagement are desired, though its relaxing body component makes it versatile across settings.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
+  },
+  "sw520040": {
+    "lineage": "Power Plant (South African Sativa) x Lavender (Soma Seeds) — Lavender itself being a cross of Super Skunk x Big Skunk Korean x Afghani Hawaiian (Soma Seeds)",
+    "therapeutic": "Stress relief, anxiety reduction, mild depression, appetite stimulation, muscle tension, fatigue",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, potential couch-lock with extended use due to indica-leaning profile",
+    "aroma": "A lush, sugary sweetness dominates the nose, reminiscent of spun sugar and ripe tropical fruit, with soft floral undertones of lavender and a faint earthy musk anchoring the bouquet.",
+    "misc": "Cotton Candy was originally bred by Nirvana Seeds and later popularized by Delicious Seeds, who won multiple Cannabis Cup awards with their rendition in the early 2000s. Typical THC levels range from 16–22%, and buds are known for dense, olive-green nugs with purple hues, generous trichome coverage, and burnt-orange pistils. This strain is best suited for late afternoon or evening use when relaxation and a mood lift are desired, making it an excellent social or wind-down strain for moderate consumers.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw520303": {
+    "lineage": "Blueberry Cookies x Cherry OG BX (Blueberry Cookies = Girl Scout Cookies x Blueberry; Cherry OG BX = Cherry Thai x Afghani backcross)",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, insomnia, appetite stimulation, mood elevation",
+    "negative": "Dry mouth, dry eyes, mild dizziness at higher doses, potential couch-lock with overconsumption, may cause mild paranoia in THC-sensitive users",
+    "aroma": "A vibrant burst of sweet summer fruit greets the nose — ripe blueberries and tart cherries layered over a subtle earthy cookie dough base. Warm spice undertones from caryophyllene add depth, while limonene lifts the profile with a bright, citrus-kissed finish reminiscent of a fruit punch candy.",
+    "misc": "Rocket Pop is bred to evoke the nostalgic flavor of a classic frozen treat, and its 60/40 indica-dominant balance makes it a versatile strain favored for evening wind-down or late-afternoon relaxation without full sedation. Typical THC levels for this strain range between 20–24%, making it suitable for intermediate consumers, though newer users should approach with caution given its potency. As a vape product from Nebula, expect a clean, terpene-forward vapor that highlights the fruity flavor profile well, and users should start with 1–2 short draws and wait several minutes before redosing.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw520319": {
+    "lineage": "Triangle Kush x Animal Mints (Seed Junky Genetics), with Animal Mints itself being a cross of Animal Cookies x SinMint Cookies; sometimes also attributed to Cherry Pie x Girl Scout Cookies lineage in older phenotype descriptions",
+    "therapeutic": "Stress relief, anxiety reduction, chronic pain, appetite stimulation, insomnia, depression, muscle tension",
+    "negative": "Dry mouth, dry eyes, dizziness at high doses, potential anxiety or paranoia in THC-sensitive users, couch-lock with heavy consumption",
+    "aroma": "Wedding Cake greets the nose with a rich, doughy sweetness reminiscent of fresh-baked vanilla cake layered over tangy, fruity undertones and a subtle earthy spice from its Kush heritage. The overall aromatic profile is indulgent and dessert-forward, with a warm, cookie-like finish that lingers pleasantly.",
+    "misc": "Wedding Cake was popularized by Seed Junky Genetics and has won multiple Cannabis Cup awards, including recognition at the 2018 SoCal Cannabis Cup. Typical THC levels in flower range from 22–27%, making it a potent choice best suited for late afternoon or evening use when relaxation and creative unwinding are desired. This indica-dominant hybrid is ideal for experienced consumers looking to decompress; newcomers should start with low doses given its reputation for strong sedative effects at higher quantities.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 6,
+      "aphrodisiac": 4
+    }
+  },
+  "sw520341": {
+    "lineage": "Pink Champagne Cookies x Green Ribbon BX (Grasslandz / also attributed to various independent breeders; sometimes listed under 'Moscato')",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, mood elevation, fatigue, low libido",
+    "negative": "Dry mouth, dry eyes, mild dizziness at higher doses, potential mild paranoia in THC-sensitive users",
+    "aroma": "A lush, wine-cellar bouquet of ripe Concord grapes and sweet muscat melon opens the nose, layered beneath with soft floral lavender from the linalool and a subtle creamy vanilla finish. Warm spiced earthiness from caryophyllene and a touch of rose-like geraniol round out a complex, perfumed profile reminiscent of a chilled glass of grape moscato wine.",
+    "misc": "Grape Moscato (Moscato) is a 50/50 balanced hybrid whose terpene stack — dominated by linalool, geraniol, bisabolol, and terpineol — skews heavily floral and sedative, making it well-suited for evening relaxation or romantic, social settings despite its uplifting qualities. Typical THC content in flower form ranges from 18–24%, and buds are generally dense and frosted with amber trichomes showing purple hues inherited from the Pink Champagne Cookies parentage. As a vape product from Grasslandz, consumers should start with 1–2 short draws and titrate slowly, as the calming and aroused effects can build gradually and intensify with cumulative hits.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 2,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 6
     }
   }
 }
