@@ -2423,5 +2423,23 @@
       "just_happy": 5,
       "aphrodisiac": 5
     }
+  },
+  "sw427433": {
+    "lineage": "Blue Mammoth x Blue Dream x Amnesia (Dizgo); Blue Mammoth derives from Blueberry x Big Bud, Blue Dream from Blueberry x Haze (DJ Short / Azure Haze lineage), and Amnesia from South Asian and Jamaican landrace Haze genetics",
+    "therapeutic": "Stress relief, mild depression, fatigue, creative blocks, mood elevation, mild anxiety (low doses)",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible restlessness due to Haze-forward genetics despite indica classification, headache if sensitive to Amnesia-lineage strains",
+    "aroma": "A bright and inviting bouquet of ripe blueberries and sweet mixed berries leads the nose, underpinned by a sharp, fuel-like diesel edge inherited from the Amnesia and Haze genetics. Earthy, slightly floral undertones from the Myrcene-dominant terpene profile round out the experience with a grounding warmth.",
+    "misc": "Orion is a Dizgo house blend pre-roll drawing on three complementary blue-hued and haze-leaning cultivars, likely falling in the 18–24% THC range based on parent strain averages. Despite its indica hybrid classification, the Amnesia and Blue Dream influence push the effects notably upward and cerebral, making this better suited for daytime or early evening creative sessions rather than nighttime wind-down. Consumers seeking heavy sedation should look elsewhere, as this blend skews energetic and euphoric, ideal for social settings or artistic endeavors.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 6,
+      "anxiety_relief": 3,
+      "lift_up": 2,
+      "get_creative": 2,
+      "get_social": 2,
+      "pain_body": 4,
+      "just_happy": 4,
+      "aphrodisiac": 2
+    }
   }
 }
