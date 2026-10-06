@@ -2477,5 +2477,59 @@
       "just_happy": 6,
       "aphrodisiac": 5
     }
+  },
+  "sw565899": {
+    "lineage": "FrankenCakes × LilMissHS (Minny Grown Cannabis) — FrankenCakes is a complex dessert-forward hybrid with Wedding Cake and Frankenstein lineage roots; LilMissHS is a Jack Herer-lineage derivative developed by Lil' Miss Herbals, contributing strong Haze and Northern Lights genetics for uplifting, cerebral character",
+    "therapeutic": "Stress relief, anxiety reduction, depression, mental fatigue, mild pain, creative blocks, ADD/ADHD symptom management",
+    "negative": "Dry mouth, dry eyes, possible mild anxiety or paranoia at higher doses for THC-sensitive users, occasional headache; not ideal for those prone to sativa-induced overstimulation",
+    "aroma": "Franken Pine opens with a striking wave of resinous evergreen needles and deep woodland soil, layered with herbal spice and a sticky, forest-floor richness that feels like walking through a dense pine forest after rain. The bouquet is sharp and botanical, with a clean, terpene-forward brightness that lifts the denser earthy base notes.",
+    "misc": "Cultivated by Minnesota-based Minny Grown Cannabis, Franken Pine is a regionally distinctive hybrid sitting at 24.5% THC with a terpene profile dominated by Myrcene and Pinene — a pairing that balances relaxation with mental clarity in a way atypical for most piney strains. Buds are typically dense and frost-heavy with deep green coloration, amber trichomes, and occasional purple undertones inherited from the Cake lineage. Best suited for daytime to early-evening use when focus, creativity, and social engagement are desired without heavy sedation.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 7,
+      "anxiety_relief": 5,
+      "lift_up": 3,
+      "get_creative": 5,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 4
+    }
+  },
+  "sw565925": {
+    "lineage": "Blue Dream (Blueberry x Haze) x Rare Dankness #1 (Ghost OG x Chemdawg) — developed by Minny Grown Cannabis in Minnesota",
+    "therapeutic": "Stress relief, mild anxiety, muscle tension, fatigue, low-grade pain, mood elevation, mild insomnia (end of day use)",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible drowsiness for low-tolerance users, light couch-lock if consumed in larger quantities",
+    "aroma": "Night Hawk opens with a sharp, resinous blast of fresh pine needles layered over damp woodland earth and loamy forest floor, with a soft, almost floral sweetness lingering underneath like distant wildflowers in a conifer grove.",
+    "misc": "Bred by Minny Grown Cannabis, a Minnesota-based cultivator known for cold-climate grown flower with dense trichome production. At 18.2% THC, Night Hawk sits in a moderate-to-solid potency range — accessible for intermediate consumers while still delivering noticeable effects for experienced users. Best consumed in the early evening, as the balanced indica character eases physical tension and lifts mood without immediately inducing heavy sedation, making it suitable for unwinding after work, light social settings, or creative relaxation before bed.",
+    "mood_ratings": {
+      "wind_down": 5,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "sw565931": {
+    "lineage": "Cherry Kush x (Lemon Tree Papaya x GMO) x Fro'Do (Minny Grown Cannabis)",
+    "therapeutic": "Stress relief, mood elevation, mild anxiety reduction, creative blocks, fatigue, mild pain management, social anxiety",
+    "negative": "Dry mouth, dry eyes, possible paranoia at high doses, mild dizziness for low-tolerance users, overconsumption may lead to couch-lock despite sativa-leaning classification",
+    "aroma": "Zesty Parm opens with a striking wave of aged, funky parmesan cheese underpinned by garlicky earthiness — a savory nose reminiscent of its GMO heritage — then transitions into a bright, uplifting burst of citrus zest and fresh lemon that keeps the profile lively and complex. Subtle herbal and woody undertones round out the bouquet, making it one of the more uniquely savory-meets-citrus aromatic experiences in the hybrid market.",
+    "misc": "Bred by Minny Grown Cannabis, a Minnesota-based craft cultivator known for producing regionally distinct, terpene-rich genetics with strong local market presence. At 24.4% THC, Zesty Parm sits in the upper-mid potency range, making it suitable for intermediate to experienced consumers; novices should dose conservatively. Buds are typically dense with a frosty trichome coating, displaying deep greens with possible purple undertones inherited from its Cherry Kush lineage, and are best enjoyed during afternoon or early evening sessions when creativity and sociability are desired without full sedation.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
   }
 }
