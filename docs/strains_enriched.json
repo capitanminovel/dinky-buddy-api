@@ -2459,5 +2459,23 @@
       "just_happy": 5,
       "aphrodisiac": 5
     }
+  },
+  "sw565958": {
+    "lineage": "Mexican Sativa x Thai Sativa x Afghani Indica (origins traced to Arcata, California; popularized and refined by breeders in the Pacific Northwest, with notable distribution through Mr. Nice Seeds and various California collectives)",
+    "therapeutic": "Depression, stress, anxiety relief, fatigue, ADHD, mild pain, headaches, creative blocks, mood disorders",
+    "negative": "Dry mouth, dry eyes, paranoia or anxiety at high doses (especially sensitive users), dizziness, racing thoughts, not recommended for low-tolerance users due to 82.8% THC concentration in vape format",
+    "aroma": "A sharp, resinous burst of fresh pine and lemon zest opens immediately, giving way to warm spiced earth with subtle floral and peppery undertones that linger on the exhale. The terpene complexity from pinene and limonene creates a bright, almost mentholated freshness balanced by the grounding depth of myrcene and caryophyllene.",
+    "misc": "Trainwreck is a legendary California landrace hybrid that emerged from Humboldt County in the 1980s and has since become a staple in dispensaries nationwide; typical flower THC ranges 18–25% but this vape concentrate registers 82.8%, making dosing discipline critical — one to two draws is sufficient for most users. The strain earned its name from its fast-hitting, disorienting onset that can feel like a freight train, making it best suited for daytime or early afternoon use when creative output or social energy is desired. Northpark's vape rendition preserves the strain's signature terpene profile well, with terpinolene and bisabolol adding a unique floral-herbal nuance that distinguishes it from simpler distillate products.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 6,
+      "anxiety_relief": 5,
+      "lift_up": 5,
+      "get_creative": 6,
+      "get_social": 4,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
   }
 }
