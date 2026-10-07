@@ -2531,5 +2531,41 @@
       "just_happy": 5,
       "aphrodisiac": 4
     }
+  },
+  "sw333902": {
+    "lineage": "Apples and Bananas x Grape Gas (Compound Genetics x Skunk House Genetics collaboration lineage; Apples and Bananas = Platinum Cookies x Granddaddy Purple x Blue Power x Gelatti; Grape Gas = Grape Pie x Jet Fuel Gelato)",
+    "therapeutic": "Stress relief, appetite stimulation, insomnia, mild chronic pain, anxiety reduction, mood elevation",
+    "negative": "Dry mouth, dry eyes, potential couch-lock at higher doses, mild paranoia in THC-sensitive users, drowsiness that may impair daytime function",
+    "aroma": "A pungent, mouth-watering blend of ripe tropical fruit, sweet grape candy, and sharp fuel exhaust that evolves into a creamy, slightly tart finish reminiscent of sour apple skins and banana runts. The gas undertone cuts through the sweetness with a dank, earthy backbone that lingers on the palate.",
+    "misc": "Gastro Pop is a cultivar popularized by Compound Genetics known for its striking fruit-forward yet fuel-drenched terpene profile driven by myrcene-heavy sedation balanced with limonene-induced euphoria; typical THC expression runs 18-28% in flower form, making this 16.4% pre-roll a moderate-potency offering suitable for intermediate consumers. Buds are typically dense with purple and green hues, coated in amber trichomes with visible orange pistils. Best consumed in the evening or late afternoon given its relaxing and sleepy indica-leaning effects; ideal for unwinding after meals or combating restlessness before sleep.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw565961": {
+    "lineage": "Larry OG x Granddaddy Purple (Supernova Gardens); Granddaddy Purple is itself a cross of Purple Urkle x Big Bud (Ken Estes), while Larry OG traces back to OG Kush lineage",
+    "therapeutic": "Stress relief, anxiety reduction, chronic pain, muscle tension, insomnia, appetite stimulation, depression",
+    "negative": "Dry mouth, dry eyes, potential dizziness or paranoia at high doses, heavy couch-lock, sedation unsuitable for daytime productivity",
+    "aroma": "A luscious wave of sweet grape candy and fresh blueberry muffin greets the nose, underscored by earthy pine and a subtle spicy pepper finish from its terpene profile. The overall scent is dessert-like and deeply inviting, reminiscent of fruit punch concentrate with a herbal backbone.",
+    "misc": "Purple Punch is an indica-dominant hybrid that rose to prominence after winning multiple cannabis cups and concentrate awards, making it a fixture in extract and vape categories. At 91.9% THC in this vape form, it is extremely potent and best suited for experienced consumers; novices should take one or two puffs and wait before redosing. Ideal for evening or nighttime use, Purple Punch delivers a fast-onset cerebral euphoria that gradually melts into full-body relaxation, making it a go-to for unwinding after a long day.",
+    "mood_ratings": {
+      "wind_down": 4,
+      "deep_sleep": 2,
+      "anxiety_relief": 4,
+      "lift_up": 7,
+      "get_creative": 8,
+      "get_social": 6,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
   }
 }
