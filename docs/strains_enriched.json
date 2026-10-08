@@ -2646,5 +2646,41 @@
       "just_happy": 5,
       "aphrodisiac": 4
     }
+  },
+  "sw568917": {
+    "lineage": "Chem's Sister x Sour Dubb x Chocolate Diesel (Joesy Whales & Lone Watty / GG Strains LLC)",
+    "therapeutic": "Chronic pain, insomnia, depression, stress, anxiety, muscle spasms, appetite loss",
+    "negative": "Dry mouth, dry eyes, couch-lock, dizziness at higher doses, may cause paranoia in THC-sensitive users, not recommended for daytime or high-functioning tasks",
+    "aroma": "GG4 hits the nose with a pungent, fuel-forward blast of diesel and chemical earthiness, undercut by a surprisingly sweet cocoa and coffee richness that lingers on the exhale. The overall scent profile is heavy and resinous, almost adhesive — true to its 'Gorilla Glue' namesake.",
+    "misc": "Originally bred accidentally by Joesy Whales and Lone Watty, GG4 (formerly Gorilla Glue #4) became a legend after winning multiple Cannabis Cup awards in 2014 and 2015, including High Times' Jamaican World Cup. Buds are typically dense, chunky, and blanketed in thick white trichomes with olive-green coloration and rust-orange pistils, reflecting its exceptionally resinous nature. At 19.1% THC this is best reserved for evening or nighttime use — ideal for users seeking deep physical relaxation and help winding down, though newer consumers should start with a small dose given its potent indica-leaning body effects.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 2,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw568931": {
+    "lineage": "(Crypto × MAC Stomper) × Colorado Night Shifter (Dabney's Cannabis Co. / Doctor Dabs in-house breeding program)",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, mood elevation, insomnia support, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, potential couch-lock with heavy consumption, dizziness in low-tolerance users",
+    "aroma": "A richly sweet berry nose opens the experience, underscored by earthy, peppery spice from the dominant caryophyllene and a subtle citrus brightness from limonene. Deep inhalation reveals floral lavender undertones from linalool alongside a funky, dank complexity inherited from its MAC Stomper parentage.",
+    "misc": "Crypto Shifter is a craft, in-house original from Dabney's Cannabis Co., developed under the Doctor Dabs breeding program by crossing Crypto and MAC Stomper, then backcrossing with Colorado Night Shifter to deepen the indica-leaning character. At 13.8% total THC, this is a moderate-potency flower well-suited for intermediate consumers or those sensitive to high-THC cultivars, delivering a balanced hybrid effect without overwhelming sedation. Best enjoyed in the early evening when winding down, its calming yet uplifting profile makes it ideal for social relaxation, creative pursuits, or transitioning into restful sleep.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 5,
+      "just_happy": 7,
+      "aphrodisiac": 6
+    }
   }
 }
