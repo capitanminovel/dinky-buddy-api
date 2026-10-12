@@ -2736,5 +2736,41 @@
       "just_happy": 6,
       "aphrodisiac": 4
     }
+  },
+  "sw566307": {
+    "lineage": "Purple Afghani × OG Kush (Dizgo house genetics; Purple Afghani is itself a descendant of Afghani landrace indica lines, crossed with OG Kush, a legendary California hybrid tracing back to Chemdawg × Hindu Kush × Lemon Thai)",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, insomnia, muscle tension, mood elevation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible couch-lock, drowsiness — not recommended before tasks requiring focus or alertness",
+    "aroma": "Cherry Kush opens with a lush wave of sweet cherry and mixed berries, underpinned by earthy, floral notes from linalool and a subtle spicy-citrus brightness courtesy of caryophyllene and limonene. The overall bouquet is reminiscent of berry jam layered over a damp, kushy forest floor.",
+    "misc": "Produced by Dizgo as a convenient 3-pack of mini pre-rolls (0.33g each), Cherry Kush is well-suited for evening or nighttime use given its indica-leaning hybrid profile and calming, body-relaxing effects. At 19.8% THC, it sits in a moderate-to-strong range appropriate for intermediate consumers, though novices should approach with caution due to potential sedative effects. The buds typically display deep green and purple hues inherited from the Purple Afghani parentage, with a generous resin coating consistent with OG Kush genetics.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 4,
+      "get_creative": 2,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 6
+    }
+  },
+  "sw569033": {
+    "lineage": "Proprietary blend of fruit-forward hybrid strains, likely incorporating genetics from strains such as Zkittlez, Gelato, or similar dessert/fruit cultivars; specific breeder lineage undisclosed by Dizgo, processed as live rosin from fresh-frozen biomass",
+    "therapeutic": "Mood elevation, stress relief, mild anxiety reduction, creative stimulation, appetite stimulation, mild pain relief",
+    "negative": "Dry mouth, dry eyes, potential anxiety or paranoia at high doses due to elevated THC (71.9%), dizziness for low-tolerance users, couch-lock if overconsumed",
+    "aroma": "A vibrant burst of tropical and mixed berry sweetness dominates the nose, underscored by subtle candy-like undertones and a faint earthy resin finish characteristic of quality live rosin. Expect a fresh, full-spectrum fragrance that closely mirrors ripe orchard and summer fruit.",
+    "misc": "Dizgo's Mixed Fruit Live Rosin vape is a 0.5g cartridge crafted using live rosin extraction, preserving the terpene-rich profile of fresh-frozen cannabis plants without the use of solvents, making it a premium solventless option. At 71.9% THC, this is moderately potent for a live rosin product and best suited for intermediate to experienced consumers; novice users should begin with 1-2 second draws and wait several minutes between sessions. Best used during afternoon or early evening social or creative activities given its balanced hybrid character.",
+    "mood_ratings": {
+      "wind_down": 4,
+      "deep_sleep": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
   }
 }
