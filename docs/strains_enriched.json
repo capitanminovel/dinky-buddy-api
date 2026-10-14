@@ -2887,5 +2887,41 @@
     "negative": "Delayed onset (30–90 minutes), overconsumption risk due to palatable flavor, dry mouth, increased heart rate, anxiety or paranoia at high doses, impaired coordination, prolonged effects compared to inhalation",
     "aroma": "Evokes a crisp, tangy green apple with a sharp citric sour note up front and a clean, sweet candy finish. The scent is bright and confectionery, reminiscent of sour apple hard candy rather than the cannabis plant itself.",
     "misc": "Each Voyageur Sour Apple gummy contains exactly 10mg THC, making them ideal for beginner-to-intermediate consumers — beginners should start with half a gummy (5mg) and wait at least 90 minutes before redosing. The 100mg total pack offers consistent, precisely dosed servings suitable for microdosing or moderate recreational use. As with all edibles, effects are longer-lasting (4–8 hours) and more body-focused than inhaled cannabis, so consumers should plan their experience accordingly and avoid mixing with alcohol."
+  },
+  "sw570737": {
+    "lineage": "Sour Stomper x Grape Crinkle (Verist Fields / Archive Seed Bank lineage); Sour Stomper is a cross of Rug Burn OG x Grape Stomper, while Grape Crinkle brings additional grape-forward genetics, combining to produce the Double Sour Grape expression",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, muscle tension, mild pain management, appetite stimulation, fatigue (moderate)",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses for THC-sensitive users, possible drowsiness with extended use, light couch-lock toward end of session",
+    "aroma": "A vivid burst of crushed purple grapes and ripe berries leads the nose, layered with a tangy sour citrus edge and a subtle earthy spice that lingers on the exhale, reminiscent of a grape candy dusted lightly with cracked black pepper.",
+    "misc": "Double Sour Grape is a slightly indica-leaning hybrid produced by Verist Fields, featuring a moderate THC level of 16.8% that makes it approachable for both newer and experienced consumers. Buds typically display deep green and purple hues with a frosty trichome coating reflecting its rich terpene profile anchored by Myrcene for relaxation, Limonene for mood lift, and Caryophyllene for a peppery anti-inflammatory edge. Best enjoyed in the late afternoon or evening when unwinding is the goal; the 5-pack Little Sticks format is ideal for casual, measured sessions without overconsumption.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 2,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw570738": {
+    "lineage": "Blackberry Kush x StrawGlue (Verist Fields proprietary cultivar, grown in the Minnesota River Valley)",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, mood elevation, fatigue, tension headaches",
+    "negative": "Dry mouth, dry eyes, possible lightheadedness at higher doses, mild paranoia in THC-sensitive individuals",
+    "aroma": "A complex and inviting bouquet opens with bright citrus and ripe berry sweetness, underpinned by a cool menthol breeze and subtle earthy undertones — finishing with a faint fuel-like depth courtesy of its Kush heritage.",
+    "misc": "Valley Frost is a signature house hybrid developed by Verist Fields, a Minnesota-based cultivator, blending the sedative berry sweetness of Blackberry Kush with the sticky, balanced euphoria of StrawGlue (itself a Strawberry Cough x Gorilla Glue lineage). At 18.1% THC, this is a moderate-potency cultivar well-suited for daytime-to-evening use, offering calming clarity without heavy sedation. The dominant terpene profile of Linalool, Limonene, and Caryophyllene supports a relaxed yet mentally engaged experience, making it ideal for social settings, creative tasks, or unwinding after work — beginner users should start slow with one or two puffs given the compounding effect of pre-roll format.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 7,
+      "aphrodisiac": 7
+    }
   }
 }
