@@ -3013,5 +3013,59 @@
       "just_happy": 4,
       "aphrodisiac": 3
     }
+  },
+  "sw576657": {
+    "lineage": "Likely derived from Sunstone genetics crossed with or phenotype-selected for apricot and orange terpene expression; Sunstone is believed to descend from Orange Crush x Golden Goat lineage, though exact breeder attribution for this specific Tasty Gems expression is proprietary",
+    "therapeutic": "Mood elevation, stress relief, fatigue, mild depression, creative blocks, appetite stimulation, social anxiety",
+    "negative": "Dry mouth, dry eyes, mild paranoia at high doses, anxiety in THC-sensitive users, dizziness — use caution given high 81% THC concentration especially for novice consumers",
+    "aroma": "A bright, sun-warmed burst of ripe apricot and juicy mandarin orange greets the nose with a sweet, tropical undertone reminiscent of fresh citrus zest and stone fruit nectar. Subtle floral and faintly earthy base notes round out the profile, lending it a warm, golden complexity.",
+    "misc": "With a notably high THC concentration of 81% in vape form, this product is best suited for experienced consumers seeking uplifting, energetic effects ideal for daytime or early afternoon use. The sativa-dominant character promotes cerebral clarity, creativity, and sociability without heavy sedation. Tasty Gems positions this as a flavor-forward vape experience, emphasizing the fruit-driven terpene profile as a key differentiator in their Sunstone line.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "deep_sleep": 2,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
+  },
+  "sw576659": {
+    "lineage": "Likely derived from Blue Dream x an Aquamarine or oceanic-themed Indica cross; exact verified genetics are not publicly documented, suggesting a proprietary or house blend by Tasty Gems, possibly rooted in Blueberry x Haze heritage with an Indica-dominant phenotype selected for sedative qualities",
+    "therapeutic": "Insomnia, chronic pain, muscle tension, anxiety, stress relief, appetite stimulation, nausea",
+    "negative": "Dry mouth, dry eyes, dizziness at high doses, heavy couch-lock, potential paranoia in THC-sensitive users, sedation may impair daytime function",
+    "aroma": "Aquamarine Dream evokes a cool, aquatic freshness layered with sweet berry undertones and a subtle earthy pine base. The overall profile is clean and slightly floral, reminiscent of ocean breeze meeting a ripe blueberry patch in a humid forest.",
+    "misc": "At 80.4% THC, this is a high-potency vape concentrate best suited for experienced consumers; novice users should approach with extreme caution and take single, low-volume draws. Tasty Gems positions this as a premium vape product under their 'Gems' line, likely using distillate or live resin extraction to achieve the high THC concentration. Best consumed in the evening or nighttime hours given its Indica-dominant character, which promotes deep physical relaxation and eventual sedation.",
+    "mood_ratings": {
+      "wind_down": 5,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "sw576662": {
+    "lineage": "Afghani x Thai (Original breeder: Sensi Seeds, popularized in the 1980s; one of the most iconic landrace-derived strains in cannabis history)",
+    "therapeutic": "Insomnia, chronic pain, stress, anxiety, muscle spasms, appetite loss, depression, nausea",
+    "negative": "Dry mouth, dry eyes, dizziness at high doses, heavy couch-lock, potential paranoia in THC-sensitive users, grogginess upon waking if used before sleep",
+    "aroma": "Northern Lights greets the nose with a deeply earthy, resinous sweetness layered over sharp pine and subtle spice, reminiscent of a damp forest floor after rain. A soft woody musk rounds out the profile, with faint herbal undertones that linger well after exhale.",
+    "misc": "Northern Lights is arguably the most awarded indica strain in cannabis history, having won the High Times Cannabis Cup multiple times and serving as a foundational parent to classics like Shiva Skunk and Super Silver Haze. At 81.5% THC in this vape formulation, this is significantly more potent than flower form (typically 16–21% THC), making it best suited for experienced consumers. Ideal for evening or nighttime use, this strain delivers a fast-acting, full-body sedation that eases tension and transitions smoothly into deep, restorative sleep.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 6,
+      "anxiety_relief": 4,
+      "lift_up": 4,
+      "get_creative": 2,
+      "get_social": 3,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 3
+    }
   }
 }
