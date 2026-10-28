@@ -1,21 +1,4 @@
 {
-  "ee5cc6a7a40e": {
-    "lineage": "Purple Thai x Unknown Hybrid (Campfire Cannabis) — Purple Thai itself is a classic sativa-leaning landrace-influenced cross with deep Southeast Asian genetic roots, historically linked to Thai landrace strains crossed with purple-expressing varieties; the unknown hybrid cross likely introduces additional hybrid vigor and terpene complexity",
-    "therapeutic": "Stress relief, mild anxiety, fatigue, depression, appetite stimulation, mild pain relief, mood elevation",
-    "negative": "Dry mouth, dry eyes, mild paranoia or anxiety in THC-sensitive users at higher doses, possible dizziness; not ideal for those prone to sativa-induced racing thoughts",
-    "aroma": "Bangkok Purple opens with a bright burst of tropical fruit and sweet berry, layered over a citrusy-sour backbone with subtle piney earthiness underneath; as the bud is broken apart, a light floral and herbal note emerges, reminiscent of Southeast Asian botanicals with a clean, refreshing finish",
-    "misc": "Campfire Cannabis positions Bangkok Purple as a daytime-to-early-evening sativa-dominant hybrid, well-suited for creative activities, social settings, or outdoor adventures given its energizing yet calming balance at a moderate 16.9% THC — approachable for intermediate consumers but manageable for mindful beginners. Buds likely display purple-hued calyxes with orange pistils and a moderate-to-heavy trichome coating, consistent with its Purple Thai heritage. The broad terpene profile featuring Myrcene and Terpinolene together creates an unusually smooth, uplifting experience that softens the typical sativa edge.",
-    "mood_ratings": {
-      "wind_down": 7,
-      "anxiety_relief": 4,
-      "lift_up": 7,
-      "get_creative": 8,
-      "get_social": 6,
-      "pain_body": 4,
-      "just_happy": 5,
-      "aphrodisiac": 4
-    }
-  },
   "f618b483f28e": {
     "lineage": "GMO (Garlic Mushroom Onion) x Han-Solo Burger — GMO is itself a cross of Girl Scout Cookies x Chemdog, while Han-Solo Burger is derived from Meat Breath x Han-Solo (both heavy indica-leaning hybrids). Donny Burger was developed and popularized by Skunk House Genetics.",
     "therapeutic": "Chronic pain, muscle tension, insomnia, stress relief, appetite stimulation, anxiety reduction, nausea, depression",
@@ -3103,5 +3086,29 @@
       "just_happy": 4,
       "aphrodisiac": 3
     }
+  },
+  "sw347227": {
+    "lineage": "Purple Thai x Unknown Hybrid (Campfire Cannabis) — Purple Thai itself is a classic sativa-leaning landrace-influenced cross with deep Southeast Asian genetic roots, historically linked to Thai landrace strains crossed with purple-expressing varieties; the unknown hybrid cross likely introduces additional hybrid vigor and terpene complexity",
+    "therapeutic": "Stress relief, mild anxiety, fatigue, depression, appetite stimulation, mild pain relief, mood elevation",
+    "negative": "Dry mouth, dry eyes, mild paranoia or anxiety in THC-sensitive users at higher doses, possible dizziness; not ideal for those prone to sativa-induced racing thoughts",
+    "aroma": "Bangkok Purple opens with a bright burst of tropical fruit and sweet berry, layered over a citrusy-sour backbone with subtle piney earthiness underneath; as the bud is broken apart, a light floral and herbal note emerges, reminiscent of Southeast Asian botanicals with a clean, refreshing finish",
+    "misc": "Campfire Cannabis positions Bangkok Purple as a daytime-to-early-evening sativa-dominant hybrid, well-suited for creative activities, social settings, or outdoor adventures given its energizing yet calming balance at a moderate 16.9% THC — approachable for intermediate consumers but manageable for mindful beginners. Buds likely display purple-hued calyxes with orange pistils and a moderate-to-heavy trichome coating, consistent with its Purple Thai heritage. The broad terpene profile featuring Myrcene and Terpinolene together creates an unusually smooth, uplifting experience that softens the typical sativa edge.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "anxiety_relief": 4,
+      "lift_up": 7,
+      "get_creative": 8,
+      "get_social": 6,
+      "pain_body": 4,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw583516": {
+    "lineage": "Edible product — no cultivar-specific lineage. Contains cannabis-derived or hemp-derived THC distillate in a watermelon-flavored gummy format. Voyager is a cannabis edibles brand producing consistent, precisely dosed confections.",
+    "therapeutic": "Stress relief, mild to moderate pain management, anxiety reduction, appetite stimulation, sleep aid (at higher doses), mood elevation",
+    "negative": "Dry mouth, dry eyes, potential anxiety or paranoia at high doses, delayed onset may lead to overconsumption — effects can take 30–90 minutes to manifest, impaired coordination, grogginess if taken in excess",
+    "aroma": "As a gummy edible, the sensory experience is flavor-forward rather than aromatic — expect a bright, sweet watermelon candy scent reminiscent of fresh summer melon with a sugary confectionery finish. There is little to no detectable cannabis odor, making these discreet and palatable.",
+    "misc": "Each gummy contains a precise 10mg THC dose, making this pack ideal for both beginners and experienced consumers who prefer controlled, measurable intake. Beginners should start with 5mg (half a gummy) and wait at least 90 minutes before redosing, as edible onset varies significantly by metabolism, body weight, and food intake. The 100mg total pack is well-suited for microdosers managing chronic conditions or experienced users seeking longer-lasting, full-body hybrid effects. Note: the listed THC of 109% is a data error — actual THC content is 10mg per gummy, 100mg per pack."
   }
 }
