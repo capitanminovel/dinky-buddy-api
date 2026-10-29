@@ -3110,5 +3110,41 @@
     "negative": "Dry mouth, dry eyes, potential anxiety or paranoia at high doses, delayed onset may lead to overconsumption — effects can take 30–90 minutes to manifest, impaired coordination, grogginess if taken in excess",
     "aroma": "As a gummy edible, the sensory experience is flavor-forward rather than aromatic — expect a bright, sweet watermelon candy scent reminiscent of fresh summer melon with a sugary confectionery finish. There is little to no detectable cannabis odor, making these discreet and palatable.",
     "misc": "Each gummy contains a precise 10mg THC dose, making this pack ideal for both beginners and experienced consumers who prefer controlled, measurable intake. Beginners should start with 5mg (half a gummy) and wait at least 90 minutes before redosing, as edible onset varies significantly by metabolism, body weight, and food intake. The 100mg total pack is well-suited for microdosers managing chronic conditions or experienced users seeking longer-lasting, full-body hybrid effects. Note: the listed THC of 109% is a data error — actual THC content is 10mg per gummy, 100mg per pack."
+  },
+  "sw588464": {
+    "lineage": "Blueberry (DJ Short) x Haze (Santa Cruz Haze)",
+    "therapeutic": "Depression, stress, anxiety, chronic pain, fatigue, PTSD, lack of appetite, mild nausea",
+    "negative": "Dry mouth, dry eyes, occasional paranoia or anxiety at high doses, dizziness, mild headache — high THC concentration in this vape format warrants cautious dosing for low-tolerance users",
+    "aroma": "A lush wave of sweet blueberry and ripe mixed berries leads the nose, underscored by soft floral and herbal undertones with a faint earthy vanilla finish. The Haze parentage contributes a light spicy brightness that lifts the sweetness without overwhelming it.",
+    "misc": "Blue Dream is one of the most iconic and widely recognized strains in the American cannabis market, originating from the Santa Cruz, California scene and popularized through the West Coast dispensary trade in the early 2000s. At 86.1% THC, this Unbound vape delivers a potent concentrate-level experience well above the strain's typical flower range of 17–24% THC, making it best suited for experienced consumers. Ideal for daytime to early evening use, Blue Dream pairs perfectly with creative work, social settings, or outdoor activities, offering a balanced sativa-leaning effect that uplifts the mind while gently relaxing the body.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 6,
+      "anxiety_relief": 5,
+      "lift_up": 4,
+      "get_creative": 5,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 6,
+      "aphrodisiac": 4
+    }
+  },
+  "sw588492": {
+    "lineage": "Skywalker x OG Kush (DNA Genetics / Darkhorse Genetics)",
+    "therapeutic": "Insomnia, chronic pain, stress, anxiety, muscle tension, appetite stimulation, depression",
+    "negative": "Dry mouth, dry eyes, couch-lock at high doses, dizziness, paranoia in novice users, heavy sedation — not recommended for daytime use",
+    "aroma": "A pungent, fuel-driven earthiness anchors the nose, layered with bright citrus zest and sweet herbal pine that opens up as it warms. Subtle spiced undertones round out the profile, giving it a rich, complex scent reminiscent of a dank forest floor drenched in lemon and diesel.",
+    "misc": "Skywalker OG was popularized by DNA Genetics and is considered a staple indica-leaning hybrid in the OG Kush family tree, known in dispensaries for its dense, frosty buds covered in amber trichomes with deep green and purple hues. At 86.8% THC in this vape concentrate form, this is a high-potency product best suited for experienced consumers — novices should start with a single short puff and wait. Ideal for evening or nighttime use, this strain is best enjoyed when all obligations are complete, as the deeply relaxing, sleep-inducing effects make it a go-to for unwinding after a long day.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
   }
 }
