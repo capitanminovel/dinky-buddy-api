@@ -961,24 +961,6 @@
       "aphrodisiac": 5
     }
   },
-  "50e599e15bc1": {
-    "lineage": "Purple Kush x Lemon Skunk (Purple Kush: Hindu Kush x Purple Afghani; Lemon Skunk: two select Skunk phenotypes with heavy lemon expression, popularized by DNA Genetics)",
-    "therapeutic": "Stress relief, anxiety management, mild depression, creative blocks, fatigue, mild pain, mood elevation",
-    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible lightheadedness in novice users; sativa-leaning effects may increase anxiety in sensitive individuals",
-    "aroma": "An intriguing clash of sweet grape and dark berry from the Purple Kush heritage collides with sharp, zesty lemon and a pungent diesel undercurrent from the Lemon Skunk lineage. Beneath it all lies a damp, earthy woodiness with faint floral and pine notes that round out the complexity.",
-    "misc": "Produced by Campfire Cannabis as a pre-roll offering, Fight Club sits at a solid 20.2% THC making it suitable for intermediate to experienced consumers rather than beginners. The terpene profile — led by Myrcene for body relaxation and Limonene and Terpinolene for mood lift and creativity — aligns well with the sativa-leaning hybrid classification, delivering an energized yet calm headspace ideal for daytime or early evening use. Consumers seeking focus and creative stimulation without heavy sedation will find this strain particularly well-suited to social settings, artistic projects, or active afternoons.",
-    "mood_ratings": {
-      "wind_down": 7,
-      "deep_sleep": 4,
-      "anxiety_relief": 4,
-      "lift_up": 6,
-      "get_creative": 7,
-      "get_social": 5,
-      "pain_body": 5,
-      "just_happy": 5,
-      "aphrodisiac": 5
-    }
-  },
   "71f966288ca1": {
     "lineage": "(Fro'Do x Alaskan Yeti) x Lil Miss Sunshine (Avio)",
     "therapeutic": "Stress relief, mild anxiety, fatigue, mood elevation, mild pain management",
@@ -3307,6 +3289,60 @@
       "pain_body": 5,
       "just_happy": 6,
       "aphrodisiac": 5
+    }
+  },
+  "sw391515": {
+    "lineage": "Purple Kush x Lemon Skunk (Purple Kush: Hindu Kush x Purple Afghani; Lemon Skunk: two select Skunk phenotypes with heavy lemon expression, popularized by DNA Genetics)",
+    "therapeutic": "Stress relief, anxiety management, mild depression, creative blocks, fatigue, mild pain, mood elevation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, possible lightheadedness in novice users; sativa-leaning effects may increase anxiety in sensitive individuals",
+    "aroma": "An intriguing clash of sweet grape and dark berry from the Purple Kush heritage collides with sharp, zesty lemon and a pungent diesel undercurrent from the Lemon Skunk lineage. Beneath it all lies a damp, earthy woodiness with faint floral and pine notes that round out the complexity.",
+    "misc": "Produced by Campfire Cannabis as a pre-roll offering, Fight Club sits at a solid 20.2% THC making it suitable for intermediate to experienced consumers rather than beginners. The terpene profile — led by Myrcene for body relaxation and Limonene and Terpinolene for mood lift and creativity — aligns well with the sativa-leaning hybrid classification, delivering an energized yet calm headspace ideal for daytime or early evening use. Consumers seeking focus and creative stimulation without heavy sedation will find this strain particularly well-suited to social settings, artistic projects, or active afternoons.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 6,
+      "get_creative": 7,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 5
+    }
+  },
+  "sw608356": {
+    "lineage": "God Bud x OG Kush (breeder attribution varies; popularized through Pacific Northwest and Canadian breeding circles, with some cuts traced to Jordan of the Islands genetics)",
+    "therapeutic": "Insomnia, chronic pain, stress, anxiety, muscle tension, appetite loss, depression",
+    "negative": "Dry mouth, dry eyes, dizziness, potential couch-lock at higher doses, may cause grogginess the following morning, not recommended for daytime use or novice consumers due to potent sedative effects",
+    "aroma": "God's Breath carries a rich, dank wave of earthy grape and sweet berry undercut by sharp herbal pine and a subtle kushy musk that deepens as the buds are broken apart. Warm notes of sandalwood and spice round out the bouquet, giving it a complex, almost incense-like finish.",
+    "misc": "God's Breath is a heavily indica-dominant cultivar known for dense, frosty buds with deep green and occasional purple hues blanketed in amber trichomes, reflecting its potent 23-24% THC range. The terpene trio of Myrcene, Caryophyllene, and Pinene work synergistically to deliver sedating yet mildly euphoric effects, making this best reserved for evening or nighttime use. Campfire Cannabis positions this as a premium relaxation strain suited for unwinding after long days, and consumers should start with a modest dose given its strong indica character and sedative ceiling.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 6,
+      "anxiety_relief": 4,
+      "lift_up": 2,
+      "get_creative": 5,
+      "get_social": 2,
+      "pain_body": 6,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "sw608328": {
+    "lineage": "Trainwreck x Pebbles (likely Fruity Pebbles OG) — exact breeder unknown, but consistent with crosses popularized in the Pacific Northwest craft cannabis scene",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, fatigue, mild pain management",
+    "negative": "Dry mouth, dry eyes, possible mild paranoia at higher doses, slight dizziness in novice consumers",
+    "aroma": "A vibrant burst of sweet citrus and ripe berries greets the nose upfront, underpinned by a tangy lemon-sour edge and subtle fruity candy notes reminiscent of a bowl of mixed cereal. The dominant limonene terpene gives it a bright, zesty lift that lingers pleasantly on the exhale.",
+    "misc": "Pebble Wreck is a playful hybrid that blends the cerebral, energetic punch of Trainwreck with the candy-sweet, colorful profile of a Fruity Pebbles-lineage parent, landing at a solid 21.7% THC that suits intermediate to experienced consumers. Buds are typically dense with a frosty trichome coat, showcasing purple and green hues with orange pistils. Best suited for daytime to early evening use when you want social energy, creative focus, or a mood boost without heavy sedation.",
+    "mood_ratings": {
+      "wind_down": 2,
+      "deep_sleep": 1,
+      "anxiety_relief": 3,
+      "lift_up": 8,
+      "get_creative": 4,
+      "get_social": 7,
+      "pain_body": 2,
+      "just_happy": 5,
+      "aphrodisiac": 4
     }
   }
 }
