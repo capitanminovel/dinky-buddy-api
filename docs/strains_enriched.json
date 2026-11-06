@@ -3344,5 +3344,77 @@
       "just_happy": 5,
       "aphrodisiac": 4
     }
+  },
+  "sw611623": {
+    "lineage": "Likely derived from Black strains crossed with Phantom OG lineage; possibly Black Domina x Phantom OG or related OG/Kush hybrid genetics — exact breeder and confirmed cross not publicly documented for Avio's Phantom Black",
+    "therapeutic": "Stress relief, mood elevation, fatigue, mild depression, anxiety, creative blocks, low energy",
+    "negative": "Dry mouth, dry eyes, potential anxiety or paranoia at high doses due to very elevated THC (43.1%), dizziness, mild headache — not recommended for THC-sensitive or novice consumers",
+    "aroma": "Phantom Black opens with a sharp burst of fresh pine and bright citrus zest, quickly giving way to deep, damp earth layered with peppery spice and subtle herbal complexity. The finish is clean and slightly resinous, with a woody backbone that grounds the whole aromatic profile.",
+    "misc": "With a notably high THC content of 43.1% — likely reflecting concentrate-infused or premium indoor pre-roll processing — Phantom Black is best suited for experienced consumers seeking a potent sativa-leaning experience. The terpene trio of Limonene, Caryophyllene, and Humulene supports its energizing, mood-lifting effects while also offering mild anti-inflammatory and stress-relieving properties. Best consumed during daytime or early evening hours when creativity, sociability, or physical activity is desired; approach with caution and start slow given the high potency.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "deep_sleep": 2,
+      "anxiety_relief": 4,
+      "lift_up": 8,
+      "get_creative": 4,
+      "get_social": 7,
+      "pain_body": 5,
+      "just_happy": 6,
+      "aphrodisiac": 6
+    }
+  },
+  "sw611646": {
+    "lineage": "Likely derived from autoflowering hybrid genetics, possibly crossing a high-THC photoperiod hybrid with Ruderalis stock; exact breeder lineage for Avio's 'Auto Pilot' is proprietary, but terpene and effect profile suggests OG or Kush-adjacent parentage blended with a Haze or Sativa-leaning cultivar (Avio Brand)",
+    "therapeutic": "Stress relief, anxiety reduction, mild depression, creative blocks, fatigue, mood elevation, mild pain management",
+    "negative": "Dry mouth, dry eyes, possible anxiety or paranoia at high doses due to elevated THC (36.2%), dizziness for low-tolerance users, potential couch-lock if overconsumed",
+    "aroma": "Opens with a bold, dank earthiness layered over fresh-cut herbs and a peppery spice kick, courtesy of dominant Caryophyllene. Linalool adds a soft floral undertone while Limonene cuts through with a bright citrus lift, rounding out the nose with a clean, slightly sweet finish.",
+    "misc": "At 36.2% THC, Auto Pilot sits in the upper tier of potency and is best suited for experienced consumers; novice users should approach with caution and low doses. As a pre-roll from Avio, it is likely machine-rolled with cured flower optimized for consistency and shelf stability. Best consumed in the late afternoon or evening when creative relaxation is desired, and the calming-yet-uplifting effect profile makes it a solid choice for social creative settings or winding down after work.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 7,
+      "aphrodisiac": 6
+    }
+  },
+  "sw611677": {
+    "lineage": "Likely proprietary hybrid blend (exact genetics undisclosed by Avio); distillate-infused pre-roll combining cannabis flower with a fruit-forward terpene-enhanced distillate, suggesting lineage from candy/fruity hybrids such as Zkittlez or Runtz-adjacent crosses, potentially including OG Kush or GSC in the background given the earthy, caryophyllene-driven base",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, mood elevation, muscle tension, insomnia (early-stage), depression, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, possible dizziness or paranoia at high doses due to elevated THC (39.4%), potential couch-lock with extended use, not recommended for novice consumers without caution, may cause increased heart rate",
+    "aroma": "An immediately inviting burst of sweet gummy candy and ripe tropical fruit — think juicy berries, fresh citrus zest, and mango — layered over a grounding earthiness and subtle floral linalool lift. The nose is bright and candy-forward but anchored by the natural, herbal character of the underlying flower.",
+    "misc": "Gummy Gas is a distillate-infused pre-roll from Avio, meaning the high THC content (39.4%) is achieved through the addition of cannabis-derived or refined distillate coating the flower, rather than raw flower potency alone — consumers should dose cautiously, especially those with lower tolerance. The terpene trio of Linalool, Limonene, and Caryophyllene suggests a well-rounded entourage effect: uplifting and mood-brightening from Limonene, calming and sedative-leaning from Linalool, and anti-inflammatory with stress-busting properties from Caryophyllene. Best suited for late afternoon or evening use when relaxation and unwinding are the goal, though the uplifting Limonene component may support creative or social sessions at moderate consumption levels.",
+    "mood_ratings": {
+      "wind_down": 6,
+      "deep_sleep": 3,
+      "anxiety_relief": 8,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 4,
+      "pain_body": 4,
+      "just_happy": 7,
+      "aphrodisiac": 6
+    }
+  },
+  "sw611695": {
+    "lineage": "Exact genetics not publicly confirmed; likely a proprietary Indica-leaning Hybrid cross involving Rainbow-family strains such as Rainbow Belts or Skittlez-adjacent cultivars, potentially descending from Zkittlez x Do-Si-Dos lineage with possible Gelato influence (Avio proprietary blend)",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, muscle tension, insomnia (early onset), mood elevation, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, possible dizziness or paranoia at 41.7% THC — not recommended for novice users; couch-lock potential at higher doses, mild headache if over-consumed",
+    "aroma": "An inviting burst of ripe mixed berries and tropical fruit leads the nose, layered with sugary candy sweetness reminiscent of fruit chews and a bright citrus zest. Underneath, earthy herbal undertones and a subtle floral note from linalool round out the bouquet with a soft, grounding finish.",
+    "misc": "Rainbow Run is an Avio house cultivar presented as a high-potency Indica-leaning Hybrid with an exceptional 41.7% THC content, placing it firmly in the top tier of commercially available flower. The terpene trio of Linalool, Caryophyllene, and Guaiol suggests calming, anti-inflammatory, and mood-stabilizing effects that complement its fruit-forward profile. Best suited for evening or late-afternoon use by experienced consumers seeking deep relaxation without full sedation; beginners should approach this pre-roll with significant caution given its extreme potency.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 2,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 6
+    }
   }
 }
