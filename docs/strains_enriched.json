@@ -263,23 +263,6 @@
     "mood_ratings": {},
     "strain_type": "hybrid"
   },
-  "a4762c1c9162": {
-    "lineage": "Infused edible product — no specific strain lineage applicable. This is a manufactured cannabis edible by Nebula, dosed at 10mg THC per serving with 10 servings per bar (100mg total).",
-    "therapeutic": "Stress relief, mild to moderate pain management, appetite stimulation, sleep aid (at higher doses), anxiety reduction",
-    "negative": "Delayed onset (30–120 minutes) may lead to overconsumption; dry mouth, elevated heart rate, anxiety or paranoia if dose exceeded, couch-lock, impaired coordination and cognition, not recommended for first-time consumers without guidance",
-    "aroma": "As a gummy edible, this product carries a bright, tart green apple candy scent with a sugary-sweet finish. The aroma is artificially flavored, evoking crisp Granny Smith apple with minimal cannabis odor.",
-    "misc": "This is a 100mg THC edible bar by Nebula, broken into 10mg per-piece servings — a standard beginner-to-intermediate dose. New consumers should start with half a serving (5mg) and wait at least 90 minutes before redosing to assess tolerance. Experienced consumers may find 10–20mg appropriate; the THC percentage listed (101%) likely reflects concentration within the infused oil or extract used, not the product as a whole.",
-    "mood_ratings": {
-      "wind_down": 3,
-      "anxiety_relief": 3,
-      "lift_up": 3,
-      "get_creative": 3,
-      "get_social": 3,
-      "pain_body": 3,
-      "just_happy": 3,
-      "aphrodisiac": 3
-    }
-  },
   "7539507e5b37": {
     "lineage": "Cannabis-infused edible product by Nebula; no specific strain lineage disclosed. Formulated with distillate or concentrate at 91.6% THC potency per extract used in production.",
     "therapeutic": "Stress relief, anxiety reduction, mild to moderate pain management, appetite stimulation, insomnia support, mood elevation",
@@ -3469,6 +3452,131 @@
       "pain_body": 4,
       "just_happy": 4,
       "aphrodisiac": 2
+    }
+  },
+  "sw289766": {
+    "lineage": "Infused edible product — no specific strain lineage applicable. This is a manufactured cannabis edible by Nebula, dosed at 10mg THC per serving with 10 servings per bar (100mg total).",
+    "therapeutic": "Stress relief, mild to moderate pain management, appetite stimulation, sleep aid (at higher doses), anxiety reduction",
+    "negative": "Delayed onset (30–120 minutes) may lead to overconsumption; dry mouth, elevated heart rate, anxiety or paranoia if dose exceeded, couch-lock, impaired coordination and cognition, not recommended for first-time consumers without guidance",
+    "aroma": "As a gummy edible, this product carries a bright, tart green apple candy scent with a sugary-sweet finish. The aroma is artificially flavored, evoking crisp Granny Smith apple with minimal cannabis odor.",
+    "misc": "This is a 100mg THC edible bar by Nebula, broken into 10mg per-piece servings — a standard beginner-to-intermediate dose. New consumers should start with half a serving (5mg) and wait at least 90 minutes before redosing to assess tolerance. Experienced consumers may find 10–20mg appropriate; the THC percentage listed (101%) likely reflects concentration within the infused oil or extract used, not the product as a whole.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "anxiety_relief": 3,
+      "lift_up": 3,
+      "get_creative": 3,
+      "get_social": 3,
+      "pain_body": 3,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
+  },
+  "sw611812": {
+    "lineage": "Rainbow Sherbet x Pink Guava (Dark Heart Nursery / bred by DJ Short's lineage crossing; popularized by Paper Plane Genetics and widely circulated through California market)",
+    "therapeutic": "Stress relief, depression, anxiety, appetite stimulation, mild pain relief, fatigue, mood disorders",
+    "negative": "Dry mouth, dry eyes, occasional dizziness or paranoia at higher doses, may cause overconsumption due to pleasant flavor profile; not ideal for those sensitive to THC-induced anxiety",
+    "aroma": "Zoap bursts with a lush, candy-forward bouquet of ripe cherries, tropical guava, and fresh citrus zest layered over a creamy sherbet base. Subtle earthy and floral undertones round out the nose, giving it a complex sweetness that lingers in the air.",
+    "misc": "Zoap gained significant popularity in California dispensaries around 2022-2023 and became a highly sought-after hybrid for its exceptional flavor and well-balanced effects. At 20.6% THC with a dominant Myrcene, Limonene, and Caryophyllene terpene profile, it delivers a euphoric, creative uplift that gradually softens into relaxed contentment, making it ideal for afternoon or early evening use. Buds typically present dense, medium-to-large structures with vivid greens and purple hues, frosty trichome coverage, and orange pistils — making it a visually striking and flavorful choice for hybrid enthusiasts.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
+  },
+  "sw612104": {
+    "lineage": "OGKB (OG Kush Breath) x Chemdawg, with possible Ghost Train Haze or Trainwreck influence; exact breeder origin unconfirmed but associated with Pacific Northwest and boutique Californian genetics programs",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, fatigue, creative blocks, mood elevation, mild depression",
+    "negative": "Dry mouth, dry eyes, possible paranoia or anxiety at high doses due to elevated THC content, dizziness for low-tolerance users, mild headache",
+    "aroma": "Toad Venom opens with a sharp, zesty burst of citrus and lime rind undercut by cooling mint and damp pine needles, evolving into a deeper earthy, woody base reminiscent of forest floor and roasted nuts. The overall aromatic profile is complex and invigorating, balancing bright top notes with grounding herbal undertones.",
+    "misc": "As a live rosin product from Avio, Toad Venom preserves the full terpene spectrum of the starting flower through solventless extraction, resulting in a clean, flavorful, and potent concentrate at 69.8% THC — well above the typical 15-25% found in raw flower. The dominant myrcene adds body-relaxing depth while caryophyllene and humulene contribute spicy, anti-inflammatory, and earthy character. Best suited for daytime to early evening use given its sativa-leaning hybrid profile; recommended for experienced consumers due to its high potency.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 2,
+      "get_creative": 2,
+      "get_social": 2,
+      "pain_body": 7,
+      "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "sw612112": {
+    "lineage": "Lemon Yacht Club is believed to be a cross of Lemon OG Kush x unknown Sativa cultivar, possibly related to the Cookies or Jungle Boys breeding circles; exact breeder attribution is not widely confirmed, but phenotypic traits suggest Pacific Northwest or California craft origins",
+    "therapeutic": "Stress relief, anxiety reduction, mood elevation, fatigue, mild depression, creative blocks, mild pain management",
+    "negative": "Dry mouth, dry eyes, mild paranoia at high doses, dizziness for low-tolerance users, potential for racing thoughts in highly anxious consumers",
+    "aroma": "An intensely bright and zesty burst of fresh-squeezed lemon and citrus peel leads the nose, underscored by a herbal, almost tea-like earthiness and a subtle dry peppery spice on the back end. The live rosin process preserves a full-spectrum aromatic complexity that feels fresh, resinous, and vibrantly terpene-rich.",
+    "misc": "As a sativa-leaning hybrid produced in live rosin format by Avio, this strain preserves the full terpene profile of the living plant, delivering clean, solventless vapor with a potent 71.2% THC content ideal for experienced consumers. The dominant terpene trio of Limonene, Caryophyllene, and Terpinolene creates an uplifting, energizing, and mildly grounding effect profile well-suited for daytime or early evening use. Consumers new to live rosin or high-THC concentrates should start with one or two small puffs and allow several minutes before re-dosing.",
+    "mood_ratings": {
+      "wind_down": 3,
+      "deep_sleep": 2,
+      "anxiety_relief": 4,
+      "lift_up": 8,
+      "get_creative": 5,
+      "get_social": 7,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 6
+    }
+  },
+  "sw612121": {
+    "lineage": "Likely Strawberry Cough x Lemon OG or similar citrus-berry hybrid cross; exact breeder lineage unconfirmed, but Strawberry Lemonade is commonly associated with crosses involving Strawberry and Lemon strains popularized in California markets",
+    "therapeutic": "Stress relief, mild anxiety reduction, mood elevation, fatigue, mild pain and tension, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, potential mild paranoia at high doses, dizziness for low-tolerance users, couch-lock possible with extended use due to indica-leaning profile",
+    "aroma": "A vibrant burst of sun-ripened strawberries and tart lemon zest opens immediately, layered with a subtle earthy musk and a faint peppery spice on the exhale that grounds the otherwise bright, candy-like bouquet.",
+    "misc": "As a live rosin product, Avio's Strawberry Lemonade preserves the full terpene profile from fresh-frozen plant material, delivering a solventless, clean experience that highlights the natural fruit-forward character of the strain. At 74.3% THC this is a potent concentrate best suited for experienced consumers or those with moderate-to-high tolerance; beginners should take short, controlled puffs and wait several minutes between sessions. Best enjoyed in the evening or late afternoon when relaxation and mood elevation are desired without full sedation.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 4,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
+  },
+  "sw611782": {
+    "lineage": "Gelato #41 x Triangle Kush (Cookies Fam / Jungle Boys collaboration, originally bred by Sherbinski and Jungle Boys)",
+    "therapeutic": "Stress relief, chronic pain, anxiety, mild depression, muscle tension, insomnia (late-stage), appetite stimulation",
+    "negative": "Dry mouth, dry eyes, possible dizziness or paranoia at high doses due to elevated THC (78.9%), potential couch-lock with overconsumption, not recommended for low-tolerance users",
+    "aroma": "A lush, dessert-forward nose bursting with sweet tropical fruit, dark grape, and fresh berries layered over a creamy vanilla base, with subtle fuel and spice notes creeping in on the exhale. The overall impression is reminiscent of cracking open a bag of fruit candy in a pastry shop.",
+    "misc": "Gushers was popularized by the Cookies Fam and Jungle Boys and has earned widespread recognition on the competitive California market for its uniquely sweet-yet-funky profile. As a distillate at 78.9% THC with 1% CBD, this Grasslandz vape is potent and fast-acting — best suited for evening or late-afternoon use given its indica-leaning body effects, though the limonene and uplifting qualities can provide an initial cerebral lift before the relaxing body wave sets in. New or occasional consumers should take 1-2 puffs and wait several minutes before redosing to avoid overconsumption.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 6,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 2,
+      "get_social": 4,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw611791": {
+    "lineage": "Peaches and Cream x Blue Dream (Grasslandz proprietary blend; Blue Dream itself is a cross of Blueberry (DJ Short) x Haze, while Peaches and Cream is a phenotype-selected hybrid of Peaches x Cookies and Cream lineage)",
+    "therapeutic": "Stress relief, anxiety reduction, mild depression, creative blocks, fatigue, appetite stimulation, mild pain management",
+    "negative": "Dry mouth, dry eyes, possible mild paranoia or anxiety at high doses due to elevated THC (78.7%); newcomers should use caution with high-potency distillate format",
+    "aroma": "A lush, sun-warmed peach orchard meets sweet cream and fresh blueberry on the nose, underpinned by a soft floral lavender lift and a crisp piney finish that keeps things bright and clean.",
+    "misc": "This sativa-leaning hybrid distillate from Grasslandz captures the best of both parent strains — the euphoric, creative energy of Blue Dream paired with the sweet, creamy fruit profile of Peaches and Cream. With 78.7% THC and a touch of CBD at 1.6%, this vape is best suited for daytime or early evening use when you want a mood lift without full sedation. The terpene blend of Myrcene and Linalool adds gentle body relaxation while Limonene and Pinene keep the headspace clear and functional — ideal for social settings, creative projects, or combating afternoon fatigue.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 7,
+      "anxiety_relief": 5,
+      "lift_up": 4,
+      "get_creative": 5,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 5
     }
   }
 }
