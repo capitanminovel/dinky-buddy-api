@@ -1,21 +1,4 @@
 {
-  "f618b483f28e": {
-    "lineage": "GMO (Garlic Mushroom Onion) x Han-Solo Burger — GMO is itself a cross of Girl Scout Cookies x Chemdog, while Han-Solo Burger is derived from Meat Breath x Han-Solo (both heavy indica-leaning hybrids). Donny Burger was developed and popularized by Skunk House Genetics.",
-    "therapeutic": "Chronic pain, muscle tension, insomnia, stress relief, appetite stimulation, anxiety reduction, nausea, depression",
-    "negative": "Dry mouth, dry eyes, potential paranoia or anxiety at high doses, heavy sedation with overconsumption, couch-lock, dizziness in low-tolerance users",
-    "aroma": "Donny Burger opens with a deeply funky, savory blast of garlic and pungent cheese layered over diesel and rubber undertones, reminiscent of its GMO parentage. As it warms, subtle notes of sour lemon and sweet spice emerge, rounding out an intensely complex and lingering aromatic profile.",
-    "misc": "Bred by Skunk House Genetics, Donny Burger is a well-regarded cultivar in the Pacific Northwest cannabis scene known for its heavy resin production and dense, trichome-caked dark green buds with deep purple hues and amber pistils. At 23.4% THC it sits in a typical range of 22–28% for this strain, making it best suited for evening or late-night use when deep relaxation and appetite stimulation are desired. Novice consumers should approach with caution due to its potent sedative and cerebral intensity, while experienced users will appreciate its euphoric onset that gradually melts into a full-body indica stone.",
-    "mood_ratings": {
-      "wind_down": 9,
-      "anxiety_relief": 4,
-      "lift_up": 4,
-      "get_creative": 6,
-      "get_social": 3,
-      "pain_body": 5,
-      "just_happy": 5,
-      "aphrodisiac": 3
-    }
-  },
   "add95b58d1c0": {
     "lineage": "GG4 (Gorilla Glue #4) x Jokerz #31 | GG4: Chem's Sister x Sour Dubb x Chocolate Diesel (GG Strains LLC); Jokerz #31: White Runtz x Jet Fuel Gelato (Compound Genetics)",
     "therapeutic": "Stress relief, anxiety management, mild depression, chronic pain, muscle tension, headaches, appetite stimulation, mental fatigue",
@@ -3594,6 +3577,23 @@
       "get_social": 3,
       "pain_body": 4,
       "just_happy": 4,
+      "aphrodisiac": 3
+    }
+  },
+  "sw289784": {
+    "lineage": "GMO (Garlic Mushroom Onion) x Han-Solo Burger — GMO is itself a cross of Girl Scout Cookies x Chemdog, while Han-Solo Burger is derived from Meat Breath x Han-Solo (both heavy indica-leaning hybrids). Donny Burger was developed and popularized by Skunk House Genetics.",
+    "therapeutic": "Chronic pain, muscle tension, insomnia, stress relief, appetite stimulation, anxiety reduction, nausea, depression",
+    "negative": "Dry mouth, dry eyes, potential paranoia or anxiety at high doses, heavy sedation with overconsumption, couch-lock, dizziness in low-tolerance users",
+    "aroma": "Donny Burger opens with a deeply funky, savory blast of garlic and pungent cheese layered over diesel and rubber undertones, reminiscent of its GMO parentage. As it warms, subtle notes of sour lemon and sweet spice emerge, rounding out an intensely complex and lingering aromatic profile.",
+    "misc": "Bred by Skunk House Genetics, Donny Burger is a well-regarded cultivar in the Pacific Northwest cannabis scene known for its heavy resin production and dense, trichome-caked dark green buds with deep purple hues and amber pistils. At 23.4% THC it sits in a typical range of 22–28% for this strain, making it best suited for evening or late-night use when deep relaxation and appetite stimulation are desired. Novice consumers should approach with caution due to its potent sedative and cerebral intensity, while experienced users will appreciate its euphoric onset that gradually melts into a full-body indica stone.",
+    "mood_ratings": {
+      "wind_down": 9,
+      "anxiety_relief": 4,
+      "lift_up": 4,
+      "get_creative": 6,
+      "get_social": 3,
+      "pain_body": 5,
+      "just_happy": 5,
       "aphrodisiac": 3
     }
   }
