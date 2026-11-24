@@ -434,24 +434,6 @@
       "aphrodisiac": 6
     }
   },
-  "1ff10456344e": {
-    "lineage": "Chem Dog Funk x Auto Varin Lime Sour (Campfire Cannabis)",
-    "therapeutic": "Stress relief, muscle tension, chronic pain, anxiety, fatigue, mood elevation",
-    "negative": "Dry mouth, dry eyes, possible paranoia at high doses, dizziness in low-tolerance users, potential couch-lock with heavy consumption",
-    "aroma": "An aggressive, fuel-forward blast of diesel and burned rubber greets the nose immediately, giving way to dank, barnyard earthiness and a sharp sour citrus tang reminiscent of lime zest soaked in gasoline. The funk is persistent and complex, with a cheesy, musky depth that lingers long after the jar is opened.",
-    "misc": "Bred by Campfire Cannabis, Barnyard High Test pulls its gassy, chemmy backbone from Chem Dog Funk — a phenotype-forward expression of the legendary Chemdawg lineage — crossed with Auto Varin Lime Sour, which contributes terpene complexity, THCV potential, and bright citrus contrast. Given the high total cannabinoid claim and THCV-leaning parentage from the Varin side, consumers can expect a fast-acting, energetic onset that transitions into a grounded body relaxation, making it best suited for late afternoon or evening use. Seasoned consumers will appreciate the intensity and depth of this strain, while newer users should approach with caution and start with a small session.",
-    "mood_ratings": {
-      "wind_down": 8,
-      "deep_sleep": 5,
-      "anxiety_relief": 4,
-      "lift_up": 5,
-      "get_creative": 2,
-      "get_social": 4,
-      "pain_body": 6,
-      "just_happy": 5,
-      "aphrodisiac": 4
-    }
-  },
   "d54ec231c67e": {
     "lineage": "African Orange x Runtz (Runtz itself being Zkittlez x Gelato by Cookies Fam); Orange Runtz as presented here appears to be a Campfire Cannabis-selected phenotype or in-house cross leveraging African sativa genetics with the Runtz hybrid line",
     "therapeutic": "Stress relief, depression, fatigue, mild anxiety, mood elevation, lack of focus, creative blocks, social anxiety",
@@ -3747,5 +3729,113 @@
     "negative": "NOTE: THC value of 323.5% appears to be a data entry error — likely 32.35mg or 323.5mg total per bar. Potential side effects include anxiety, paranoia, dry mouth, dizziness, impaired coordination, and prolonged intoxication especially if dose is misread or misunderstood by the consumer. Edibles have delayed onset (30–120 minutes) which can lead to overconsumption.",
     "aroma": "Expect warm, bakery-style notes of ripe banana, brown sugar, and toasted nuts layered over a rich dark or milk chocolate base. The aroma is dessert-forward and inviting, with subtle vanilla and caramelized sweetness.",
     "misc": "This is an infused chocolate bar from Legacy Cannabis designed for recreational and wellness consumers who enjoy dessert-flavored edibles. Always verify the actual mg THC per serving and per package before consuming — the listed THC% is almost certainly a formatting error and should be confirmed with the retailer. Start with a 5–10mg serving, wait at least 90 minutes before redosing, and store away from heat to preserve potency and texture."
+  },
+  "sw388031": {
+    "lineage": "Chem Dog Funk x Auto Varin Lime Sour (Campfire Cannabis)",
+    "therapeutic": "Stress relief, muscle tension, chronic pain, anxiety, fatigue, mood elevation",
+    "negative": "Dry mouth, dry eyes, possible paranoia at high doses, dizziness in low-tolerance users, potential couch-lock with heavy consumption",
+    "aroma": "An aggressive, fuel-forward blast of diesel and burned rubber greets the nose immediately, giving way to dank, barnyard earthiness and a sharp sour citrus tang reminiscent of lime zest soaked in gasoline. The funk is persistent and complex, with a cheesy, musky depth that lingers long after the jar is opened.",
+    "misc": "Bred by Campfire Cannabis, Barnyard High Test pulls its gassy, chemmy backbone from Chem Dog Funk — a phenotype-forward expression of the legendary Chemdawg lineage — crossed with Auto Varin Lime Sour, which contributes terpene complexity, THCV potential, and bright citrus contrast. Given the high total cannabinoid claim and THCV-leaning parentage from the Varin side, consumers can expect a fast-acting, energetic onset that transitions into a grounded body relaxation, making it best suited for late afternoon or evening use. Seasoned consumers will appreciate the intensity and depth of this strain, while newer users should approach with caution and start with a small session.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 5,
+      "get_creative": 2,
+      "get_social": 4,
+      "pain_body": 6,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw293507": {
+    "lineage": "Grape Pie x Wedding Crasher (Grape Pie = Grape Stomper x Cherry Pie; Wedding Crasher = Wedding Cake x Purple Punch) — popularized by Symbiotic Genetics",
+    "therapeutic": "Insomnia, chronic pain, stress and anxiety relief, depression, appetite stimulation, muscle tension",
+    "negative": "Dry mouth, dry eyes, dizziness at higher doses, potential couch-lock, may cause grogginess if used during the day",
+    "aroma": "A lush, dessert-forward bouquet of ripe purple grapes and sweet cherry jam layered over creamy vanilla and a subtle earthy musk, with a faint floral undertone courtesy of linalool that rounds out the sweetness into something genuinely indulgent.",
+    "misc": "Grape Cream Cake is a dessert-lineage indica-leaning hybrid that typically tests between 20–26% THC, making Campfire Cannabis's 23.2% expression right in its wheelhouse. Buds are characteristically dense and resinous, often displaying deep green and violet hues blanketed in a thick frost of trichomes with amber pistils. Best suited for evening or nighttime use given its sedating and sleepy effects profile — ideal for unwinding after a long day, pre-sleep relaxation, or cozy social settings where calming euphoria is welcome.",
+    "mood_ratings": {
+      "wind_down": 9,
+      "deep_sleep": 8,
+      "anxiety_relief": 6,
+      "lift_up": 2,
+      "get_creative": 2,
+      "get_social": 2,
+      "pain_body": 5,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw507459": {
+    "lineage": "The Soap (Animal Mints x Kush Mints) x Project 4516 (Grape Pie x Sherblato); Animal Mints itself is a cross of Animal Cookies x SinMint Cookies, and Kush Mints is Animal Mints x Bubba Kush — bred under the Campfire Cannabis label",
+    "therapeutic": "Stress relief, anxiety reduction, mild pain management, insomnia, mood elevation, muscle tension",
+    "negative": "Dry mouth, dry eyes, possible couch-lock at higher doses, mild dizziness or paranoia in THC-sensitive users, sedation that may impair productivity",
+    "aroma": "A lush, creamy bouquet opens with floral lavender and sweet citrus zest, underpinned by a sharp diesel funk and grounding notes of fresh pine and damp earth. As it burns, warmer woody and minty undertones emerge, giving the overall scent profile a spa-like, almost soapy sweetness.",
+    "misc": "Bubble Bath is a proprietary in-house cross developed by Campfire Cannabis, blending the gassy, minty complexity of The Soap lineage with the fruity, dessert-forward genetics of Project 4516 to create a balanced indica-leaning hybrid typically testing in the 19–22% THC range. Buds tend to be dense and frosty with a lavender-green coloration and heavy trichome coverage, reflecting its rich Cookies and Kush heritage. Best consumed in the evening or late afternoon for unwinding after a stressful day; novice consumers should start slow given its potency and linalool-driven sedative qualities.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 4,
+      "anxiety_relief": 8,
+      "lift_up": 5,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 5,
+      "just_happy": 7,
+      "aphrodisiac": 7
+    }
+  },
+  "sw629317": {
+    "lineage": "Fro'Do x Alaskan Yeti, then backcrossed with LilMissHs (dizgo)",
+    "therapeutic": "Stress relief, mild anxiety, creative blocks, fatigue, mild depression, mood elevation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, slight dizziness in sensitive users",
+    "aroma": "A layered and inviting nose of tropical fruit and citrus zest opens first, giving way to a grounding base of damp earth, pine resin, and a subtle herbal spice that lingers on the exhale. The blend is bright yet rooted, reminiscent of a forest floor edged with ripe mango and lemon peel.",
+    "misc": "Frodo Squeeze is a sativa-leaning hybrid crafted by dizgo, drawing on the earthy, resinous qualities of Alaskan Yeti, the uplifting fruity character of Fro'Do, and the creative euphoria reportedly contributed by LilMissHs. At 18.2% THC, this is a moderate-strength offering well-suited for daytime to early evening use, ideal for creative pursuits, social settings, or unwinding without full sedation. The dominant terpene profile of Myrcene, Limonene, and Terpinene supports its calming-yet-alert effect profile, making it approachable for intermediate consumers while still delivering meaningful relief.",
+    "mood_ratings": {
+      "wind_down": 6,
+      "deep_sleep": 4,
+      "anxiety_relief": 3,
+      "lift_up": 6,
+      "get_creative": 3,
+      "get_social": 5,
+      "pain_body": 4,
+      "just_happy": 5,
+      "aphrodisiac": 4
+    }
+  },
+  "sw628525": {
+    "lineage": "Peanut Butter Breath x Strawberry Pinecone (Campfire Cannabis selection); Peanut Butter Breath is itself a cross of Do-Si-Dos x Mendo Breath (ThugPug Genetics), while Strawberry Pinecone is a lesser-documented Pacific Northwest cultivar with Strawberry Diesel heritage",
+    "therapeutic": "Insomnia, chronic pain, anxiety, muscle tension, stress relief, appetite stimulation, mild depression",
+    "negative": "Dry mouth, dry eyes, couch-lock at higher doses, dizziness or mild paranoia in THC-sensitive users, strong sedation may impair daytime functioning — not recommended for new or low-tolerance consumers",
+    "aroma": "God's Breath opens with a rich, nutty peanut butter warmth layered over sweet grape and ripe berry undertones, grounded by deep earthy pine and a subtle spiced woodiness that lingers on the exhale. The herbal complexity gives it an almost dank, forest-floor quality that makes it immediately recognizable and deeply inviting.",
+    "misc": "This is a Campfire Cannabis house cultivar leaning heavily into the indica side of its Peanut Butter Breath parentage, with THC testing at 23.7% placing it firmly in the high-potency category suitable for experienced consumers. Buds typically present dense and compact with deep olive-green coloring, amber trichomes, and occasional purple hues inherited from the Do-Si-Dos lineage. Best consumed in the evening or before bed, as the Myrcene-dominant terpene profile combined with Caryophyllene and Pinene creates a powerfully sedating yet euphoric experience that transitions smoothly from relaxed bliss into deep sleep.",
+    "mood_ratings": {
+      "wind_down": 8,
+      "deep_sleep": 5,
+      "anxiety_relief": 4,
+      "lift_up": 2,
+      "get_creative": 6,
+      "get_social": 2,
+      "pain_body": 6,
+      "just_happy": 3,
+      "aphrodisiac": 3
+    }
+  },
+  "sw629341": {
+    "lineage": "Fro'Do x LilMissHS (dizgo); Fro'Do is believed to be a cross involving Froot Loops and Do-Si-Dos genetics, while LilMissHS (Little Miss Headspace) is a sativa-dominant cultivar with suspected lineage tied to Lemon Haze and Headband-adjacent genetics — exact breeder origin of parent strains attributed to dizgo's proprietary breeding program",
+    "therapeutic": "Stress relief, depression, fatigue, mild anxiety, creative blocks, mood elevation, appetite stimulation",
+    "negative": "Dry mouth, dry eyes, mild paranoia at higher doses, potential racing thoughts in THC-sensitive users, dizziness if overconsumed — use with caution if prone to sativa-induced anxiety",
+    "aroma": "Zesty Parm bursts open with a sharp citrus and lemon zest top note layered over a piney, herbal backbone reminiscent of fresh rosemary and cracked black pepper. As it settles, a subtle earthy woodiness and floral lavender undertone (from linalool) rounds out the profile into something surprisingly complex and savory-sweet.",
+    "misc": "Developed by dizgo, a brand known for curating unique hybrid cultivars with expressive terpene profiles, Zesty Parm sits at 20.2% THC making it a moderate-to-strong option best suited for experienced consumers. The dominant terpene stack of myrcene, limonene, and caryophyllene delivers an energizing yet grounded experience ideal for daytime creative sessions, social outings, or afternoon productivity. Consumers should expect a bright, uplifting onset that transitions into a focused, euphoric flow without heavy sedation.",
+    "mood_ratings": {
+      "wind_down": 7,
+      "deep_sleep": 6,
+      "anxiety_relief": 5,
+      "lift_up": 4,
+      "get_creative": 5,
+      "get_social": 3,
+      "pain_body": 4,
+      "just_happy": 6,
+      "aphrodisiac": 5
+    }
   }
 }
